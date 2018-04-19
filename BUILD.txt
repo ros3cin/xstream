@@ -13,3 +13,6 @@ username and passwords.
 
 To deploy (optionally adding sources and javadoc jars):
 mvn deploy
+
+Easy build:
+mvn package -DskipTests
