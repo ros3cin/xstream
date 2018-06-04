@@ -16,3 +16,4 @@ mvn deploy
 
 Easy build:
 mvn package -DskipTests
+NOTE: For a java 7 build, set your java home to jdk7. I was not able to enforce java 7 when using java 8
