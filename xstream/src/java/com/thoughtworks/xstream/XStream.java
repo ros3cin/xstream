@@ -648,7 +648,7 @@ public class XStream {
         allowTypeHierarchy(Number.class);
         allowTypeHierarchy(Throwable.class);
         allowTypeHierarchy(TimeZone.class);
-        allowTypeHierarchy(Path.class);
+        //allowTypeHierarchy(Path.class);
 
         final Set<Class<?>> types = new HashSet<>();
         types.addAll(Arrays.<Class<?>>asList(BitSet.class, Charset.class, Class.class, Currency.class, Date.class,
@@ -827,7 +827,7 @@ public class XStream {
         }
 
         aliasType("charset", Charset.class);
-        aliasType("path", Path.class);
+        //aliasType("path", Path.class);
 
         if (JVM.loadClassForName("javax.security.auth.Subject") != null) {
             aliasDynamically("auth-subject", "javax.security.auth.Subject");
@@ -1044,7 +1044,7 @@ public class XStream {
         addImmutableType(URL.class, false);
         addImmutableType(File.class, false);
         addImmutableType(Class.class, false);
-        addImmutableType(Paths.get(".").getClass(), false);
+        //addImmutableType(Paths.get(".").getClass(), false);
 
         if (JVM.isAWTAvailable()) {
             addImmutableTypeDynamically("java.awt.font.TextAttribute", false);

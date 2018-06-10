@@ -141,11 +141,11 @@ public class DomDriver extends AbstractXmlDriver {
      */
     protected DocumentBuilderFactory createDocumentBuilderFactory() {
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
+        /*try {
             factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
         } catch (final ParserConfigurationException e) {
             throw new StreamException(e);
-        }
+        }*/
         return factory;
     }
 }
