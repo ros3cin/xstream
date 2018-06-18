@@ -14,6 +14,7 @@ import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.converters.ConversionException;
@@ -49,7 +50,7 @@ public class EnumToStringConverter<T extends Enum<T>> extends AbstractSingleValu
     private static <T extends Enum<T>> Map<String, T> extractStringMap(final Class<T> type) {
         checkType(type);
         final EnumSet<T> values = EnumSet.allOf(type);
-        final Map<String, T> strings = new HashMap<>(values.size());
+        final Map<String, T> strings = new HashedMap<>(values.size());
         for (final T value : values) {
             if (strings.put(value.toString(), value) != null) {
                 throw new InitializationException("Enum type "

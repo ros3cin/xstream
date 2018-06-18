@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.reflection.MissingFieldException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
@@ -52,7 +54,7 @@ public class PropertyDictionary implements Caching {
      */
     @Deprecated
     public Iterator<BeanProperty> serializablePropertiesFor(final Class<?> type) {
-        final Collection<BeanProperty> beanProperties = new ArrayList<>();
+        final Collection<BeanProperty> beanProperties = new NodeCachingLinkedList<>();
         final Collection<PropertyDescriptor> descriptors = buildMap(type).values();
         for (final PropertyDescriptor descriptor : descriptors) {
             if (descriptor.getReadMethod() != null && descriptor.getWriteMethod() != null) {
@@ -124,7 +126,7 @@ public class PropertyDictionary implements Caching {
                 oaex.add("bean-type", type.getName());
                 throw oaex;
             }
-            nameMap = new LinkedHashMap<>();
+            nameMap = new HashedMap<>();
             final PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
             for (final PropertyDescriptor descriptor : propertyDescriptors) {
                 nameMap.put(descriptor.getName(), descriptor);

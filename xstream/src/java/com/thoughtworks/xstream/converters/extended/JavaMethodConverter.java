@@ -15,6 +15,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
 
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.converters.ConversionException;
@@ -127,7 +128,7 @@ public class JavaMethodConverter implements Converter {
             }
 
             reader.moveDown();
-            final List<Class<?>> parameterTypeList = new ArrayList<>();
+            final List<Class<?>> parameterTypeList = new NodeCachingLinkedList<>();
             while (reader.hasMoreChildren()) {
                 reader.moveDown();
                 final String parameterTypeName = reader.getValue();

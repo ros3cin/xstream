@@ -13,6 +13,7 @@ package com.thoughtworks.xstream.converters.extended;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -85,7 +86,7 @@ public class NamedArrayConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Object> list = new ArrayList<>();
+        final List<Object> list = new NodeCachingLinkedList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             final Object item;

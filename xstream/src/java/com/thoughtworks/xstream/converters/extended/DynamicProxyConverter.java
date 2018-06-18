@@ -17,6 +17,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
@@ -104,7 +105,7 @@ public class DynamicProxyConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Class<?>> interfaces = new ArrayList<>();
+        final List<Class<?>> interfaces = new NodeCachingLinkedList<>();
         InvocationHandler handler = null;
         Class<?> handlerType = null;
         while (reader.hasMoreChildren()) {

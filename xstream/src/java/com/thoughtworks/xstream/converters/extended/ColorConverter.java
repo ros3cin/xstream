@@ -14,6 +14,7 @@ package com.thoughtworks.xstream.converters.extended;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -47,7 +48,7 @@ public class ColorConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final Map<String, Integer> elements = new HashMap<>();
+        final Map<String, Integer> elements = new HashedMap<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             elements.put(reader.getNodeName(), Integer.valueOf(reader.getValue()));

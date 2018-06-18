@@ -20,6 +20,7 @@ import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.Mapper;
+import org.apache.commons.collections4.list.*;
 
 
 /**
@@ -52,7 +53,7 @@ public class ArrayConverter extends AbstractCollectionConverter {
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
         // read the items from xml into a list (the array size is not known until all items have been read)
-        final List<Object> items = new ArrayList<>();
+        final List<Object> items = new NodeCachingLinkedList<>();
         while (reader.hasMoreChildren()) {
             final Object item = readCompleteItem(reader, context, null); // TODO: arg, what should replace null?
             items.add(item);

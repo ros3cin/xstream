@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorWritingException;
@@ -166,7 +167,7 @@ public class BeanProvider implements JavaBeanProvider {
     }
 
     protected PropertyDescriptor[] getSerializableProperties(final Object object) {
-        final List<PropertyDescriptor> result = new ArrayList<>();
+        final List<PropertyDescriptor> result = new NodeCachingLinkedList<>();
         for (final Iterator<PropertyDescriptor> iter = propertyDictionary.propertiesFor(object.getClass()); iter
             .hasNext();) {
             final PropertyDescriptor descriptor = iter.next();
