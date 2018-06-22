@@ -18,6 +18,7 @@ import java.util.Map;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.converters.enums.EnumSingleValueConverter;
 import com.thoughtworks.xstream.core.Caching;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -113,7 +114,7 @@ public class EnumMapper extends MapperWrapper implements Caching {
     }
 
     private Object readResolve() {
-        enumConverterMap = new HashMap<>();
+        enumConverterMap = new HashedMap<>();
         attributeMapper = lookupMapperOfType(AttributeMapper.class);
         return this;
     }

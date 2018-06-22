@@ -14,6 +14,7 @@ package com.thoughtworks.xstream.mapper;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
@@ -45,7 +46,7 @@ public abstract class MapperWrapper implements Mapper {
 
         if (wrapped instanceof MapperWrapper) {
             final MapperWrapper wrapper = (MapperWrapper)wrapped;
-            final Map<String, Mapper> wrapperMap = new HashMap<>();
+            final Map<String, Mapper> wrapperMap = new HashedMap<>();
             wrapperMap.put("aliasForAttribute", wrapper.aliasForAttributeMapper);
             wrapperMap.put("aliasForSystemAttribute", wrapper.aliasForSystemAttributeMapper);
             wrapperMap.put("attributeForAlias", wrapper.attributeForAliasMapper);

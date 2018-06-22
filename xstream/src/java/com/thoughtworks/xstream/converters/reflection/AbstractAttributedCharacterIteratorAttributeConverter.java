@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.text.AttributedCharacterIterator;
 import java.util.HashMap;
+import org.apache.commons.collections4.map.HashedMap;
 import java.util.Map;
 
 import com.thoughtworks.xstream.converters.ConversionException;
@@ -34,7 +35,7 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
     extends AbstractSingleValueConverter {
 
     private static final Map<String, Map<String, ? extends AttributedCharacterIterator.Attribute>> instanceMaps =
-            new HashMap<>();
+            new HashedMap<>();
     private static final Method getName;
 
     static {
@@ -115,7 +116,7 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
         final Map<String, T> typedMap = (Map<String, T>)instanceMaps.get(type.getName());
         attributeMap = typedMap;
         if (attributeMap == null) {
-            attributeMap = new HashMap<>();
+            attributeMap = new HashedMap<>();
             final Field instanceMap = Fields.locate(type, Map.class, true);
             if (instanceMap != null) {
                 try {

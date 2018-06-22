@@ -12,6 +12,7 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -22,8 +23,8 @@ import java.util.Map;
  */
 public abstract class AbstractAttributeAliasingMapper extends MapperWrapper {
 
-    protected final Map<String, String> aliasToName = new HashMap<>();
-    protected transient Map<String, String> nameToAlias = new HashMap<>();
+    protected final Map<String, String> aliasToName = new HashedMap<>();
+    protected transient Map<String, String> nameToAlias = new HashedMap<>();
 
     public AbstractAttributeAliasingMapper(final Mapper wrapped) {
         super(wrapped);

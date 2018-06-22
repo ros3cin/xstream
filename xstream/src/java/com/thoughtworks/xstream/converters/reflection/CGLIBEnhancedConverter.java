@@ -24,6 +24,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -72,7 +73,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
             final Mapper mapper, final ReflectionProvider reflectionProvider,
             final ClassLoaderReference classLoaderReference) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoaderReference);
-        fieldCache = new HashMap<>();
+        fieldCache = new HashedMap<>();
     }
 
     /**
@@ -82,7 +83,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     public CGLIBEnhancedConverter(
             final Mapper mapper, final ReflectionProvider reflectionProvider, final ClassLoader classLoader) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoader);
-        fieldCache = new HashMap<>();
+        fieldCache = new HashedMap<>();
     }
 
     /**
@@ -435,7 +436,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     @Override
     protected Object readResolve() {
         super.readResolve();
-        fieldCache = new HashMap<>();
+        fieldCache = new HashedMap<>();
         return this;
     }
 

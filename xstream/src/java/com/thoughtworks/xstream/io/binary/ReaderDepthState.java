@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import org.eclipse.collections.impl.list.mutable.FastList;
 
 
 /**
@@ -87,7 +88,7 @@ class ReaderDepthState {
         attribute.name = name;
         attribute.value = value;
         if (current.attributes == null) {
-            current.attributes = new ArrayList<>();
+            current.attributes = new FastList<>();
         }
         current.attributes.add(attribute);
     }

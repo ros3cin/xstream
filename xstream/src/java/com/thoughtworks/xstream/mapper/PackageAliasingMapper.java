@@ -18,6 +18,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -37,7 +38,7 @@ public class PackageAliasingMapper extends MapperWrapper implements Serializable
     };
 
     private Map<String, String> packageToName = new TreeMap<>(REVERSE);
-    protected transient Map<String, String> nameToPackage = new HashMap<>();
+    protected transient Map<String, String> nameToPackage = new HashedMap<>();
 
     public PackageAliasingMapper(final Mapper wrapped) {
         super(wrapped);
@@ -99,7 +100,7 @@ public class PackageAliasingMapper extends MapperWrapper implements Serializable
         @SuppressWarnings("unchecked")
         final Map<String, String> map = (Map<String, String>)in.readObject();
         packageToName.putAll(map);
-        nameToPackage = new HashMap<>();
+        nameToPackage = new HashedMap<>();
         for (final Map.Entry<String, String> entry : packageToName.entrySet()) {
             nameToPackage.put(entry.getValue(), entry.getKey());
         }

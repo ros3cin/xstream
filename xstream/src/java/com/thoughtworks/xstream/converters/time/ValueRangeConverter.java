@@ -13,6 +13,7 @@ package com.thoughtworks.xstream.converters.time;
 import java.time.temporal.ValueRange;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -64,7 +65,7 @@ public class ValueRangeConverter implements Converter {
             reader.moveDown();
             reader.moveDown();
         }
-        final Map<String, Long> elements = new HashMap<>();
+        final Map<String, Long> elements = new HashedMap<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
 

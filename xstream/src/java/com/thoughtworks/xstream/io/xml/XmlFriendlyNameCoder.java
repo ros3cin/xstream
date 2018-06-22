@@ -14,6 +14,7 @@ package com.thoughtworks.xstream.io.xml;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
 import com.thoughtworks.xstream.io.naming.NameCoder;
@@ -284,7 +285,7 @@ public class XmlFriendlyNameCoder implements NameCoder, Cloneable {
     }
 
     protected Map<String, String> createCacheMap() {
-        return new HashMap<>();
+        return new HashedMap<>();
     }
 
     private static class IntPair {

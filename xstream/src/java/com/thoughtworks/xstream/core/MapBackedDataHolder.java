@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.DataHolder;
 
@@ -23,7 +24,7 @@ public class MapBackedDataHolder implements DataHolder {
     private final Map<Object, Object> map;
 
     public MapBackedDataHolder() {
-        this(new HashMap<>());
+        this(new HashedMap<>());
     }
 
     public MapBackedDataHolder(final Map<Object, Object> map) {

@@ -14,6 +14,7 @@ package com.thoughtworks.xstream.io.xml;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import javax.xml.namespace.QName;
 
@@ -66,10 +67,10 @@ public class QNameMap {
      */
     public synchronized void registerMapping(final QName qname, final String javaClassName) {
         if (javaToQName == null) {
-            javaToQName = Collections.synchronizedMap(new HashMap<String, QName>());
+            javaToQName = Collections.synchronizedMap(new HashedMap<String, QName>());
         }
         if (qnameToJava == null) {
-            qnameToJava = Collections.synchronizedMap(new HashMap<QName, String>());
+            qnameToJava = Collections.synchronizedMap(new HashedMap<QName, String>());
         }
         javaToQName.put(javaClassName, qname);
         qnameToJava.put(qname, javaClassName);

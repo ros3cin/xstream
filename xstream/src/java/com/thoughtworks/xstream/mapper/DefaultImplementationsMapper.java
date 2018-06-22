@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.thoughtworks.xstream.InitializationException;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -25,8 +26,8 @@ import com.thoughtworks.xstream.InitializationException;
  */
 public class DefaultImplementationsMapper extends MapperWrapper {
 
-    private final Map<Class<?>, Class<?>> typeToImpl = new HashMap<>();
-    private transient Map<Class<?>, Class<?>> implToType = new HashMap<>();
+    private final Map<Class<?>, Class<?>> typeToImpl = new HashedMap<>();
+    private transient Map<Class<?>, Class<?>> implToType = new HashedMap<>();
 
     public DefaultImplementationsMapper(final Mapper wrapped) {
         super(wrapped);

@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -119,7 +120,7 @@ public class XppDomComparator implements Comparator<XppDom> {
 
             xpath.append('/');
 
-            final Map<String, int[]> names = new HashMap<>();
+            final Map<String, int[]> names = new HashedMap<>();
             for (int i = 0; i < children; ++i) {
                 final XppDom child1 = dom1.getChild(i);
                 final XppDom child2 = dom2.getChild(i);

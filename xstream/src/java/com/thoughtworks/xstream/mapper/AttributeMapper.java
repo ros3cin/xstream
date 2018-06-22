@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -36,7 +37,7 @@ import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
  */
 public class AttributeMapper extends MapperWrapper {
 
-    private final Map<String, Class<?>> fieldNameToTypeMap = new HashMap<>();
+    private final Map<String, Class<?>> fieldNameToTypeMap = new HashedMap<>();
     private final Set<Class<?>> typeSet = new HashSet<>();
     private final ConverterLookup converterLookup;
     private final ReflectionProvider reflectionProvider;

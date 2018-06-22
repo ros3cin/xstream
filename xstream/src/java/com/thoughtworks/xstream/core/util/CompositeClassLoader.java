@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
+
 /**
  * ClassLoader that is composed of other classloaders. Each loader will be used to try to load the particular class, until
  * one of them succeeds. <b>Note:</b> The loaders will always be called in the REVERSE order they were added in.
@@ -99,7 +101,7 @@ public class CompositeClassLoader extends ClassLoader {
 
     @Override
     public Class<?> loadClass(final String name) throws ClassNotFoundException {
-        final List<ClassLoader> copy = new ArrayList<>(classLoaders.size());
+        final List<ClassLoader> copy = new NodeCachingLinkedList<>(classLoaders.size());
         synchronized(this) {
             cleanup();
             for(final WeakReference<ClassLoader> ref : classLoaders) {

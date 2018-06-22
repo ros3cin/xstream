@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -94,7 +95,7 @@ public class BinaryStreamWriter implements ExtendedHierarchicalStreamWriter {
     private class IdRegistry {
 
         private long nextId = 0;
-        private final Map<String, Long> ids = new HashMap<>();
+        private final Map<String, Long> ids = new HashedMap<>();
 
         public long getId(final String value) {
             Long id = ids.get(value);

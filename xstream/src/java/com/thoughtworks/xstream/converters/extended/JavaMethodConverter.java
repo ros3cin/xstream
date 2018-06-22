@@ -128,7 +128,7 @@ public class JavaMethodConverter implements Converter {
             }
 
             reader.moveDown();
-            final List<Class<?>> parameterTypeList = new NodeCachingLinkedList<>();
+            final List<Class<?>> parameterTypeList = new ArrayList<>();
             while (reader.hasMoreChildren()) {
                 reader.moveDown();
                 final String parameterTypeName = reader.getValue();

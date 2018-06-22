@@ -26,8 +26,6 @@ import com.thoughtworks.xstream.converters.ErrorWriter;
 import com.thoughtworks.xstream.core.JVM;
 import com.thoughtworks.xstream.core.util.ThreadSafeSimpleDateFormat;
 
-import org.apache.commons.collections4.list.*;
-
 
 /**
  * Converts a {@link Date} to a string as a date format, retaining precision down to milliseconds.
@@ -62,7 +60,7 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
 
         final String defaultPattern = "yyyy-MM-dd HH:mm:ss.S z";
         final String defaultEraPattern = "yyyy-MM-dd G HH:mm:ss.S z";
-        final List<String> acceptablePatterns = new NodeCachingLinkedList<>();
+        final List<String> acceptablePatterns = new ArrayList<>();
         final boolean utcSupported = JVM.canParseUTCDateFormat();
         DEFAULT_PATTERN = utcSupported ? defaultPattern : "yyyy-MM-dd HH:mm:ss.S 'UTC'";
         DEFAULT_ERA_PATTERN = utcSupported ? defaultEraPattern : "yyyy-MM-dd G HH:mm:ss.S 'UTC'";

@@ -15,6 +15,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -26,7 +27,7 @@ import java.util.Map;
  */
 public class ObjectIdDictionary<E> {
 
-    private final Map<? super Wrapper, E> map = new HashMap<>();
+    private final Map<? super Wrapper, E> map = new HashedMap<>();
     private final ReferenceQueue<Object> queue = new ReferenceQueue<>();
 
     private static interface Wrapper {

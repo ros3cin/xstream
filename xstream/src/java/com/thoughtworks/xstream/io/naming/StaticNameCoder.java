@@ -12,6 +12,7 @@ package com.thoughtworks.xstream.io.naming;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -41,11 +42,11 @@ public class StaticNameCoder implements NameCoder {
      * @since 1.4
      */
     public StaticNameCoder(final Map<String, String> java2Node, final Map<String, String> java2Attribute) {
-        this.java2Node = new HashMap<>(java2Node);
+        this.java2Node = new HashedMap<>(java2Node);
         if (java2Node == java2Attribute || java2Attribute == null) {
             this.java2Attribute = this.java2Node;
         } else {
-            this.java2Attribute = new HashMap<>(java2Attribute);
+            this.java2Attribute = new HashedMap<>(java2Attribute);
         }
         readResolve();
     }

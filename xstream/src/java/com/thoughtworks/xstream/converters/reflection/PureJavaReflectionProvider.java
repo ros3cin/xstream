@@ -28,6 +28,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import com.thoughtworks.xstream.core.util.Fields;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -200,6 +201,6 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
     }
 
     protected void init() {
-        serializedDataCache = new HashMap<>();
+        serializedDataCache = new HashedMap<>();
     }
 }

@@ -21,6 +21,7 @@ import com.thoughtworks.xstream.converters.ConverterLookup;
 import com.thoughtworks.xstream.converters.ConverterRegistry;
 import com.thoughtworks.xstream.core.util.Cloneables;
 import com.thoughtworks.xstream.core.util.PrioritizedList;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -37,7 +38,7 @@ public class DefaultConverterLookup implements ConverterLookup, ConverterRegistr
     private Map<String, Converter> serializationMap = null;
 
     public DefaultConverterLookup() {
-        this(new HashMap<String, Converter>());
+        this(new HashedMap<String, Converter>());
     }
 
     /**

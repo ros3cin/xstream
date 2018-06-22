@@ -12,6 +12,7 @@
 package com.thoughtworks.xstream.io.path;
 
 import java.util.HashMap;
+import org.apache.commons.collections4.map.HashedMap;
 import java.util.Map;
 
 
@@ -81,7 +82,7 @@ public class PathTracker {
         pathStack[pointer] = name;
         Map<String, Integer> indexMap = indexMapStack[pointer];
         if (indexMap == null) {
-            indexMap = new HashMap<>();
+            indexMap = new HashedMap<>();
             indexMapStack[pointer] = indexMap;
         }
         if (indexMap.containsKey(name)) {

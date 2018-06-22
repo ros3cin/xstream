@@ -14,10 +14,12 @@ package com.thoughtworks.xstream.converters.extended;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
@@ -133,7 +135,7 @@ public class ToAttributedValueConverter implements Converter {
     @Override
     public void marshal(final Object source, final HierarchicalStreamWriter writer, final MarshallingContext context) {
         final Class<?> sourceType = source.getClass();
-        final Map<String, Field> defaultFieldDefinition = new HashMap<>();
+        final Map<String, Field> defaultFieldDefinition = new HashedMap<>();
         final String[] tagValue = new String[1];
         final Object[] realValue = new Object[1];
         final Class<?>[] fieldType = new Class[1];
@@ -222,7 +224,7 @@ public class ToAttributedValueConverter implements Converter {
         final Object result = reflectionProvider.newInstance(context.getRequiredType());
         final Class<?> resultType = result.getClass();
 
-        final Set<FastField> seenFields = new HashSet<>();
+        final Set<FastField> seenFields = new LinkedHashSet<>();
         final Iterator<String> it = reader.getAttributeNames();
 
         final Set<String> systemAttributes = new HashSet<>();

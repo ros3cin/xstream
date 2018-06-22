@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.ErrorWriter;
 import com.thoughtworks.xstream.io.ExtendedHierarchicalStreamReader;
@@ -221,7 +222,7 @@ public class BinaryStreamReader implements ExtendedHierarchicalStreamReader {
 
     private static class IdRegistry {
 
-        private final Map<Long, String> map = new HashMap<>();
+        private final Map<Long, String> map = new HashedMap<>();
 
         public void put(final long id, final String value) {
             map.put(Long.valueOf(id), value);

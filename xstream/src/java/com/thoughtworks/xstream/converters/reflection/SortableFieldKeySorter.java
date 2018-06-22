@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.apache.commons.collections4.map.HashedMap;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.core.Caching;
@@ -31,7 +32,7 @@ import com.thoughtworks.xstream.core.Caching;
 public class SortableFieldKeySorter implements FieldKeySorter, Caching {
 
     private final static FieldKey[] EMPTY_FIELD_KEY_ARRAY = {};
-    private final Map<Class<?>, Comparator<FieldKey>> map = new HashMap<>();
+    private final Map<Class<?>, Comparator<FieldKey>> map = new HashedMap<>();
 
     @Override
     public Map<FieldKey, Field> sort(final Class<?> type, final Map<FieldKey, Field> keyedByFieldKey) {

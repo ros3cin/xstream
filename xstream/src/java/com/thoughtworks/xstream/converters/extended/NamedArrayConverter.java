@@ -14,6 +14,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.collections4.list.NodeCachingLinkedList;
+import org.eclipse.collections.impl.list.mutable.FastList;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -86,7 +87,7 @@ public class NamedArrayConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Object> list = new NodeCachingLinkedList<>();
+        final List<Object> list = new FastList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             final Object item;

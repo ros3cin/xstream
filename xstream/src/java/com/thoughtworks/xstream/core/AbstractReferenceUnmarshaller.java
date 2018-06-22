@@ -19,6 +19,7 @@ import com.thoughtworks.xstream.converters.ConverterLookup;
 import com.thoughtworks.xstream.core.util.FastStack;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.mapper.Mapper;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -32,7 +33,7 @@ import com.thoughtworks.xstream.mapper.Mapper;
 public abstract class AbstractReferenceUnmarshaller<R> extends TreeUnmarshaller {
 
     private static final Object NULL = new Object();
-    private final Map<R, Object> values = new HashMap<>();
+    private final Map<R, Object> values = new HashedMap<>();
     private final FastStack<R> parentStack = new FastStack<>(16);
 
     public AbstractReferenceUnmarshaller(

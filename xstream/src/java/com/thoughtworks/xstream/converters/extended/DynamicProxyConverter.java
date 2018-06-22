@@ -105,7 +105,7 @@ public class DynamicProxyConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Class<?>> interfaces = new NodeCachingLinkedList<>();
+        final List<Class<?>> interfaces = new ArrayList<>();
         InvocationHandler handler = null;
         Class<?> handlerType = null;
         while (reader.hasMoreChildren()) {

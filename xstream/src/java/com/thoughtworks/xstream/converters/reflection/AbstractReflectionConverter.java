@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
+import org.apache.commons.collections4.map.HashedMap;
+
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -96,7 +99,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
     protected void doMarshal(final Object source, final HierarchicalStreamWriter writer,
             final MarshallingContext context) {
         final List<FieldInfo> fields = new ArrayList<>();
-        final Map<String, Field> defaultFieldDefinition = new HashMap<>();
+        final Map<String, Field> defaultFieldDefinition = new HashedMap<>();
         final Class<?> sourceType = source.getClass();
 
         // Attributes might be preferred to child elements ...
@@ -144,7 +147,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
         new Object() {
             {
                 final Map<String, Set<Mapper.ImplicitCollectionMapping>> hiddenMappers =
-                        new HashMap<String, Set<Mapper.ImplicitCollectionMapping>>();
+                        new HashedMap<String, Set<Mapper.ImplicitCollectionMapping>>();
                 for (final FieldInfo info : fields) {
                     if (info.value != null) {
                         final Field defaultField = defaultFieldDefinition.get(info.fieldName);
@@ -682,7 +685,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
 
         private final Map<Object, Object> map;
         private final String keyFieldName;
-        private final Map<Class<?>, Field> fieldCache = new HashMap<>();
+        private final Map<Class<?>, Field> fieldCache = new HashedMap<>();
 
         public MappingList(final Map<Object, Object> map, final String keyFieldName) {
             this.map = map;

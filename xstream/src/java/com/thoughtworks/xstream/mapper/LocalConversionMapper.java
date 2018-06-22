@@ -16,6 +16,7 @@ import java.util.Map;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.core.util.FastField;
+import org.apache.commons.collections4.map.HashedMap;
 
 
 /**
@@ -26,7 +27,7 @@ import com.thoughtworks.xstream.core.util.FastField;
  */
 public class LocalConversionMapper extends MapperWrapper {
 
-    private final Map<FastField, Converter> localConverters = new HashMap<>();
+    private final Map<FastField, Converter> localConverters = new HashedMap<>();
     private transient AttributeMapper attributeMapper;
 
     /**

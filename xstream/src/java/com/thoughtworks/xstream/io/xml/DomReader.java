@@ -13,6 +13,7 @@ package com.thoughtworks.xstream.io.xml;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.collections.impl.list.mutable.FastList;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -131,7 +132,7 @@ public class DomReader extends AbstractDocumentReader {
     protected void reassignCurrentElement(final Object current) {
         currentElement = (Element)current;
         final NodeList childNodes = currentElement.getChildNodes();
-        childElements = new ArrayList<>();
+        childElements = new FastList<>();
         for (int i = 0; i < childNodes.getLength(); i++) {
             final Node node = childNodes.item(i);
             if (node instanceof Element) {

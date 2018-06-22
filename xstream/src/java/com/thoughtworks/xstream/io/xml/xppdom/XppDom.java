@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.commons.collections4.list.TreeList;
+import org.apache.commons.collections4.map.HashedMap;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -42,7 +44,7 @@ public class XppDom implements Serializable {
     public XppDom(final String name) {
         this.name = name;
         childList = new ArrayList<>();
-        childMap = new HashMap<>();
+        childMap = new HashedMap<>();
     }
 
     // ----------------------------------------------------------------------
@@ -83,7 +85,7 @@ public class XppDom implements Serializable {
 
     public void setAttribute(final String name, final String value) {
         if (null == attributes) {
-            attributes = new HashMap<>();
+            attributes = new HashedMap<>();
         }
 
         attributes.put(name, value);
@@ -158,7 +160,7 @@ public class XppDom implements Serializable {
     // ----------------------------------------------------------------------
 
     Object readResolve() {
-        childMap = new HashMap<>();
+        childMap = new HashedMap<>();
         for (final XppDom element : childList) {
             childMap.put(element.getName(), element);
         }
@@ -179,7 +181,7 @@ public class XppDom implements Serializable {
      */
     public static XppDom build(final XmlPullParser parser) throws XmlPullParserException, IOException {
         final List<XppDom> elements = new ArrayList<>();
-        final List<StringBuilder> values = new ArrayList<>();
+        final List<StringBuilder> values = new TreeList<>();
         XppDom node = null;
 
         int eventType = parser.getEventType();
