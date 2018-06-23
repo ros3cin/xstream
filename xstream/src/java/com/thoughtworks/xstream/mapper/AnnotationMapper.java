@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.collections4.list.NodeCachingLinkedList;
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAliasType;
@@ -420,7 +421,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
         if (targetType != null && annotation.useImplicitType()) {
             parameter.add(targetType);
         }
-        final List<Object> arrays = new ArrayList<>();
+        final List<Object> arrays = new NodeCachingLinkedList<>();
         arrays.add(annotation.booleans());
         arrays.add(annotation.bytes());
         arrays.add(annotation.chars());

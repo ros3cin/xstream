@@ -15,6 +15,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -222,7 +223,7 @@ public class ToAttributedValueConverter implements Converter {
         final Object result = reflectionProvider.newInstance(context.getRequiredType());
         final Class<?> resultType = result.getClass();
 
-        final Set<FastField> seenFields = new HashSet<>();
+        final Set<FastField> seenFields = new LinkedHashSet<>();
         final Iterator<String> it = reader.getAttributeNames();
 
         final Set<String> systemAttributes = new HashSet<>();

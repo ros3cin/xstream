@@ -13,6 +13,7 @@ package com.thoughtworks.xstream.converters.extended;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.collections.impl.list.mutable.FastList;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -77,7 +78,7 @@ public class EncodedByteArrayConverter implements Converter, SingleValueConverte
     private Object unmarshalIndividualByteElements(final HierarchicalStreamReader reader,
             final UnmarshallingContext context) {
         // have to create a temporary list because we don't know the size of the array
-        final List<Byte> bytes = new ArrayList<>();
+        final List<Byte> bytes = new FastList<>();
         boolean firstIteration = true;
         while (firstIteration || reader.hasMoreChildren()) { // hangover from previous hasMoreChildren
             reader.moveDown();
