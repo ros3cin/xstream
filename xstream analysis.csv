@@ -1,0 +1,1081 @@
+Pacote,Concrete Type,Call Method Name,Field Name,Metodo,Line Code,Class,Ocorrencias,Into Loop,Loops Info,Inside Recursive Method
+java/util/List,Ljava/util/ArrayList,build,elements,size,193,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,randomGet,195,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/List,addChild,childList,add(value),106,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/Map,Ljava/util/Map,addChild,childMap,put(key;value),107,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,add(value),199,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,add(value),200,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/Map,Ljava/util/Map,setAttribute,attributes,put(key;value),89,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; 2) 2;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,build,values,size,209,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,randomGet,210,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,size,213,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,remove(middle-index),214,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,remove(middle-index),215,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,4,true,1) 2;O1;1; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),49,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),50,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),51,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),52,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),53,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),54,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),55,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),56,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),57,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),58,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),59,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),60,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),61,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),62,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),63,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),64,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),65,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),66,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,19,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,19,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,78,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,79,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,80,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,81,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,82,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,83,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,84,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,85,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,86,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,87,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,88,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,89,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,90,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,91,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,92,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,93,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,94,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,iterator,95,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,64,false,,false
+java/util/Map,Ljava/util/Map,getMapper,classNameToMapper,iterator,41,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,iterator,54,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,13,false,,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,put(key;value),57,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,13,false,,false
+java/util/Map,Ljava/util/Map,getMapper,classNameToMapper,iterator,41,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,4,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/Map,getFieldNameForItemTypeAndName,namedItemTypeToDef,keySet,165,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,false,,true
+java/util/Set,Ljava/util/Set,getFieldNameForItemTypeAndName,,iterator,165,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,false,,true
+java/util/Map,Ljava/util/Map,getFieldNameForItemTypeAndName,namedItemTypeToDef,iterator,166,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,1,true,1) 2;O1;0; ,true
+java/util/Map,Ljava/util/Map,getImplicitCollectionDefByItemFieldName,itemFieldNameToDef,iterator,206,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,3,false,,true
+java/util/Map,Ljava/util/Map,getImplicitCollectionDefForFieldName,fieldNameToDef,iterator,217,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,false,,true
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,13,false,,false
+java/util/Map,Ljava/util/Map,add,fieldNameToDef,put(key;value),227,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,13,false,,false
+java/util/Map,Ljava/util/Map,add,namedItemTypeToDef,put(key;value),228,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,13,false,,false
+java/util/Map,Ljava/util/Map,add,itemFieldNameToDef,put(key;value),230,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,13,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,72,true,1) 5;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,72,true,1) 5;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,435,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshalIndividualByteElements,bytes,add(value),84,Lcom/thoughtworks/xstream/converters/extended/EncodedByteArrayConverter>,1,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshalIndividualByteElements,bytes,size,89,Lcom/thoughtworks/xstream/converters/extended/EncodedByteArrayConverter>,2,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshalIndividualByteElements,bytes,sequentialGet,91,Lcom/thoughtworks/xstream/converters/extended/EncodedByteArrayConverter>,1,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,unmarshalIndividualByteElements,bytes,add(value),84,Lcom/thoughtworks/xstream/converters/extended/EncodedByteArrayConverter>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshalIndividualByteElements,bytes,sequentialGet,91,Lcom/thoughtworks/xstream/converters/extended/EncodedByteArrayConverter>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,41,true,1) 12;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,41,true,1) 12;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,16,true,1) 13;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,16,true,1) 13;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 14;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 14;ON;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,instanceMaps,iterator,115,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,18,true,1) 8;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,18,true,1) 8;ON;0; ,false
+java/util/Set,Ljava/util/Set,readResolve,,iterator,126,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,putAll,130,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,isEmpty,136,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,clear,147,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,clear,149,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,clear,151,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,readResolve,instanceMaps,put(key;value),154,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,32,false,,false
+java/util/Map,Ljava/util/Map,canConvert,attributeMap,isEmpty,71,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,48,true,1) 6;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,48,true,1) 6;ON;0; ,false
+java/util/Map,Ljava/util/Map,fromString,attributeMap,containsKey,104,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,fromString,attributeMap,iterator,105,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,38,true,1) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,38,true,1) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,103,true,1) 11;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,103,true,1) 11;ON;0; ,false
+java/util/List,Ljava/util/List,<init>,val$fields,iterator,148,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,4,false,,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,false,,false
+java/util/Set,Ljava/util/Set,putAll,,iterator,44,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,2,false,,false
+java/util/List,Ljava/util/List,put,valueOrder,add(value),54,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/List,put,valueOrder,set,56,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 2;O1;0; ,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,put,this,put,58,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/List,put,valueOrder,add(value),54,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/List,put,valueOrder,set,56,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 1;O1;0; ,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,put,this,put,58,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/List,put,valueOrder,add(value),54,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/List,Ljava/util/List,put,valueOrder,set,56,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,put,this,put,58,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/List,Ljava/util/List,remove,valueOrder,remove(middle-index),66,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,remove,this,remove,68,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/List,Ljava/util/List,clear,valueOrder,clear,74,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,clear,this,clear,75,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/HashMap,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap,entrySet,this,entrySet,92,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/Set,Ljava/util/Set,entrySet,,iterator,92,Lcom/thoughtworks/xstream/core/util/OrderRetainingMap>,1,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,12,true,1) 4;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,12,true,1) 4;ON;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,2,true,1) 5;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,41,true,1) 10;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,41,true,1) 10;ON;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 4;ON;null; ,false
+java/util/Set,Ljava/util/Set,marshal,,iterator,78,Lcom/thoughtworks/xstream/converters/extended/FontConverter>,1,false,,false
+java/util/Map,Ljava/util/HashMap,unmarshal,attributes,isEmpty,105,Lcom/thoughtworks/xstream/converters/extended/FontConverter>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,unmarshal,attributes,put(key;value),112,Lcom/thoughtworks/xstream/converters/extended/FontConverter>,1,true,1) 1;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,unmarshal,,iterator,126,Lcom/thoughtworks/xstream/converters/extended/FontConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,pushElement,indexMap,containsKey,87,Lcom/thoughtworks/xstream/io/path/PathTracker>,7,false,,false
+java/util/Map,Ljava/util/Map,pushElement,indexMap,iterator,88,Lcom/thoughtworks/xstream/io/path/PathTracker>,7,false,,false
+java/util/Map,Ljava/util/Map,pushElement,indexMap,put(key;value),88,Lcom/thoughtworks/xstream/io/path/PathTracker>,7,false,,false
+java/util/Map,Ljava/util/Map,pushElement,indexMap,put(key;value),90,Lcom/thoughtworks/xstream/io/path/PathTracker>,7,false,,false
+java/util/Map,Ljava/util/Map,peekElement,,iterator,130,Lcom/thoughtworks/xstream/io/path/PathTracker>,5,true,1) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,iterator,set,iterator,43,Lcom/thoughtworks/xstream/core/util/PrioritizedList>,6,false,,false
+java/util/Map,Ljava/util/Map,containsId,map,containsKey,113,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,9,false,,false
+java/util/Map,Ljava/util/Map,associateId,map,put(key;value),103,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,11,false,,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,1,true,1) 7;null;null; ,false
+java/util/Map,Ljava/util/Map,removeId,map,remove(key),118,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,8,false,,false
+java/util/Map,Ljava/util/Map,buildMap,propertyNameCache,iterator,117,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,13,false,,false
+java/util/Map,Ljava/util/Map,buildMap,propertyNameCache,put(key;value),133,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,13,false,,false
+java/util/Map,Ljava/util/Map,serializablePropertiesFor,,values,56,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,1,false,,false
+java/util/Collection,Ljava/util/Collection,serializablePropertiesFor,descriptors,iterator,57,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,1,false,,false
+java/util/Collection,Ljava/util/ArrayList,serializablePropertiesFor,beanProperties,add(value),59,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,1,true,1) 1;O1;0; ,false
+java/util/Collection,Ljava/util/ArrayList,serializablePropertiesFor,beanProperties,iterator,62,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,1,false,,false
+java/util/Map,Ljava/util/Map,propertyDescriptorOrNull,,iterator,113,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,8,false,,false
+java/util/Map,Ljava/util/Map,propertiesFor,,values,86,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,3,false,,false
+java/util/Collection,Ljava/util/Collection,propertiesFor,,iterator,86,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,3,false,,false
+java/util/Map,Ljava/util/Map,flushCache,propertyNameCache,clear,140,Lcom/thoughtworks/xstream/converters/javabean/PropertyDictionary>,1,false,,false
+java/util/Map,Ljava/util/Map,get,map,iterator,60,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,put,map,put(key;value),66,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,remove,map,remove(key),72,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,iterate,map,entrySet,170,Lcom/thoughtworks/xstream/core/util/WeakCache>,5,false,,false
+java/util/Set,Ljava/util/Set,iterate,,iterator,170,Lcom/thoughtworks/xstream/core/util/WeakCache>,5,false,,false
+java/util/Map,Ljava/util/Map,size,map,size,95,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,values,map,size,115,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,entrySet,map,size,134,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,containsKey,map,containsKey,202,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,clear,map,clear,207,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,keySet,map,keySet,212,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,equals,map,equals,217,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/Map,Ljava/util/Map,hashCode,map,hashCode,222,Lcom/thoughtworks/xstream/core/util/WeakCache>,1,false,,false
+java/util/List,Ljava/util/ArrayList,build,elements,size,193,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,randomGet,195,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/List,addChild,childList,add(value),106,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/Map,Ljava/util/Map,addChild,childMap,put(key;value),107,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,add(value),199,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,add(value),200,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/Map,Ljava/util/Map,setAttribute,attributes,put(key;value),89,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; 2) 3;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,build,values,size,209,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,randomGet,210,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,size,213,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,remove(middle-index),214,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,remove(middle-index),215,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,true,1) 3;O1;1; ,false
+java/util/Set,Ljava/util/Set,add,,contains,544,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$UnprocessedTypesSet>,2,false,,true
+java/util/LinkedHashSet,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$UnprocessedTypesSet,add,this,add,544,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$UnprocessedTypesSet>,2,false,,true
+java/util/Map,Ljava/util/Map,marshal,map,entrySet,83,Lcom/thoughtworks/xstream/converters/collections/MapConverter>,3,false,,false
+java/util/Set,Ljava/util/Set,marshal,,iterator,83,Lcom/thoughtworks/xstream/converters/collections/MapConverter>,3,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),67,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),69,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),71,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),73,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),74,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),76,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),79,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),80,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),81,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,add(value),84,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,size,85,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,<clinit>,acceptablePatterns,toArray,85,Lcom/thoughtworks/xstream/converters/basic/DateConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,add(value),114,Lcom/thoughtworks/xstream/converters/extended/DynamicProxyConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,size,127,Lcom/thoughtworks/xstream/converters/extended/DynamicProxyConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,toArray,128,Lcom/thoughtworks/xstream/converters/extended/DynamicProxyConverter>,1,false,,false
+java/util/List,Ljava/util/List,getChild,childElements,randomGet,122,Lcom/thoughtworks/xstream/io/xml/DomReader>,1,false,,false
+java/util/List,Ljava/util/List,getChildCount,childElements,size,127,Lcom/thoughtworks/xstream/io/xml/DomReader>,1,false,,false
+java/util/List,Ljava/util/List,reassignCurrentElement,childElements,add(value),138,Lcom/thoughtworks/xstream/io/xml/DomReader>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,convert,values,containsKey,50,Lcom/thoughtworks/xstream/core/AbstractReferenceUnmarshaller>,1,false,,false
+java/util/Map,Ljava/util/Map,convert,values,put(key;value),51,Lcom/thoughtworks/xstream/core/AbstractReferenceUnmarshaller>,1,false,,false
+java/util/Map,Ljava/util/Map,convert,values,iterator,60,Lcom/thoughtworks/xstream/core/AbstractReferenceUnmarshaller>,1,false,,false
+java/util/Map,Ljava/util/Map,convert,values,put(key;value),80,Lcom/thoughtworks/xstream/core/AbstractReferenceUnmarshaller>,2,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 6;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 6;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 5;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 5;ON;null; ,false
+java/util/Set,Ljava/util/HashSet,unmarshal,systemAttributes,add(value),229,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter>,1,false,,false
+java/util/Set,Ljava/util/HashSet,unmarshal,systemAttributes,contains,234,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/HashSet,unmarshal,seenFields,add(value),276,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/HashSet,unmarshal,seenFields,add(value),320,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter>,1,false,,false
+java/util/Collection,Ljava/util/Collection,marshal,collection,iterator,77,Lcom/thoughtworks/xstream/converters/collections/CollectionConverter>,2,false,,false
+java/util/List,Ljava/util/List,addAll,list,addAll,46,Lcom/thoughtworks/xstream/core/util/PresortedSet>,6,false,,false
+java/util/List,Ljava/util/List,size,list,size,101,Lcom/thoughtworks/xstream/core/util/PresortedSet>,2,false,,false
+java/util/Map,Ljava/util/Map,<clinit>,backingMap,values,65,Lcom/thoughtworks/xstream/converters/collections/TreeSetConverter>,1,false,,false
+java/util/Collection,Ljava/util/Collection,<clinit>,,toArray,65,Lcom/thoughtworks/xstream/converters/collections/TreeSetConverter>,1,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,9,true,1) 3;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,9,true,1) 3;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 4;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 4;ON;null; ,false
+java/util/Map,Ljava/util/Map,sort,map,containsKey,38,Lcom/thoughtworks/xstream/converters/reflection/SortableFieldKeySorter>,1,false,,false
+java/util/Set,Ljava/util/Set,sort,,toArray,40,Lcom/thoughtworks/xstream/converters/reflection/SortableFieldKeySorter>,1,false,,false
+java/util/Map,Ljava/util/Map,sort,map,iterator,41,Lcom/thoughtworks/xstream/converters/reflection/SortableFieldKeySorter>,1,false,,false
+java/util/Map,Ljava/util/Map,registerFieldOrder,map,put(key;value),60,Lcom/thoughtworks/xstream/converters/reflection/SortableFieldKeySorter>,1,false,,false
+java/util/Map,Ljava/util/Map,flushCache,map,clear,102,Lcom/thoughtworks/xstream/converters/reflection/SortableFieldKeySorter>,1,false,,false
+java/util/Map,Ljava/util/Map,encodeName,escapeCache,iterator,160,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder>,4,false,,false
+java/util/Map,Ljava/util/Map,encodeName,escapeCache,put(key;value),207,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder>,4,false,,false
+java/util/Map,Ljava/util/Map,decodeName,unescapeCache,iterator,213,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder>,4,false,,false
+java/util/Map,Ljava/util/Map,decodeName,unescapeCache,put(key;value),263,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder>,4,false,,false
+java/util/Set,Ljava/util/Set,flushCache,,retainAll,95,Lcom/thoughtworks/xstream/mapper/OuterClassMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,addAliasFor,aliasToName,put(key;value),33,Lcom/thoughtworks/xstream/mapper/AbstractAttributeAliasingMapper>,3,false,,false
+java/util/Map,Ljava/util/Map,addAliasFor,nameToAlias,put(key;value),34,Lcom/thoughtworks/xstream/mapper/AbstractAttributeAliasingMapper>,3,false,,false
+java/util/Map,Ljava/util/Map,readResolve,aliasToName,entrySet,39,Lcom/thoughtworks/xstream/mapper/AbstractAttributeAliasingMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,readResolve,,iterator,39,Lcom/thoughtworks/xstream/mapper/AbstractAttributeAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,nameToAlias,put(key;value),40,Lcom/thoughtworks/xstream/mapper/AbstractAttributeAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,lookupId,map,iterator,108,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,3,false,,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,4,true,1) 3;null;null; ,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,addFirst,123,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,2,true,1) 3;null;null; ,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,iterator,127,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,12,false,,false
+java/util/Map,Ljava/util/Map,fieldsFor,,values,64,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,2,false,,false
+java/util/Collection,Ljava/util/Collection,fieldsFor,,iterator,64,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,2,false,,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,addFirst,123,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,4,true,1) 4;null;null; ,false
+java/util/Map,Ljava/util/Map,fieldOrNull,fields,iterator,100,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,8,false,,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,addFirst,123,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,1,true,1) 2;null;null; ,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,addFirst,123,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,1,true,1) 1;null;null; ,false
+java/util/Map,Ljava/util/Map,unbox,UNBOX,iterator,64,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,list,add(value),99,Lcom/thoughtworks/xstream/converters/extended/NamedArrayConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,list,size,102,Lcom/thoughtworks/xstream/converters/extended/NamedArrayConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,list,size,103,Lcom/thoughtworks/xstream/converters/extended/NamedArrayConverter>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,list,sequentialGet,104,Lcom/thoughtworks/xstream/converters/extended/NamedArrayConverter>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,collectionTarget,put(key;value),149,Lcom/thoughtworks/xstream/converters/collections/TreeSetConverter$1$1>,1,false,,false
+java/util/Map,Ljava/util/Map,size,val$target,size,159,Lcom/thoughtworks/xstream/converters/collections/TreeSetConverter$1$1>,1,false,,false
+java/util/Set,Ljava/util/Set,addElementsToIgnore,unknownElementsToIgnore,add(value),36,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,5,false,,false
+java/util/Set,Ljava/util/Set,omitField,fieldsToOmit,add(value),40,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,4,false,,false
+java/util/Set,Ljava/util/Set,shouldSerializeMember,fieldsToOmit,contains,45,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,isIgnoredElement,unknownElementsToIgnore,isEmpty,55,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,2,false,,false
+java/util/Set,Ljava/util/Set,isIgnoredElement,unknownElementsToIgnore,iterator,56,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,20,true,1) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,20,true,1) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,setFeature,features,put(key;value),183,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/Map,Ljava/util/Map,getFeature,features,iterator,216,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/Map,Ljava/util/Map,setProperty,properties,put(key;value),285,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/Map,Ljava/util/Map,getProperty,properties,iterator,313,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/Map,Ljava/util/Map,parse,properties,iterator,544,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,3,false,,false
+java/util/List,Ljava/util/List,addInternal,classLoaders,iterator,87,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,24,false,,false
+java/util/List,Ljava/util/List,addInternal,classLoaders,add(starting-index;value),97,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,24,false,,false
+java/util/Map,Ljava/util/Map,<init>,typeToConverterMap,clear,52,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,25,false,,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,6,true,1) 12;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 12;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 12;null;null; 2) 12;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 12;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 12;ON;null; 2) 12;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 12;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,6,true,1) 16;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,6,true,1) 16;ON;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,226,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,35,false,,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,addAll,227,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,35,false,,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,toArray,240,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,35,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 13;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 13;ON;null; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,typeToImpl,put(key;value),55,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,34,false,,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,implToType,put(key;value),56,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,34,false,,false
+java/util/Set,Ljava/util/Set,<init>,annotatedTypes,add(value),88,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,29,false,,false
+java/util/List,Ljava/util/List,addPermission,permissions,clear,66,Lcom/thoughtworks/xstream/mapper/SecurityMapper>,42,false,,false
+java/util/List,Ljava/util/List,addPermission,permissions,add(starting-index;value),68,Lcom/thoughtworks/xstream/mapper/SecurityMapper>,42,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,addAll,654,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),658,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),659,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),660,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),664,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),665,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),666,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),667,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),668,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),669,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),670,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),671,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),672,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),673,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),674,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),675,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),676,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),678,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),679,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),680,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),681,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),682,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),683,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),685,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,add(value),686,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,remove(key),688,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,size,689,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Set,Ljava/util/HashSet,setupSecurity,types,toArray,689,Lcom/thoughtworks/xstream/XStream>,27,false,,false
+java/util/Map,Ljava/util/Map,addClassAlias,nameToType,put(key;value),37,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,32,false,,false
+java/util/Map,Ljava/util/Map,addClassAlias,classToName,put(key;value),38,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,32,false,,false
+java/util/Map,Ljava/util/Map,addTypeAlias,nameToType,put(key;value),42,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,30,false,,false
+java/util/Map,Ljava/util/Map,addTypeAlias,typeToName,put(key;value),43,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,30,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,6,true,1) 14;ON;null; ,false
+java/util/Set,Ljava/util/Set,addImmutableType,immutableTypes,add(value),54,Lcom/thoughtworks/xstream/mapper/ImmutableTypesMapper>,32,false,,false
+java/util/Set,Ljava/util/Set,addImmutableType,unreferenceableTypes,add(value),56,Lcom/thoughtworks/xstream/mapper/ImmutableTypesMapper>,32,false,,false
+java/util/Set,Ljava/util/Set,addImmutableType,unreferenceableTypes,remove(key),58,Lcom/thoughtworks/xstream/mapper/ImmutableTypesMapper>,32,false,,false
+java/util/Map,Ljava/util/Map,parse,properties,iterator,549,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,3,false,,false
+java/util/List,Ljava/util/List,parse,source,isEmpty,550,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,3,false,,false
+java/util/List,Ljava/util/List,parse,source,iterator,558,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,3,false,,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,6,true,1) 11;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 11;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 11;null;null; 2) 11;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 11;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 11;ON;null; 2) 11;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,6,true,1) 11;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,6,true,1) 15;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,6,true,1) 15;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 12;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,6,true,1) 12;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,6,true,1) 13;ON;null; ,false
+java/util/List,Ljava/util/List,flushStartTag,elementStack,randomGet,682,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,4,false,,false
+java/util/List,Ljava/util/List,startNode,elementStack,add(starting-index;value),589,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/List,Ljava/util/List,endNode,elementStack,remove(starting-index),630,Lcom/thoughtworks/xstream/io/xml/SaxWriter>,1,false,,false
+java/util/Set,Ljava/util/Set,getType,NUMBER_TYPES,contains,608,Lcom/thoughtworks/xstream/io/json/AbstractJsonWriter>,8,false,,false
+java/util/List,Ljava/util/List,<init>,result,add(value),46,Lcom/thoughtworks/xstream/io/xml/AbstractDocumentWriter>,46,false,,false
+java/util/List,Ljava/util/ArrayList,<init>,result,add(value),77,Lcom/thoughtworks/xstream/io/path/Path>,1,true,1) 2;ON;-1; ,false
+java/util/List,Ljava/util/ArrayList,<init>,result,add(value),80,Lcom/thoughtworks/xstream/io/path/Path>,3,false,,false
+java/util/List,Ljava/util/ArrayList,<init>,result,size,81,Lcom/thoughtworks/xstream/io/path/Path>,3,false,,false
+java/util/List,Ljava/util/ArrayList,<init>,result,toArray,82,Lcom/thoughtworks/xstream/io/path/Path>,3,false,,false
+java/util/Map,Ljava/util/Map,peekElement,,iterator,130,Lcom/thoughtworks/xstream/io/path/PathTracker>,2,true,1) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,<init>,result,add(value),77,Lcom/thoughtworks/xstream/io/path/Path>,1,true,1) 3;ON;-1; ,false
+java/util/Map,Ljava/util/Map,put,fields,put(key;value),205,Lcom/thoughtworks/xstream/core/util/CustomObjectOutputStream$CustomPutField>,9,false,,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 2;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;null;null; 2) 2;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;ON;null; 2) 2;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;null;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;null;null; 2) 1;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;ON;null; 2) 1;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;null;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 7;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 7;ON;null; ,false
+java/util/Map,Ljava/util/Map,marshal,map,entrySet,244,Lcom/thoughtworks/xstream/converters/extended/NamedMapConverter>,1,false,,false
+java/util/Set,Ljava/util/Set,marshal,,iterator,244,Lcom/thoughtworks/xstream/converters/extended/NamedMapConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,2,true,1) 5;null;null; ,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,1,true,1) 4;null;null; ,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,2,true,1) 6;null;null; ,false
+java/util/Map,Ljava/util/Map,peekElement,,iterator,130,Lcom/thoughtworks/xstream/io/path/PathTracker>,2,false,,false
+java/util/Map,Ljava/util/Map,peekElement,,iterator,130,Lcom/thoughtworks/xstream/io/path/PathTracker>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,add,val$types,add(value),238,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1>,2,false,,false
+java/util/Set,Ljava/util/Set,add,val$processedTypes,contains,240,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1>,2,false,,false
+java/util/LinkedHashSet,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,add,this,add,240,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1>,2,false,,false
+java/util/Map,Ljava/util/Map,accept,callbackIndexMap,containsKey,489,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter$ReverseEngineeredCallbackFilter>,1,false,,false
+java/util/Map,Ljava/util/Map,accept,callbackIndexMap,iterator,495,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter$ReverseEngineeredCallbackFilter>,1,false,,false
+java/util/Map,Ljava/util/Map,getId,ids,iterator,100,Lcom/thoughtworks/xstream/io/binary/BinaryStreamWriter$IdRegistry>,4,false,,false
+java/util/Map,Ljava/util/Map,getId,ids,put(key;value),103,Lcom/thoughtworks/xstream/io/binary/BinaryStreamWriter$IdRegistry>,4,false,,false
+java/util/Map,Ljava/util/Map,getQName,javaToQName,iterator,56,Lcom/thoughtworks/xstream/io/xml/QNameMap>,3,false,,false
+java/util/List,Ljava/util/ArrayList,<init>,result,add(value),77,Lcom/thoughtworks/xstream/io/path/Path>,1,true,1) 1;ON;-1; ,false
+java/util/Map,Ljava/util/HashMap,unmarshal,elements,put(key;value),53,Lcom/thoughtworks/xstream/converters/extended/ColorConverter>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,unmarshal,elements,iterator,56,Lcom/thoughtworks/xstream/converters/extended/ColorConverter>,4,false,,false
+java/util/List,Ljava/util/List,add,list,add(value),41,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,clear,list,clear,51,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,contains,list,contains,56,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,containsAll,list,containsAll,61,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,equals,list,equals,66,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,hashCode,list,hashCode,71,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,isEmpty,list,isEmpty,76,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,iterator,list,iterator,81,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,remove,list,remove(value),86,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,removeAll,list,removeAll,91,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,retainAll,list,retainAll,96,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,toArray,list,toArray,106,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,toArray,list,toArray,111,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,first,list,isEmpty,121,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,first,list,randomGet,121,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,last,list,isEmpty,131,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,last,list,size,131,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/List,Ljava/util/List,last,list,randomGet,131,Lcom/thoughtworks/xstream/core/util/PresortedSet>,1,false,,false
+java/util/Set,Ljava/util/Set,writeFieldsToStream,,iterator,157,Lcom/thoughtworks/xstream/converters/reflection/SerializableConverter$1>,1,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;null; 2) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;null; 2) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 3;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 3;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 2;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 2;ON;0; ,false
+java/util/Map,Ljava/util/Map,get,stuff,iterator,83,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,set,stuff,put(key;value),104,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,false,,false
+java/util/Map,Ljava/util/Map,set,stuff,containsKey,105,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,set,stuff,remove(key),107,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,keys,stuff,keySet,115,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,false,,false
+java/util/Set,Ljava/util/Set,keys,,iterator,115,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,false,,false
+java/util/Map,Ljava/util/Map,get,stuff,iterator,83,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,shouldLookForSingleValueConverter,typeSet,contains,83,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,10,false,,false
+java/util/Map,Ljava/util/Map,shouldLookForSingleValueConverter,fieldNameToTypeMap,iterator,85,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,10,false,,false
+java/util/Set,Ljava/util/Set,shouldLookForSingleValueConverter,fieldToUseAsAttribute,contains,89,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,10,false,,false
+java/util/Map,Ljava/util/Map,getLocalConverter,enumConverterMap,iterator,88,Lcom/thoughtworks/xstream/mapper/EnumMapper>,3,false,,false
+java/util/Map,Ljava/util/Map,getLocalConverter,enumConverterMap,put(key;value),98,Lcom/thoughtworks/xstream/mapper/EnumMapper>,3,false,,false
+java/util/Map,Ljava/util/Map,flushCache,enumConverterMap,size,108,Lcom/thoughtworks/xstream/mapper/EnumMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,flushCache,enumConverterMap,clear,110,Lcom/thoughtworks/xstream/mapper/EnumMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,addPackageAlias,nameToPackage,put(key;value),53,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,addPackageAlias,packageToName,put(key;value),54,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,serializedClass,packageToName,iterator,65,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,realClass,nameToPackage,iterator,81,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,readObject,packageToName,putAll,101,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readObject,packageToName,entrySet,103,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,readObject,,iterator,103,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readObject,nameToPackage,put(key;value),104,Lcom/thoughtworks/xstream/mapper/PackageAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,fieldToAliasMap,put(key;value),38,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,4,false,,false
+java/util/Map,Ljava/util/Map,addFieldAlias,aliasToFieldMap,put(key;value),39,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,4,false,,false
+java/util/Map,Ljava/util/Map,invoke,indexMap,iterator,474,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter$ReverseEngineeringInvocationHandler>,1,false,,false
+java/util/Map,Ljava/util/Map,invoke,indexMap,put(key;value),474,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter$ReverseEngineeringInvocationHandler>,1,false,,false
+java/util/Map,Ljava/util/Map,aliasForSystemAttribute,nameToAlias,iterator,27,Lcom/thoughtworks/xstream/mapper/SystemAttributeAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,aliasForSystemAttribute,nameToAlias,containsKey,28,Lcom/thoughtworks/xstream/mapper/SystemAttributeAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,getAttribute,attributes,iterator,81,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,3,false,,false
+java/util/Map,Ljava/util/Map,getAttributeNames,attributes,keySet,76,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,7,false,,false
+java/util/Set,Ljava/util/Set,getAttributeNames,,toArray,76,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,7,false,,false
+java/util/List,Ljava/util/List,getChild,childList,randomGet,97,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,3,false,,false
+java/util/List,Ljava/util/List,getChildCount,childList,size,141,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,6,false,,false
+java/util/Set,Ljava/util/Set,allows,names,contains,52,Lcom/thoughtworks/xstream/security/ExplicitTypePermission>,1,false,,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/javabean/JavaBeanConverter$2,unmarshal,seenProperties,add,134,Lcom/thoughtworks/xstream/converters/javabean/JavaBeanConverter>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,getCallbacks,fieldCache,iterator,182,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/Map,Ljava/util/Map,getCallbacks,fieldCache,put(key;value),185,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/List,Ljava/util/List,getCallbacks,fields,size,199,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/List,getCallbacks,fields,sequentialGet,201,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,getCallbacks,list,add(value),203,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,getCallbacks,list,size,210,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/List,Ljava/util/ArrayList,getCallbacks,list,toArray,210,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/List,Ljava/util/List,createReverseEngineeredCallbackOfProperType,,contains,338,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;ON;null; 2) 3;ON;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,237,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,238,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,interfaces,addAll,240,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,interfaces,iterator,243,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,245,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 2;O1;0; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,iterator,247,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,iterator,286,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,2,false,,false
+java/util/List,Ljava/util/List,isSerializable,,iterator,115,Lcom/thoughtworks/xstream/converters/reflection/SerializableConverter>,5,false,,false
+java/util/List,Ljava/util/List,doMarshal,,iterator,243,Lcom/thoughtworks/xstream/converters/reflection/SerializableConverter>,3,false,,false
+java/util/List,Ljava/util/List,<init>,val$fields,iterator,148,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 3;O1;0; 2) 6;O1;0; 3) 6;O1;0; ,false
+java/util/List,Ljava/util/List,getCallbacks,fields,size,199,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/List,getCallbacks,fields,sequentialGet,201,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,getCallbacks,list,add(value),203,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;null; 2) 6;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;null; 2) 6;ON;0; ,false
+java/util/List,Ljava/util/List,createReverseEngineeredCallbackOfProperType,,contains,338,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;null; 2) 2;ON;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,237,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,238,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,interfaces,addAll,240,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;null;null; ,false
+java/util/Set,Ljava/util/HashSet,createCallbackIndexMap,methods,addAll,245,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/List,createReverseEngineeredCallbackOfProperType,,contains,338,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,add(value),358,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,size,361,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,interfaces,toArray,361,Lcom/thoughtworks/xstream/converters/reflection/CGLIBEnhancedConverter>,1,false,,false
+java/util/List,Ljava/util/List,isSerializable,,iterator,115,Lcom/thoughtworks/xstream/converters/reflection/SerializableConverter>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; 2) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; 2) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;ON;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,320,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,doUnmarshal,,entrySet,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;ON;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,447,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; 3) 4;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,doUnmarshal,implicitCollectionsForCurrentObject,entrySet,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 3;ON;0; ,false
+java/util/Map,Ljava/util/Map,serializedClass,implToType,iterator,61,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,defaultImplementationOf,typeToImpl,containsKey,67,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,defaultImplementationOf,typeToImpl,iterator,68,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,typeToImpl,keySet,76,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,readResolve,,iterator,76,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,typeToImpl,iterator,77,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,implToType,put(key;value),77,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 13;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 13;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 13;null;null; 2) 13;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 13;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 13;ON;null; 2) 13;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 13;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 17;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 17;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 14;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 14;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 15;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,3,true,1) 10;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 10;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 10;null;null; 2) 10;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 10;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 10;ON;null; 2) 10;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 10;null;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 11;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,3,true,1) 11;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,3,true,1) 12;ON;null; ,false
+java/util/Map,Ljava/util/Map,put,map,put(key;value),227,Lcom/thoughtworks/xstream/io/binary/BinaryStreamReader$IdRegistry>,5,false,,false
+java/util/Map,Ljava/util/Map,get,map,iterator,231,Lcom/thoughtworks/xstream/io/binary/BinaryStreamReader$IdRegistry>,5,false,,false
+java/util/Map,Ljava/util/Map,registerConverter,typeToConverterMap,clear,89,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Set,Ljava/util/Set,add,set,add(value),38,Lcom/thoughtworks/xstream/core/util/PrioritizedList>,4,false,,false
+java/util/List,Ljava/util/ArrayList,getSerializableProperties,result,add(value),174,Lcom/thoughtworks/xstream/converters/javabean/BeanProvider>,1,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,getSerializableProperties,result,size,177,Lcom/thoughtworks/xstream/converters/javabean/BeanProvider>,2,false,,false
+java/util/List,Ljava/util/ArrayList,getSerializableProperties,result,toArray,177,Lcom/thoughtworks/xstream/converters/javabean/BeanProvider>,2,false,,false
+java/util/List,Ljava/util/ArrayList,getSerializableProperties,result,add(value),174,Lcom/thoughtworks/xstream/converters/javabean/BeanProvider>,1,true,1) 1;O1;0; ,false
+java/util/EnumSet,Ljava/util/EnumSet,extractStringMap,values,size,52,Lcom/thoughtworks/xstream/converters/enums/EnumToStringConverter>,2,false,,false
+java/util/EnumSet,Ljava/util/EnumSet,extractStringMap,values,iterator,53,Lcom/thoughtworks/xstream/converters/enums/EnumToStringConverter>,2,false,,false
+java/util/Set,Ljava/util/Set,buildValueMap,,iterator,72,Lcom/thoughtworks/xstream/converters/enums/EnumToStringConverter>,2,false,,false
+java/util/EnumMap,Ljava/util/EnumMap,toString,values,get,85,Lcom/thoughtworks/xstream/converters/enums/EnumToStringConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,fromString,strings,iterator,93,Lcom/thoughtworks/xstream/converters/enums/EnumToStringConverter>,1,false,,false
+java/util/Set,Ljava/util/Set,isImmutableValueType,immutableTypes,contains,64,Lcom/thoughtworks/xstream/mapper/ImmutableTypesMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,isReferenceable,unreferenceableTypes,contains,73,Lcom/thoughtworks/xstream/mapper/ImmutableTypesMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,contains,186,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,add(value),224,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,15,true,1) 3;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,252,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; 3) 4;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,254,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,256,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;ON;null; 3) 4;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,263,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; 3) 4;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,267,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,270,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; 3) 4;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,274,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,isEmpty,277,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,iterator,278,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;null;null; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,add(value),295,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,iterator,297,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),424,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),425,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),426,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),427,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),428,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),429,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),430,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),431,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),432,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),433,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,iterator,434,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,iterator,447,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,iterator,449,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;null;null; 4) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;null;null; 4) 7;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 7;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 11;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 3;O1;0; 2) 4;O1;0; 3) 11;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,226,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,addAll,227,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,toArray,240,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,put(key;value),478,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,put(key;value),480,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,5,true,1) 3;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,nameToType,put(key;value),37,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,classToName,put(key;value),38,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,typeToImpl,put(key;value),55,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,implToType,put(key;value),56,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,nameToType,put(key;value),42,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,typeToName,put(key;value),43,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,5,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,fieldToAliasMap,put(key;value),38,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,aliasToFieldMap,put(key;value),39,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,addAttributeFor,fieldToUseAsAttribute,add(value),123,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,iterator,54,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,put(key;value),57,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,fieldNameToDef,put(key;value),227,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,namedItemTypeToDef,put(key;value),228,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,itemFieldNameToDef,put(key;value),230,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,omitField,fieldsToOmit,add(value),40,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,registerLocalConverter,localConverters,put(key;value),44,Lcom/thoughtworks/xstream/mapper/LocalConversionMapper>,5,true,1) 3;ON;null; 2) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,add(value),224,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,8,false,,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,contains,186,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,add(value),224,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,6,true,1) 2;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,252,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; 3) 3;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,254,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,256,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;ON;null; 3) 3;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,263,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; 3) 3;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,267,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,270,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; 3) 3;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,274,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,isEmpty,277,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,iterator,278,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;null;null; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,add(value),295,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,iterator,297,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),424,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),425,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),426,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),427,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),428,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),429,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),430,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),431,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),432,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),433,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,iterator,434,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,iterator,447,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,iterator,449,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;null;null; 4) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;null;null; 4) 6;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 6;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 10;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 2;O1;0; 2) 3;O1;0; 3) 10;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,226,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,addAll,227,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,toArray,240,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,put(key;value),478,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,put(key;value),480,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,true,1) 2;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,nameToType,put(key;value),37,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,classToName,put(key;value),38,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,typeToImpl,put(key;value),55,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,implToType,put(key;value),56,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,nameToType,put(key;value),42,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,typeToName,put(key;value),43,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,fieldToAliasMap,put(key;value),38,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,aliasToFieldMap,put(key;value),39,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,addAttributeFor,fieldToUseAsAttribute,add(value),123,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,iterator,54,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,put(key;value),57,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,fieldNameToDef,put(key;value),227,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,namedItemTypeToDef,put(key;value),228,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,itemFieldNameToDef,put(key;value),230,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,omitField,fieldsToOmit,add(value),40,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,registerLocalConverter,localConverters,put(key;value),44,Lcom/thoughtworks/xstream/mapper/LocalConversionMapper>,2,true,1) 2;ON;null; 2) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,contains,186,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,processTypes,annotatedTypes,add(value),224,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,3,true,1) 1;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,252,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; 3) 2;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,254,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,256,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;ON;null; 3) 2;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,263,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; 3) 2;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,267,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,270,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; 3) 2;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,274,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,isEmpty,277,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,iterator,278,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;null;null; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,add(value),295,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,iterator,297,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),424,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),425,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),426,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),427,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),428,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),429,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),430,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),431,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),432,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),433,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,iterator,434,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,iterator,447,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,iterator,449,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;null;null; 4) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;null;null; 4) 5;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 5;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 2;O1;0; 3) 9;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,226,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,addAll,227,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,toArray,240,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,put(key;value),478,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,put(key;value),480,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,nameToType,put(key;value),37,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addClassAlias,classToName,put(key;value),38,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,typeToImpl,put(key;value),55,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addDefaultImplementation,implToType,put(key;value),56,Lcom/thoughtworks/xstream/mapper/DefaultImplementationsMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,nameToType,put(key;value),42,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addTypeAlias,typeToName,put(key;value),43,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,fieldToAliasMap,put(key;value),38,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,addFieldAlias,aliasToFieldMap,put(key;value),39,Lcom/thoughtworks/xstream/mapper/FieldAliasingMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,addAttributeFor,fieldToUseAsAttribute,add(value),123,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,iterator,54,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,getOrCreateMapper,classNameToMapper,put(key;value),57,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,fieldNameToDef,put(key;value),227,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,namedItemTypeToDef,put(key;value),228,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,itemFieldNameToDef,put(key;value),230,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,omitField,fieldsToOmit,add(value),40,Lcom/thoughtworks/xstream/mapper/ElementIgnoringMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,registerLocalConverter,localConverters,put(key;value),44,Lcom/thoughtworks/xstream/mapper/LocalConversionMapper>,1,true,1) 1;ON;null; 2) 1;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,252,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;ON;null; 2) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,254,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,256,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; 2) 1;ON;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,263,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;ON;null; 2) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,267,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,270,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;ON;null; 2) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,add,274,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,isEmpty,277,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; ,false
+java/util/Set,Lcom/thoughtworks/xstream/mapper/AnnotationMapper$1,addParametrizedTypes,localTypes,iterator,278,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;null;null; ,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,add(value),295,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,false,,false
+java/util/List,Ljava/util/ArrayList,processConverterAnnotations,annotations,iterator,297,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),424,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),425,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),426,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),427,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),428,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),429,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),430,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),431,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),432,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),433,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,iterator,434,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,iterator,447,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,iterator,449,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;O1;0; 2) 4;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 4;null;null; 3) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 4;null;null; 3) 4;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; 2) 4;null;null; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 8;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 8;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,3,true,1) 1;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,226,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,addAll,227,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,toArray,240,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,put(key;value),478,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,put(key;value),480,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,addAttributeFor,fieldToUseAsAttribute,add(value),123,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),424,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),425,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),426,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),427,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),428,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),429,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),430,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),431,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),432,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,add(value),433,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/List,Ljava/util/ArrayList,cacheConverter,arrays,iterator,434,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,iterator,447,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,iterator,449,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,3,true,1) 4;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 4;null;null; 2) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 4;ON;null; 2) 4;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,3,true,1) 4;null;null; ,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterCache,put(key;value),478,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,cacheConverter,converterMapping,put(key;value),480,Lcom/thoughtworks/xstream/mapper/AnnotationMapper>,2,false,,false
+java/util/Map,Ljava/util/Map,registerLocalConverter,localConverters,put(key;value),44,Lcom/thoughtworks/xstream/mapper/LocalConversionMapper>,4,false,,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,4,true,1) 3;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,4,true,1) 3;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,4,true,1) 3;null;null; 2) 3;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,4,true,1) 3;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,4,true,1) 3;ON;null; 2) 3;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,4,true,1) 3;null;null; ,false
+java/util/Map,Ljava/util/Map,unbox,UNBOX,iterator,64,Lcom/thoughtworks/xstream/core/util/Primitives>,1,false,,false
+java/util/Map,Ljava/util/Map,isBoxed,UNBOX,containsKey,75,Lcom/thoughtworks/xstream/core/util/Primitives>,4,false,,false
+java/util/Map,Ljava/util/Map,primitiveType,NAMED_PRIMITIVE,iterator,86,Lcom/thoughtworks/xstream/core/util/Primitives>,5,false,,false
+java/util/Map,Ljava/util/Map,representingChar,REPRESENTING_CHAR,iterator,97,Lcom/thoughtworks/xstream/core/util/Primitives>,3,false,,false
+java/util/Map,Ljava/util/Map,<clinit>,BOX,put(key;value),40,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,<clinit>,UNBOX,put(key;value),41,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,<clinit>,NAMED_PRIMITIVE,put(key;value),42,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,<clinit>,REPRESENTING_CHAR,put(key;value),43,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/Map,instantiateUsingSerialization,serializedDataCache,iterator,100,Lcom/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider>,2,false,,false
+java/util/Map,Ljava/util/Map,instantiateUsingSerialization,serializedDataCache,put(key;value),115,Lcom/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider>,2,false,,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 7;ON;0; ,false
+java/util/LinkedList,Ljava/util/LinkedList,buildCache,superClasses,addFirst,123,Lcom/thoughtworks/xstream/converters/reflection/FieldDictionary>,4,true,1) 5;null;null; ,false
+java/util/Map,Ljava/util/HashMap,getSerializablePersistentFields,result,put(key;value),223,Lcom/thoughtworks/xstream/core/util/SerializationMembers>,1,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 9;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 9;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 9;null;null; 2) 9;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 9;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 9;ON;null; 2) 9;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 9;null;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 10;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 10;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,2,true,1) 11;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 8;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 8;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 8;null;null; 2) 8;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 8;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 8;ON;null; 2) 8;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,1,true,1) 8;null;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 9;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 9;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 10;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 7;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 7;null;null; 2) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 7;ON;null; 2) 7;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 7;null;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 8;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,2,true,1) 8;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,2,true,1) 9;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 6;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 6;null;null; 2) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 6;ON;null; 2) 6;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 6;null;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,2,true,1) 8;ON;null; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,2,true,1) 5;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,150,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),155,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 5;null;null; 2) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clear,170,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,add(value),194,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 5;ON;null; 2) 5;null;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,newInstance,matchingDependencies,clone,210,Lcom/thoughtworks/xstream/core/util/DependencyInjectionFactory>,2,true,1) 5;null;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,2,true,1) 7;ON;null; ,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 6;ON;null; ,false
+java/util/Set,Ljava/util/Set,addAttributeFor,fieldToUseAsAttribute,add(value),135,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,3,false,,false
+java/util/Map,Ljava/util/Map,addAttributeFor,fieldNameToTypeMap,put(key;value),53,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,2,false,,false
+java/util/Set,Ljava/util/Set,addAttributeFor,typeSet,add(value),57,Lcom/thoughtworks/xstream/mapper/AttributeMapper>,2,false,,false
+java/util/ArrayList,Ljava/util/ArrayList,compare,list,size,172,Lcom/thoughtworks/xstream/core/util/PresortedMap$ArraySetComparator>,1,false,,false
+java/util/ArrayList,Ljava/util/ArrayList,compare,list,size,174,Lcom/thoughtworks/xstream/core/util/PresortedMap$ArraySetComparator>,1,false,,false
+java/util/ArrayList,Ljava/util/ArrayList,compare,list,size,178,Lcom/thoughtworks/xstream/core/util/PresortedMap$ArraySetComparator>,1,true,1) 1;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,compare,list,sequentialGet,179,Lcom/thoughtworks/xstream/core/util/PresortedMap$ArraySetComparator>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,getSerializablePersistentFields,result,put(key;value),223,Lcom/thoughtworks/xstream/core/util/SerializationMembers>,1,true,1) 1;ON;null; ,false
+java/util/Set,Ljava/util/Set,flushCache,,retainAll,247,Lcom/thoughtworks/xstream/core/util/SerializationMembers>,3,false,,false
+java/util/Set,Ljava/util/Set,flushCache,,retainAll,248,Lcom/thoughtworks/xstream/core/util/SerializationMembers>,3,false,,false
+java/util/Map,Ljava/util/Map,setAttribute,attributes,put(key;value),89,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,false,,false
+java/util/Map,Ljava/util/Map,getChild,childMap,iterator,101,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,false,,false
+java/util/List,Ljava/util/List,addChild,childList,add(value),106,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,false,,false
+java/util/Map,Ljava/util/Map,addChild,childMap,put(key;value),107,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,2,false,,false
+java/util/List,Ljava/util/List,getChildren,childList,toArray,114,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,false,,false
+java/util/List,Ljava/util/List,getChildren,childList,size,123,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,false,,false
+java/util/List,Ljava/util/List,getChildren,childList,sequentialGet,126,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,getChildren,children,add(value),128,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;ON;null; ,false
+java/util/ArrayList,Ljava/util/ArrayList,getChildren,children,toArray,132,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,false,,false
+java/util/List,Ljava/util/List,readResolve,childList,iterator,162,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,childMap,put(key;value),163,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,size,193,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,randomGet,195,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/List,addChild,childList,add(value),106,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/Map,Ljava/util/Map,addChild,childMap,put(key;value),107,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,add(value),199,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,add(value),200,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/Map,Ljava/util/Map,setAttribute,attributes,put(key;value),89,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; 2) 1;ON;null; ,false
+java/util/List,Ljava/util/ArrayList,build,values,size,209,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,randomGet,210,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,size,213,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,elements,remove(middle-index),214,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/List,Ljava/util/ArrayList,build,values,remove(middle-index),215,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;O1;1; ,false
+java/util/Map,Ljava/util/Map,marshal,map,entrySet,64,Lcom/thoughtworks/xstream/converters/collections/PropertiesConverter>,1,false,,true
+java/util/Set,Ljava/util/Set,marshal,,iterator,64,Lcom/thoughtworks/xstream/converters/collections/PropertiesConverter>,1,false,,true
+java/util/Map,Ljava/util/Map,getJavaClassName,qnameToJava,iterator,42,Lcom/thoughtworks/xstream/io/xml/QNameMap>,2,false,,false
+java/util/Map,Ljava/util/Map,registerMapping,javaToQName,put(key;value),74,Lcom/thoughtworks/xstream/io/xml/QNameMap>,2,false,,false
+java/util/Map,Ljava/util/Map,registerMapping,qnameToJava,put(key;value),75,Lcom/thoughtworks/xstream/io/xml/QNameMap>,2,false,,false
+java/util/Set,Ljava/util/Set,putAll,,iterator,144,Lcom/thoughtworks/xstream/core/util/PresortedMap>,1,false,,false
+java/util/Map,Ljava/util/Map,visit,val$defaultFieldDefinition,containsKey,150,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter$1>,1,false,,false
+java/util/Map,Ljava/util/Map,visit,val$defaultFieldDefinition,put(key;value),152,Lcom/thoughtworks/xstream/converters/extended/ToAttributedValueConverter$1>,1,false,,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,3,true,1) 2;null;null; ,false
+java/util/Map,Ljava/util/Map,size,map,size,124,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,1,false,,false
+java/util/Map,Ljava/util/Map,cleanup,map,remove(key),131,Lcom/thoughtworks/xstream/core/util/ObjectIdDictionary>,1,true,1) 1;null;null; ,false
+java/util/Map,Ljava/util/Map,fromString,cache,iterator,89,Lcom/thoughtworks/xstream/converters/basic/StringConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,fromString,cache,put(key;value),93,Lcom/thoughtworks/xstream/converters/basic/StringConverter>,1,false,,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,containsKey,72,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,<init>,wrapperMap,put(key;value),73,Lcom/thoughtworks/xstream/mapper/MapperWrapper>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/List,realClass,permissions,iterator,74,Lcom/thoughtworks/xstream/mapper/SecurityMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,getAttribute,attributes,iterator,81,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/List,getChild,childList,randomGet,97,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 2;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,compareInternal,names,containsKey,127,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 2;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,put(key;value),128,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 2;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,iterator,131,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 2;ON;null; ,true
+java/util/Map,Ljava/util/Map,getAttribute,attributes,iterator,81,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;ON;null; ,false
+java/util/List,Ljava/util/List,getChild,childList,randomGet,97,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 1;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,compareInternal,names,containsKey,127,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 1;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,put(key;value),128,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 1;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,iterator,131,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 1;ON;null; ,true
+java/util/Map,Ljava/util/Map,getAttribute,attributes,iterator,81,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 3;ON;null; ,false
+java/util/List,Ljava/util/List,getChild,childList,randomGet,97,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDom>,1,true,1) 3;ON;null; ,false
+java/util/Map,Ljava/util/HashMap,compareInternal,names,containsKey,127,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 3;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,put(key;value),128,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 3;ON;null; ,true
+java/util/Map,Ljava/util/HashMap,compareInternal,names,iterator,131,Lcom/thoughtworks/xstream/io/xml/xppdom/XppDomComparator>,1,true,1) 3;ON;null; ,true
+java/util/ArrayList,Ljava/util/ArrayList,startNode,,contains,96,Lcom/thoughtworks/xstream/io/json/JettisonStaxWriter>,1,false,,false
+java/util/Map,Ljava/util/Map,<init>,header,iterator,63,Lcom/thoughtworks/xstream/core/util/XmlHeaderAwareReader>,3,false,,false
+java/util/Map,Ljava/util/Map,<init>,header,iterator,64,Lcom/thoughtworks/xstream/core/util/XmlHeaderAwareReader>,3,false,,false
+java/util/Map,Ljava/util/Map,lookupConverterForType,typeToConverterMap,iterator,57,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Map,Ljava/util/Map,lookupConverterForType,typeToConverterMap,put(key;value),67,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Map,Ljava/util/LinkedHashMap,lookupConverterForType,errors,put(key;value),72,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/LinkedHashMap,lookupConverterForType,errors,isEmpty,76,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Map,Ljava/util/LinkedHashMap,lookupConverterForType,errors,entrySet,80,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Set,Ljava/util/Set,lookupConverterForType,,iterator,80,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,2,false,,false
+java/util/Map,Ljava/util/Map,getLocalConverter,localConverters,iterator,49,Lcom/thoughtworks/xstream/mapper/LocalConversionMapper>,4,false,,false
+java/util/Map,Ljava/util/Map,visit,val$defaultFieldDefinition,containsKey,112,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$1>,1,false,,false
+java/util/Map,Ljava/util/Map,visit,val$defaultFieldDefinition,put(key;value),118,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$1>,1,false,,false
+java/util/Set,Ljava/util/Set,visit,writtenAttributes,contains,125,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$1>,1,false,,false
+java/util/Set,Ljava/util/Set,visit,writtenAttributes,add(value),137,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$1>,1,false,,false
+java/util/List,Ljava/util/List,visit,val$fields,add(value),139,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$1>,1,false,,false
+java/util/Map,Ljava/util/Map,getFieldNameForItemTypeAndName,namedItemTypeToDef,iterator,166,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper$ImplicitCollectionMapperForClass>,1,true,1) 1;O1;0; ,true
+java/util/Map,Ljava/util/Map,getMapper,classNameToMapper,iterator,41,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,3,true,1) 3;ON;null; ,false
+java/util/Map,Ljava/util/Map,getMapper,classNameToMapper,iterator,41,Lcom/thoughtworks/xstream/mapper/ImplicitCollectionMapper>,1,true,1) 4;ON;null; ,false
+java/util/Map,Ljava/util/Map,get,fields,iterator,252,Lcom/thoughtworks/xstream/core/util/CustomObjectInputStream$CustomGetField>,10,false,,false
+java/util/Map,Ljava/util/Map,defaulted,fields,containsKey,257,Lcom/thoughtworks/xstream/core/util/CustomObjectInputStream$CustomGetField>,10,false,,false
+java/util/Map,Ljava/util/Map,aliasForAttribute,nameToAlias,iterator,29,Lcom/thoughtworks/xstream/mapper/AttributeAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,attributeForAlias,aliasToName,iterator,35,Lcom/thoughtworks/xstream/mapper/AttributeAliasingMapper>,1,false,,false
+java/util/List,Ljava/util/List,<init>,val$fields,iterator,148,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 1;O1;0; 2) 4;O1;0; 3) 4;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 6;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 1;O1;0; 2) 6;ON;0; ,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,4,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 3;O1;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 1;ON;0; 2) 2;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,320,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,doUnmarshal,,entrySet,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 2;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 2;ON;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,447,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 2;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; 2) 2;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,doUnmarshal,implicitCollectionsForCurrentObject,entrySet,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/List,<init>,val$fields,iterator,148,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 5;O1;0; 3) 5;O1;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,containsKey,90,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 2;O1;0; 2) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,iterator,91,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 2;O1;0; 2) 7;ON;0; ,false
+java/util/Map,Ljava/util/Map,add,stuff,put(key;value),97,Lcom/thoughtworks/xstream/converters/ErrorWritingException>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 2;ON;0; 2) 3;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,320,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; 2) 3;O1;0; ,false
+java/util/Map,Ljava/util/Map,doUnmarshal,,entrySet,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; 2) 3;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; 2) 3;ON;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,447,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; 2) 3;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; 2) 3;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,doUnmarshal,implicitCollectionsForCurrentObject,entrySet,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/HashSet,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,add,this,add,285,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3>,2,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,items,add(value),58,Lcom/thoughtworks/xstream/converters/collections/ArrayConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,items,size,61,Lcom/thoughtworks/xstream/converters/collections/ArrayConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,items,iterator,63,Lcom/thoughtworks/xstream/converters/collections/ArrayConverter>,1,false,,false
+java/util/HashSet,Lcom/thoughtworks/xstream/converters/javabean/JavaBeanConverter$2,add,this,add,114,Lcom/thoughtworks/xstream/converters/javabean/JavaBeanConverter$2>,2,false,,false
+java/util/Map,Ljava/util/Map,<init>,val$defaultFieldDefinition,iterator,150,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,iterator,155,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/HashMap,<init>,hiddenMappers,put(key;value),159,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,mappings,add(value),161,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Collection,Ljava/util/Collection,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,2,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,entrySet,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Set,Ljava/util/Set,<init>,,iterator,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,<init>,,values,180,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,writeField,val$defaultFieldDefinition,iterator,238,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$2>,1,true,1) 2;O1;0; 2) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,box,BOX,iterator,54,Lcom/thoughtworks/xstream/core/util/Primitives>,1,true,1) 2;O1;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,320,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;O1;0; ,false
+java/util/Map,Ljava/util/Map,doUnmarshal,,entrySet,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,447,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 2;ON;0; ,false
+java/util/Map,Ljava/util/HashMap,doUnmarshal,implicitCollectionsForCurrentObject,entrySet,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,2,false,,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,466,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,2,false,,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,320,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,doUnmarshal,,entrySet,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/Set,Ljava/util/Set,doUnmarshal,,iterator,388,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/Set,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$3,doUnmarshal,seenFields,add,447,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,true,1) 1;ON;0; ,false
+java/util/Collection,Ljava/util/Collection,writeValueToImplicitCollection,collection,add,551,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter>,1,false,,false
+java/util/List,Ljava/util/List,addAttribute,attributes,add(value),92,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,1,true,1) 3;INFINITE;null; ,false
+java/util/List,Ljava/util/List,getConfiguration,,randomGet,63,Lcom/thoughtworks/xstream/io/xml/XppDomWriter>,1,false,,false
+java/util/Collection,Ljava/util/Collection,visit,val$collection,add,122,Lcom/thoughtworks/xstream/core/util/WeakCache$3>,1,false,,false
+java/util/List,Ljava/util/List,getChild,,randomGet,68,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,getChildCount,,size,73,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,getAttribute,,randomGet,93,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,getAttributeCount,,size,98,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,getAttributeName,,randomGet,103,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,isEmpty,109,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,randomGet,112,Lcom/thoughtworks/xstream/io/xml/JDom2Reader>,1,false,,false
+java/util/TreeMap,Ljava/util/TreeMap,<clinit>,,putAll,150,Lcom/thoughtworks/xstream/core/JVM>,1,false,,false
+java/util/TreeSet,Ljava/util/TreeSet,<clinit>,,addAll,159,Lcom/thoughtworks/xstream/core/JVM>,1,false,,false
+java/util/List,Ljava/util/List,addAttribute,attributes,add(value),92,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,1,true,1) 2;INFINITE;null; ,false
+java/util/List,Ljava/util/List,getAttribute,attributes,iterator,100,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,2,false,,false
+java/util/List,Ljava/util/List,getAttribute,attributes,randomGet,113,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,2,false,,false
+java/util/List,Ljava/util/List,getAttributeCount,attributes,size,128,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,2,false,,false
+java/util/List,Ljava/util/List,getAttributeName,attributes,randomGet,122,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,2,false,,false
+java/util/List,Ljava/util/List,getAttributeNames,attributes,iterator,135,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,2,false,,false
+java/util/List,Ljava/util/List,addAttribute,attributes,add(value),92,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,1,true,1) 1;INFINITE;null; ,false
+java/util/Map,Ljava/util/Map,put,map,put(key;value),227,Lcom/thoughtworks/xstream/io/binary/BinaryStreamReader$IdRegistry>,1,true,1) 1;INFINITE;null; ,false
+java/util/Map,Ljava/util/Map,get,map,iterator,35,Lcom/thoughtworks/xstream/core/MapBackedDataHolder>,1,false,,false
+java/util/Map,Ljava/util/Map,put,map,put(key;value),40,Lcom/thoughtworks/xstream/core/MapBackedDataHolder>,1,false,,false
+java/util/Map,Ljava/util/Map,keys,map,keySet,45,Lcom/thoughtworks/xstream/core/MapBackedDataHolder>,1,false,,false
+java/util/Collection,Ljava/util/Collection,keys,,iterator,45,Lcom/thoughtworks/xstream/core/MapBackedDataHolder>,1,false,,false
+java/util/List,Ljava/util/List,getChild,,randomGet,90,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,getChildCount,,size,95,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,getAttribute,,randomGet,115,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,getAttributeCount,,size,120,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,getAttributeName,,randomGet,125,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,isEmpty,132,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,randomGet,135,Lcom/thoughtworks/xstream/io/xml/JDomReader>,1,false,,false
+java/util/ArrayList,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder$1IntPairList,add,this,add,59,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder$1IntPairList>,2,false,,false
+java/util/ArrayList,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder$1IntPairList,add,this,add,55,Lcom/thoughtworks/xstream/io/xml/XmlFriendlyNameCoder$1IntPairList>,2,false,,false
+java/util/Map,Ljava/util/Map,readResolve,attributeMap,put(key;value),143,Lcom/thoughtworks/xstream/converters/reflection/AbstractAttributedCharacterIteratorAttributeConverter>,1,true,1) 3;ON;null; ,false
+java/util/Map,Ljava/util/LinkedHashMap,lookupConverterForType,errors,put(key;value),72,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,flushCache,typeToConverterMap,clear,95,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,1,false,,false
+java/util/Map,Ljava/util/Map,writeReplace,serializationMap,clear,105,Lcom/thoughtworks/xstream/core/DefaultConverterLookup>,1,false,,false
+java/util/List,Ljava/util/List,endNode,result,add(value),84,Lcom/thoughtworks/xstream/io/xml/AbstractDocumentWriter>,1,false,,false
+java/util/List,Ljava/util/List,getChild,,randomGet,104,Lcom/thoughtworks/xstream/io/xml/Dom4JReader>,1,false,,false
+java/util/List,Ljava/util/List,getChildCount,,size,109,Lcom/thoughtworks/xstream/io/xml/Dom4JReader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,isEmpty,121,Lcom/thoughtworks/xstream/io/xml/Dom4JReader>,1,false,,false
+java/util/List,Ljava/util/List,peekNextChild,list,randomGet,124,Lcom/thoughtworks/xstream/io/xml/Dom4JReader>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,parameterTypeList,add(value),134,Lcom/thoughtworks/xstream/converters/extended/JavaMethodConverter>,1,true,1) 1;ON;0; ,false
+java/util/List,Ljava/util/ArrayList,unmarshal,parameterTypeList,size,137,Lcom/thoughtworks/xstream/converters/extended/JavaMethodConverter>,1,false,,false
+java/util/List,Ljava/util/ArrayList,unmarshal,parameterTypeList,toArray,137,Lcom/thoughtworks/xstream/converters/extended/JavaMethodConverter>,1,false,,false
+java/util/Map,Ljava/util/Map,add,map,containsKey,695,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,add,map,put(key;value),696,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,add,fieldCache,iterator,701,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,add,fieldCache,put(key;value),704,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,add,map,put(key;value),708,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,add,map,put(key;value),713,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,size,map,size,730,Lcom/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter$MappingList>,1,false,,false
+java/util/Map,Ljava/util/Map,serializedClass,classToName,iterator,48,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,serializedClass,typeToName,keySet,52,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,serializedClass,,iterator,52,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,serializedClass,typeToName,iterator,54,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,realClass,nameToType,iterator,63,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,itemTypeAsAttribute,classToName,containsKey,81,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,aliasIsAttribute,nameToType,containsKey,89,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,classToName,keySet,94,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,readResolve,,iterator,94,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,classToName,iterator,95,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,nameToType,put(key;value),95,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,typeToName,keySet,97,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Set,Ljava/util/Set,readResolve,,iterator,97,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,false,,false
+java/util/Map,Ljava/util/Map,readResolve,typeToName,iterator,98,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Map,Ljava/util/Map,readResolve,nameToType,put(key;value),98,Lcom/thoughtworks/xstream/mapper/ClassAliasingMapper>,1,true,1) 1;O1;0; ,false
+java/util/Set,Ljava/util/Set,invertMap,,iterator,89,Lcom/thoughtworks/xstream/io/naming/StaticNameCoder>,3,false,,false
+java/util/Map,Ljava/util/Map,decodeAttribute,attribute2Java,iterator,55,Lcom/thoughtworks/xstream/io/naming/StaticNameCoder>,1,false,,false
+java/util/Map,Ljava/util/Map,decodeNode,node2Java,iterator,61,Lcom/thoughtworks/xstream/io/naming/StaticNameCoder>,1,false,,false
+java/util/Map,Ljava/util/Map,encodeAttribute,java2Attribute,iterator,67,Lcom/thoughtworks/xstream/io/naming/StaticNameCoder>,1,false,,false
+java/util/Map,Ljava/util/Map,encodeNode,java2Node,iterator,73,Lcom/thoughtworks/xstream/io/naming/StaticNameCoder>,1,false,,false
+java/util/Set,Ljava/util/Set,addAttribute,currentAttributes,contains,112,Lcom/thoughtworks/xstream/io/StatefulWriter>,1,false,,false
+java/util/Set,Ljava/util/Set,addAttribute,currentAttributes,add(value),115,Lcom/thoughtworks/xstream/io/StatefulWriter>,1,false,,false
+java/util/Collection,Ljava/util/Collection,iterator,,iterator,33,Lcom/thoughtworks/xstream/persistence/XmlSet>,1,false,,false
+java/util/List,Ljava/util/List,cleanup,classLoaders,remove(value),139,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,2,true,1) 2;ON;null; ,false
+java/util/List,Ljava/util/List,loadClass,classLoaders,size,102,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,1,false,,false
+java/util/List,Ljava/util/List,loadClass,classLoaders,iterator,105,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,1,false,,false
+java/util/List,Ljava/util/ArrayList,loadClass,copy,add(value),108,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,1,true,1) 1;O1;0; ,false
+java/util/List,Ljava/util/ArrayList,loadClass,copy,iterator,114,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,1,false,,false
+java/util/List,Ljava/util/List,cleanup,classLoaders,remove(value),139,Lcom/thoughtworks/xstream/core/util/CompositeClassLoader>,1,true,1) 1;ON;null; ,false
+java/util/Set,Ljava/util/Set,visit,val$set,add(value),141,Lcom/thoughtworks/xstream/core/util/WeakCache$4>,1,false,,false
+java/util/List,Ljava/util/List,addAttribute,attributes,add(value),92,Lcom/thoughtworks/xstream/io/binary/ReaderDepthState>,1,false,,false
