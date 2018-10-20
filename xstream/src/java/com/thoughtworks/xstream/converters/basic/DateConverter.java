@@ -19,7 +19,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorReporter;
 import com.thoughtworks.xstream.converters.ErrorWriter;
@@ -60,7 +63,7 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
 
         final String defaultPattern = "yyyy-MM-dd HH:mm:ss.S z";
         final String defaultEraPattern = "yyyy-MM-dd G HH:mm:ss.S z";
-        final List<String> acceptablePatterns = new ArrayList<>();
+        final List<String> acceptablePatterns = new FastList<>();
         final boolean utcSupported = JVM.canParseUTCDateFormat();
         DEFAULT_PATTERN = utcSupported ? defaultPattern : "yyyy-MM-dd HH:mm:ss.S 'UTC'";
         DEFAULT_ERA_PATTERN = utcSupported ? defaultEraPattern : "yyyy-MM-dd G HH:mm:ss.S 'UTC'";

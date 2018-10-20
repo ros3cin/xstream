@@ -14,7 +14,12 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.core.util.FastField;
 
 
@@ -25,8 +30,8 @@ import com.thoughtworks.xstream.core.util.FastField;
  */
 public class ElementIgnoringMapper extends MapperWrapper {
 
-    protected final Set<Pattern> unknownElementsToIgnore = new LinkedHashSet<>();
-    protected final Set<FastField> fieldsToOmit = new HashSet<>();
+    protected final Set<Pattern> unknownElementsToIgnore = new UnifiedSet<>();
+    protected final Set<FastField> fieldsToOmit = new UnifiedSet<>();
 
     public ElementIgnoringMapper(final Mapper wrapped) {
         super(wrapped);

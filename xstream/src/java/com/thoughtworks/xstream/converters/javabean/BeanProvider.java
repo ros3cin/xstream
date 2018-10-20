@@ -20,7 +20,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorWritingException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
@@ -166,7 +169,7 @@ public class BeanProvider implements JavaBeanProvider {
     }
 
     protected PropertyDescriptor[] getSerializableProperties(final Object object) {
-        final List<PropertyDescriptor> result = new ArrayList<>();
+        final List<PropertyDescriptor> result = new FastList<>();
         for (final Iterator<PropertyDescriptor> iter = propertyDictionary.propertiesFor(object.getClass()); iter
             .hasNext();) {
             final PropertyDescriptor descriptor = iter.next();

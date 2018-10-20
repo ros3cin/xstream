@@ -14,7 +14,11 @@ package com.thoughtworks.xstream.io;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.core.util.FastStack;
 
 

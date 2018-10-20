@@ -16,7 +16,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.apache.commons.collections4.list.TreeList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -41,8 +46,8 @@ public class XppDom implements Serializable {
 
     public XppDom(final String name) {
         this.name = name;
-        childList = new ArrayList<>();
-        childMap = new HashMap<>();
+        childList = new FastList<>();
+        childMap = new HashedMap<>();
     }
 
     // ----------------------------------------------------------------------
@@ -83,7 +88,7 @@ public class XppDom implements Serializable {
 
     public void setAttribute(final String name, final String value) {
         if (null == attributes) {
-            attributes = new HashMap<>();
+            attributes = new HashedMap<>();
         }
 
         attributes.put(name, value);
@@ -119,7 +124,7 @@ public class XppDom implements Serializable {
         if (null == childList) {
             return new XppDom[0];
         } else {
-            final ArrayList<XppDom> children = new ArrayList<>();
+            final List<XppDom> children = new FastList<>();
             final int size = childList.size();
 
             for (int i = 0; i < size; i++) {

@@ -19,7 +19,10 @@ import java.util.Iterator;
 import java.util.Map;
 
 import javax.swing.plaf.FontUIResource;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
@@ -100,7 +103,7 @@ public class FontConverter implements Converter {
             reader.moveDown();
             if (!reader.getNodeName().equals("attributes")) {
                 final String classAlias = mapper.aliasForSystemAttribute("class");
-                attributes = new HashMap<>();
+                attributes = new HashedMap<>();
                 do {
                     if (!attributes.isEmpty()) {
                         reader.moveDown();

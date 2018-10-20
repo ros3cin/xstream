@@ -14,7 +14,11 @@ package com.thoughtworks.xstream.core;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -59,7 +63,7 @@ public class DefaultConverterLookup implements ConverterLookup, ConverterRegistr
             return cachedConverter;
         }
 
-        final Map<String, String> errors = new LinkedHashMap<>();
+        final Map<String, String> errors = new HashedMap<>();
         for (final Converter converter : converters) {
             try {
                 if (converter.canConvert(type)) {
@@ -107,7 +111,7 @@ public class DefaultConverterLookup implements ConverterLookup, ConverterRegistr
     }
 
     private Object readResolve() {
-        typeToConverterMap = serializationMap == null ? new HashMap<String, Converter>() : serializationMap;
+        typeToConverterMap = serializationMap == null ? new HashedMap<String, Converter>() : serializationMap;
         serializationMap = null;
         return this;
     }

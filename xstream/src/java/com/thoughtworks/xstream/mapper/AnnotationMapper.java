@@ -30,7 +30,12 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAliasType;
@@ -71,8 +76,8 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
     private transient ElementIgnoringMapper elementIgnoringMapper;
     private transient AttributeMapper attributeMapper;
     private transient LocalConversionMapper localConversionMapper;
-    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new HashMap<>();
-    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new HashSet<Class<?>>());
+    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new HashedMap<>();
+    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new UnifiedSet<Class<?>>());
 
     /**
      * Construct an AnnotationMapper.
@@ -289,8 +294,8 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
             final XStreamConverters convertersAnnotation = type.getAnnotation(XStreamConverters.class);
             final XStreamConverter converterAnnotation = type.getAnnotation(XStreamConverter.class);
             final List<XStreamConverter> annotations = convertersAnnotation != null
-                ? new ArrayList<XStreamConverter>(Arrays.asList(convertersAnnotation.value()))
-                : new ArrayList<XStreamConverter>();
+                ? new FastList<XStreamConverter>(Arrays.asList(convertersAnnotation.value()))
+                : new FastList<XStreamConverter>();
             if (converterAnnotation != null) {
                 annotations.add(converterAnnotation);
             }
@@ -420,7 +425,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
         if (targetType != null && annotation.useImplicitType()) {
             parameter.add(targetType);
         }
-        final List<Object> arrays = new ArrayList<>();
+        final List<Object> arrays = new FastList<>();
         arrays.add(annotation.booleans());
         arrays.add(annotation.bytes());
         arrays.add(annotation.chars());
@@ -474,7 +479,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                     + (targetType != null ? " for type " + targetType.getName() : ""), e);
             }
             if (converterMapping == null) {
-                converterMapping = new HashMap<>();
+                converterMapping = new HashedMap<>();
                 converterCache.put(converterType, converterMapping);
             }
             converterMapping.put(parameter, converter);

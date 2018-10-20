@@ -13,7 +13,10 @@ package com.thoughtworks.xstream.converters.extended;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
@@ -85,7 +88,7 @@ public class NamedArrayConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Object> list = new ArrayList<>();
+        final List<Object> list = new FastList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             final Object item;

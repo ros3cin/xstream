@@ -24,7 +24,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -95,13 +98,13 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
 
     protected void doMarshal(final Object source, final HierarchicalStreamWriter writer,
             final MarshallingContext context) {
-        final List<FieldInfo> fields = new ArrayList<>();
-        final Map<String, Field> defaultFieldDefinition = new HashMap<>();
+        final List<FieldInfo> fields = new FastList<>();
+        final Map<String, Field> defaultFieldDefinition = new HashedMap<>();
         final Class<?> sourceType = source.getClass();
 
         // Attributes might be preferred to child elements ...
         reflectionProvider.visitSerializableFields(source, new ReflectionProvider.Visitor() {
-            final Set<String> writtenAttributes = new HashSet<>();
+            final Set<String> writtenAttributes = new UnifiedSet<>();
 
             @Override
             public void visit(final String fieldName, final Class<?> type, final Class<?> definedIn,
@@ -144,7 +147,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
         new Object() {
             {
                 final Map<String, Set<Mapper.ImplicitCollectionMapping>> hiddenMappers =
-                        new HashMap<String, Set<Mapper.ImplicitCollectionMapping>>();
+                        new HashedMap<String, Set<Mapper.ImplicitCollectionMapping>>();
                 for (final FieldInfo info : fields) {
                     if (info.value != null) {
                         final Field defaultField = defaultFieldDefinition.get(info.fieldName);
@@ -154,7 +157,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
                         if (mapping != null) {
                             Set<Mapper.ImplicitCollectionMapping> mappings = hiddenMappers.get(info.fieldName);
                             if (mappings == null) {
-                                mappings = new HashSet<>();
+                                mappings = new UnifiedSet<>();
                                 mappings.add(mapping);
                                 hiddenMappers.put(info.fieldName, mappings);
                             } else {
@@ -682,7 +685,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
 
         private final Map<Object, Object> map;
         private final String keyFieldName;
-        private final Map<Class<?>, Field> fieldCache = new HashMap<>();
+        private final Map<Class<?>, Field> fieldCache = new HashedMap<>();
 
         public MappingList(final Map<Object, Object> map, final String keyFieldName) {
             this.map = map;

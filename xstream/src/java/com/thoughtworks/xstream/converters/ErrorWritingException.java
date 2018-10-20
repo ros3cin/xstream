@@ -14,7 +14,10 @@ package com.thoughtworks.xstream.converters;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.XStreamException;
 
 
@@ -30,7 +33,7 @@ public abstract class ErrorWritingException extends XStreamException implements 
 
     private static final long serialVersionUID = 20160226L;
     private static final String SEPARATOR = "\n-------------------------------";
-    private final Map<String, String> stuff = new LinkedHashMap<>();
+    private final Map<String, String> stuff = new UnifiedMap<>();
 
     /**
      * Constructs a ErrorWritingException.

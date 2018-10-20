@@ -12,6 +12,11 @@ package com.thoughtworks.xstream.core.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 
 /**
@@ -21,10 +26,10 @@ import java.util.Map;
  * @since 1.2.1
  */
 public final class Primitives {
-    private final static Map<Class<?>, Class<?>> BOX = new HashMap<>();
-    private final static Map<Class<?>, Class<?>> UNBOX = new HashMap<>();
-    private final static Map<String, Class<?>> NAMED_PRIMITIVE = new HashMap<>();
-    private final static Map<Class<?>, Character> REPRESENTING_CHAR = new HashMap<>();
+    private final static Map<Class<?>, Class<?>> BOX = new UnifiedMap<>();
+    private final static Map<Class<?>, Class<?>> UNBOX = new HashedMap<>();
+    private final static Map<String, Class<?>> NAMED_PRIMITIVE = new HashedMap<>();
+    private final static Map<Class<?>, Character> REPRESENTING_CHAR = new HashedMap<>();
 
     static {
         final Class<?>[][] boxing = new Class[][]{

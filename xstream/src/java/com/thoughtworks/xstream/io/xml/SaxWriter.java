@@ -17,7 +17,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.apache.commons.collections4.list.TreeList;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.DTDHandler;
 import org.xml.sax.EntityResolver;
@@ -102,12 +107,12 @@ public final class SaxWriter extends AbstractXmlWriter implements XMLReader {
      * only to support the mandatory feature setting and retrieval logic defined by SAX.
      * </p>
      */
-    private final Map<String, Boolean> features = new HashMap<>();
+    private final Map<String, Boolean> features = new HashedMap<>();
 
     /**
      * The SAX properties defined for this XMLReader.
      */
-    private final Map<String, Object> properties = new HashMap<>();
+    private final Map<String, Object> properties = new HashedMap<>();
 
     private final boolean includeEnclosingDocument;
 
@@ -573,7 +578,7 @@ public final class SaxWriter extends AbstractXmlWriter implements XMLReader {
     // =========================================================================
 
     private int depth = 0;
-    private final List<String> elementStack = new LinkedList<>();
+    private final List<String> elementStack = new TreeList<>();
     private char[] buffer = new char[128];
     private boolean startTagInProgress = false;
     private final AttributesImpl attributeList = new AttributesImpl();

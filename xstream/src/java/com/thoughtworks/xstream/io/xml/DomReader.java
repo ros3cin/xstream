@@ -20,7 +20,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.io.naming.NameCoder;
 
 
@@ -131,7 +135,7 @@ public class DomReader extends AbstractDocumentReader {
     protected void reassignCurrentElement(final Object current) {
         currentElement = (Element)current;
         final NodeList childNodes = currentElement.getChildNodes();
-        childElements = new ArrayList<>();
+        childElements = new FastList<>();
         for (int i = 0; i < childNodes.getLength(); i++) {
             final Node node = childNodes.item(i);
             if (node instanceof Element) {

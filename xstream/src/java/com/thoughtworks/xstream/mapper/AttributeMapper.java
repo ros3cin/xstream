@@ -16,7 +16,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
@@ -36,11 +41,11 @@ import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
  */
 public class AttributeMapper extends MapperWrapper {
 
-    private final Map<String, Class<?>> fieldNameToTypeMap = new HashMap<>();
-    private final Set<Class<?>> typeSet = new HashSet<>();
+    private final Map<String, Class<?>> fieldNameToTypeMap = new UnifiedMap<>();
+    private final Set<Class<?>> typeSet = new UnifiedSet<>();
     private final ConverterLookup converterLookup;
     private final ReflectionProvider reflectionProvider;
-    private final Set<Field> fieldToUseAsAttribute = new HashSet<>();
+    private final Set<Field> fieldToUseAsAttribute = new UnifiedSet<>();
 
     public AttributeMapper(
             final Mapper wrapped, final ConverterLookup converterLookup, final ReflectionProvider refProvider) {

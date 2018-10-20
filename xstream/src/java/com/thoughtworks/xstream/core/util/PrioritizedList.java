@@ -14,7 +14,11 @@ package com.thoughtworks.xstream.core.util;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 /**
  * List that allows items to be added with a priority that will affect the order in which they are later iterated over.
@@ -27,7 +31,7 @@ import java.util.TreeSet;
  */
 public class PrioritizedList<E> implements Iterable<E> {
 
-    private final Set<PrioritizedItem<E>> set = new TreeSet<>();
+    private final Set<PrioritizedItem<E>> set = new UnifiedSet<>();
     private int lowestPriority = Integer.MAX_VALUE;
     private int lastId = 0;
 

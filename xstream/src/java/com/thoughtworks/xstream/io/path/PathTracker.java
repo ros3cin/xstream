@@ -13,7 +13,11 @@ package com.thoughtworks.xstream.io.path;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 /**
  * Maintains the current {@link Path} as a stream is moved through.
@@ -81,7 +85,7 @@ public class PathTracker {
         pathStack[pointer] = name;
         Map<String, Integer> indexMap = indexMapStack[pointer];
         if (indexMap == null) {
-            indexMap = new HashMap<>();
+            indexMap = new HashedMap<>();
             indexMapStack[pointer] = indexMap;
         }
         if (indexMap.containsKey(name)) {

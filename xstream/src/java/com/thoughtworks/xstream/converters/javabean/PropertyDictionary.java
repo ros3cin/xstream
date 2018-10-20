@@ -22,7 +22,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.reflection.MissingFieldException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
 import com.thoughtworks.xstream.core.Caching;
@@ -36,7 +39,7 @@ import com.thoughtworks.xstream.core.Caching;
  */
 public class PropertyDictionary implements Caching {
     private transient Map<Class<?>, Map<String, PropertyDescriptor>> propertyNameCache = Collections.synchronizedMap(
-        new HashMap<Class<?>, Map<String, PropertyDescriptor>>());
+        new HashedMap<Class<?>, Map<String, PropertyDescriptor>>());
     private final PropertySorter sorter;
 
     public PropertyDictionary() {
@@ -52,7 +55,7 @@ public class PropertyDictionary implements Caching {
      */
     @Deprecated
     public Iterator<BeanProperty> serializablePropertiesFor(final Class<?> type) {
-        final Collection<BeanProperty> beanProperties = new ArrayList<>();
+        final Collection<BeanProperty> beanProperties = new FastList<>();
         final Collection<PropertyDescriptor> descriptors = buildMap(type).values();
         for (final PropertyDescriptor descriptor : descriptors) {
             if (descriptor.getReadMethod() != null && descriptor.getWriteMethod() != null) {

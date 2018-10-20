@@ -16,8 +16,14 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.List;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 /**
  * ClassLoader that is composed of other classloaders. Each loader will be used to try to load the particular class, until
@@ -64,7 +70,7 @@ public class CompositeClassLoader extends ClassLoader {
     }
 
     private final ReferenceQueue<ClassLoader> queue = new ReferenceQueue<>();
-    private final List<WeakReference<ClassLoader>> classLoaders = new ArrayList<>();
+    private final List<WeakReference<ClassLoader>> classLoaders = new LinkedList<>();
 
     public CompositeClassLoader() {
         addInternal(Object.class.getClassLoader()); // bootstrap loader.
@@ -99,7 +105,7 @@ public class CompositeClassLoader extends ClassLoader {
 
     @Override
     public Class<?> loadClass(final String name) throws ClassNotFoundException {
-        final List<ClassLoader> copy = new ArrayList<>(classLoaders.size());
+        final List<ClassLoader> copy = new FastList<>(classLoaders.size());
         synchronized(this) {
             cleanup();
             for(final WeakReference<ClassLoader> ref : classLoaders) {

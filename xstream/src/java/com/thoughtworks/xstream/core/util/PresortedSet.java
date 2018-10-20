@@ -12,13 +12,17 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 /**
  * @author J&ouml;rg Schaible
  */
 public class PresortedSet<E> implements SortedSet<E> {
-    private final List<E> list = new ArrayList<>();
+    private final List<E> list = new FastList<>();
     private final Comparator<E> comparator;
 
     public PresortedSet() {

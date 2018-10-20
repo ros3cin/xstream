@@ -14,7 +14,10 @@ package com.thoughtworks.xstream.converters.collections;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
@@ -52,7 +55,7 @@ public class ArrayConverter extends AbstractCollectionConverter {
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
         // read the items from xml into a list (the array size is not known until all items have been read)
-        final List<Object> items = new ArrayList<>();
+        final List<Object> items = new FastList<>();
         while (reader.hasMoreChildren()) {
             final Object item = readCompleteItem(reader, context, null); // TODO: arg, what should replace null?
             items.add(item);

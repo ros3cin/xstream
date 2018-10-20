@@ -33,7 +33,11 @@ import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.CGLIBMapper;
 import com.thoughtworks.xstream.mapper.Mapper;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.CallbackFilter;
 import net.sf.cglib.proxy.Enhancer;
@@ -72,7 +76,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
             final Mapper mapper, final ReflectionProvider reflectionProvider,
             final ClassLoaderReference classLoaderReference) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoaderReference);
-        fieldCache = new HashMap<>();
+        fieldCache = new HashedMap<>();
     }
 
     /**
@@ -82,7 +86,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     public CGLIBEnhancedConverter(
             final Mapper mapper, final ReflectionProvider reflectionProvider, final ClassLoader classLoader) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoader);
-        fieldCache = new HashMap<>();
+        fieldCache = new HashedMap<>();
     }
 
     /**
@@ -181,7 +185,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         final Class<?> type = source.getClass();
         List<Field> fields = fieldCache.get(type.getName());
         if (fields == null) {
-            fields = new ArrayList<>();
+            fields = new FastList<>();
             fieldCache.put(type.getName(), fields);
             for (int i = 0; true; ++i) {
                 try {
@@ -195,7 +199,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                 }
             }
         }
-        final List<Callback> list = new ArrayList<>();
+        final List<Callback> list = new FastList<>();
         for (int i = 0; i < fields.size(); ++i) {
             try {
                 final Field field = fields.get(i);
@@ -231,7 +235,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         try {
             source.setCallbacks(reverseEngineeringCallbacks);
             final Set<Class<?>> interfaces = new HashSet<>();
-            final Set<Method> methods = new HashSet<>();
+            final Set<Method> methods = new TreeSortedSet<>();
             Class<?> type = source.getClass();
             do {
                 methods.addAll(Arrays.asList(type.getDeclaredMethods()));
@@ -352,7 +356,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         enhancer.setSuperclass((Class<?>)context.convertAnother(null, Class.class));
         reader.moveUp();
         reader.moveDown();
-        final List<Class<?>> interfaces = new ArrayList<>();
+        final List<Class<?>> interfaces = new FastList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             interfaces.add((Class<?>)context.convertAnother(null, mapper.realClass(reader.getNodeName())));

@@ -26,7 +26,11 @@ import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.core.util.Fields;
 
 
@@ -200,6 +204,6 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
     }
 
     protected void init() {
-        serializedDataCache = new HashMap<>();
+        serializedDataCache = new HashedMap<>();
     }
 }

@@ -12,7 +12,11 @@ package com.thoughtworks.xstream.core;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -32,7 +36,7 @@ import com.thoughtworks.xstream.mapper.Mapper;
 public abstract class AbstractReferenceUnmarshaller<R> extends TreeUnmarshaller {
 
     private static final Object NULL = new Object();
-    private final Map<R, Object> values = new HashMap<>();
+    private final Map<R, Object> values = new HashedMap<>();
     private final FastStack<R> parentStack = new FastStack<>(16);
 
     public AbstractReferenceUnmarshaller(

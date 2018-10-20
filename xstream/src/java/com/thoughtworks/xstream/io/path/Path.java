@@ -13,7 +13,11 @@ package com.thoughtworks.xstream.io.path;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.core.util.FastStack;
 
 
@@ -68,7 +72,7 @@ public class Path {
 
     public Path(final String pathAsString) {
         // String.split() too slow. StringTokenizer too crappy.
-        final List<String> result = new ArrayList<>();
+        final List<String> result = new FastList<>();
         int currentIndex = 0;
         int nextSeparator;
         this.pathAsString = pathAsString;

@@ -18,7 +18,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -133,7 +136,7 @@ public class ToAttributedValueConverter implements Converter {
     @Override
     public void marshal(final Object source, final HierarchicalStreamWriter writer, final MarshallingContext context) {
         final Class<?> sourceType = source.getClass();
-        final Map<String, Field> defaultFieldDefinition = new HashMap<>();
+        final Map<String, Field> defaultFieldDefinition = new HashedMap<>();
         final String[] tagValue = new String[1];
         final Object[] realValue = new Object[1];
         final Class<?>[] fieldType = new Class[1];
@@ -222,10 +225,10 @@ public class ToAttributedValueConverter implements Converter {
         final Object result = reflectionProvider.newInstance(context.getRequiredType());
         final Class<?> resultType = result.getClass();
 
-        final Set<FastField> seenFields = new HashSet<>();
+        final Set<FastField> seenFields = new UnifiedSet<>();
         final Iterator<String> it = reader.getAttributeNames();
 
-        final Set<String> systemAttributes = new HashSet<>();
+        final Set<String> systemAttributes = new UnifiedSet<>();
         systemAttributes.add(mapper.aliasForSystemAttribute("class"));
 
         // Process attributes before recursing into child elements.

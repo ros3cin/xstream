@@ -12,7 +12,11 @@ package com.thoughtworks.xstream.io.xml;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 import com.thoughtworks.xstream.core.util.FastStack;
 import com.thoughtworks.xstream.io.naming.NameCoder;
 
@@ -29,7 +33,7 @@ import com.thoughtworks.xstream.io.naming.NameCoder;
  */
 public abstract class AbstractDocumentWriter extends AbstractXmlWriter implements DocumentWriter {
 
-    private final List<Object> result = new ArrayList<>();
+    private final List<Object> result = new FastList<>();
     private final FastStack<Object> nodeStack = new FastStack<>(16);
 
     /**

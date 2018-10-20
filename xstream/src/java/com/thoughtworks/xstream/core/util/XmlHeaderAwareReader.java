@@ -21,7 +21,11 @@ import java.io.UnsupportedEncodingException;
 import java.nio.CharBuffer;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
 
 /**
  * A {@link Reader} that evaluates the XML header. It selects its encoding based on the encoding read with the XML
@@ -65,7 +69,7 @@ public final class XmlHeaderAwareReader extends Reader {
     }
 
     private Map<String, String> getHeader(final PushbackInputStream[] in) throws IOException {
-        final Map<String, String> header = new HashMap<>();
+        final Map<String, String> header = new UnifiedMap<>();
         header.put(KEY_ENCODING, "utf-8");
         header.put(KEY_VERSION, "1.0");
 

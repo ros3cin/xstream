@@ -181,6 +181,11 @@ import com.thoughtworks.xstream.security.TypeHierarchyPermission;
 import com.thoughtworks.xstream.security.TypePermission;
 import com.thoughtworks.xstream.security.WildcardTypePermission;
 
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+
 
 /**
  * Simple facade to XStream library, a Java-XML serialization tool.
@@ -650,7 +655,7 @@ public class XStream {
         allowTypeHierarchy(TimeZone.class);
         //allowTypeHierarchy(Path.class);
 
-        final Set<Class<?>> types = new HashSet<>();
+        final Set<Class<?>> types = new UnifiedSet<>();
         types.addAll(Arrays.<Class<?>>asList(BitSet.class, Charset.class, Class.class, Currency.class, Date.class,
             DecimalFormatSymbols.class, File.class, Locale.class, Object.class, Pattern.class, StackTraceElement.class,
             String.class, StringBuffer.class, StringBuilder.class, URL.class, URI.class, UUID.class));
