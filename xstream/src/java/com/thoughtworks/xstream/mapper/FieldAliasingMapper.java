@@ -14,7 +14,12 @@ package com.thoughtworks.xstream.mapper;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.core.util.FastField;
 
 
@@ -25,8 +30,8 @@ import com.thoughtworks.xstream.core.util.FastField;
  */
 public class FieldAliasingMapper extends MapperWrapper {
 
-    protected final Map<FastField, String> fieldToAliasMap = new HashMap<>();
-    protected final Map<FastField, String> aliasToFieldMap = new HashMap<>();
+    protected final Map<FastField, String> fieldToAliasMap = new UnifiedMap<>();
+    protected final Map<FastField, String> aliasToFieldMap = new UnifiedMap<>();
     private final ElementIgnoringMapper elementIgnoringMapper;
 
     public FieldAliasingMapper(final Mapper wrapped) {

@@ -10,7 +10,12 @@
  * Created on 27. March 2006 by Joerg Schaible
  */
 package com.thoughtworks.xstream.mapper;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 /**
  * Mapper that allows aliasing of attribute names.
  * 

@@ -16,7 +16,12 @@ import java.lang.reflect.Modifier;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
 import com.thoughtworks.xstream.core.util.Primitives;
@@ -31,7 +36,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
         this.reflectionProvider = reflectionProvider;
     }
 
-    private final Map<Class<?>, ImplicitCollectionMapperForClass> classNameToMapper = new HashMap<>();
+    private final Map<Class<?>, ImplicitCollectionMapperForClass> classNameToMapper = new UnifiedMap<>();
 
     private ImplicitCollectionMapperForClass getMapper(final Class<?> declaredFor, final String fieldName) {
         Class<?> definedIn = declaredFor;
@@ -152,9 +157,9 @@ public class ImplicitCollectionMapper extends MapperWrapper {
 
     private class ImplicitCollectionMapperForClass {
         private final Class<?> definedIn;
-        private final Map<NamedItemType, ImplicitCollectionMappingImpl> namedItemTypeToDef = new HashMap<>();
-        private final Map<String, ImplicitCollectionMappingImpl> itemFieldNameToDef = new HashMap<>();
-        private final Map<String, ImplicitCollectionMappingImpl> fieldNameToDef = new HashMap<>();
+        private final Map<NamedItemType, ImplicitCollectionMappingImpl> namedItemTypeToDef = new UnifiedMap<>();
+        private final Map<String, ImplicitCollectionMappingImpl> itemFieldNameToDef = new UnifiedMap<>();
+        private final Map<String, ImplicitCollectionMappingImpl> fieldNameToDef = new UnifiedMap<>();
 
         ImplicitCollectionMapperForClass(final Class<?> definedIn) {
             this.definedIn = definedIn;

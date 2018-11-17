@@ -14,7 +14,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 
 /**
  * Comparator for {@link XppDom}. Comparator can trace the XPath where the comparison failed.
@@ -119,7 +124,7 @@ public class XppDomComparator implements Comparator<XppDom> {
 
             xpath.append('/');
 
-            final Map<String, int[]> names = new HashMap<>();
+            final Map<String, int[]> names = new UnifiedMap<>();
             for (int i = 0; i < children; ++i) {
                 final XppDom child1 = dom1.getChild(i);
                 final XppDom child2 = dom2.getChild(i);

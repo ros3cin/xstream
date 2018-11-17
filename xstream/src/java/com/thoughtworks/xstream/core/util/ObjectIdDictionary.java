@@ -10,7 +10,14 @@
  * Created on 09. May 2004 by Joe Walnes
  */
 package com.thoughtworks.xstream.core.util;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -26,7 +33,7 @@ import java.util.Map;
  */
 public class ObjectIdDictionary<E> {
 
-    private final Map<? super Wrapper, E> map = new HashMap<>();
+    private final Map<? super Wrapper, E> map = new UnifiedMap<>();
     private final ReferenceQueue<Object> queue = new ReferenceQueue<>();
 
     private static interface Wrapper {

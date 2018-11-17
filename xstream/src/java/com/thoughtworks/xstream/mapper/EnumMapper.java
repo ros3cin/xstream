@@ -14,7 +14,12 @@ package com.thoughtworks.xstream.mapper;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.converters.enums.EnumSingleValueConverter;
 import com.thoughtworks.xstream.core.Caching;
@@ -113,7 +118,7 @@ public class EnumMapper extends MapperWrapper implements Caching {
     }
 
     private Object readResolve() {
-        enumConverterMap = new HashMap<>();
+        enumConverterMap = new UnifiedMap<>();
         attributeMapper = lookupMapperOfType(AttributeMapper.class);
         return this;
     }

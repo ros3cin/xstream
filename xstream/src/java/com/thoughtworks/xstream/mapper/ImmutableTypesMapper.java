@@ -13,7 +13,13 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashSet;
 import java.util.Set;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
 
 /**
  * Mapper that specifies which types are basic immutable types. Types that are marked as immutable will be written
@@ -28,8 +34,8 @@ import java.util.Set;
  */
 public class ImmutableTypesMapper extends MapperWrapper {
 
-    private final Set<Class<?>> unreferenceableTypes = new HashSet<>();
-    private final Set<Class<?>> immutableTypes = new HashSet<>();
+    private final Set<Class<?>> unreferenceableTypes = new TreeSet<>();
+    private final Set<Class<?>> immutableTypes = new TreeSet<>();
 
     public ImmutableTypesMapper(final Mapper wrapped) {
         super(wrapped);

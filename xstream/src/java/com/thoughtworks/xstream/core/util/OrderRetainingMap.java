@@ -19,7 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 
 /**
  * @deprecated As of 1.4.8 use {@link java.util.LinkedHashMap}
@@ -28,7 +35,7 @@ import java.util.Set;
 public class OrderRetainingMap<K, V> extends HashMap<K, V> {
     private static final long serialVersionUID = 20151010L;
     private final ArraySet<K> keyOrder = new ArraySet<>();
-    private final List<V> valueOrder = new ArrayList<>();
+    private final List<V> valueOrder = new TreeList<>();
 
     public OrderRetainingMap() {
         super();

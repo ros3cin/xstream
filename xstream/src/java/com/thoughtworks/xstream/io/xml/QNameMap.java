@@ -14,7 +14,12 @@ package com.thoughtworks.xstream.io.xml;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 import javax.xml.namespace.QName;
 
 
@@ -66,10 +71,10 @@ public class QNameMap {
      */
     public synchronized void registerMapping(final QName qname, final String javaClassName) {
         if (javaToQName == null) {
-            javaToQName = Collections.synchronizedMap(new HashMap<String, QName>());
+            javaToQName = Collections.synchronizedMap(new UnifiedMap<String, QName>());
         }
         if (qnameToJava == null) {
-            qnameToJava = Collections.synchronizedMap(new HashMap<QName, String>());
+            qnameToJava = Collections.synchronizedMap(new UnifiedMap<QName, String>());
         }
         javaToQName.put(javaClassName, qname);
         qnameToJava.put(qname, javaClassName);

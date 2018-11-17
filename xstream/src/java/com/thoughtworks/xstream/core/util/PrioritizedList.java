@@ -14,6 +14,14 @@ package com.thoughtworks.xstream.core.util;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 
 
 /**
@@ -27,7 +35,7 @@ import java.util.TreeSet;
  */
 public class PrioritizedList<E> implements Iterable<E> {
 
-    private final Set<PrioritizedItem<E>> set = new TreeSet<>();
+    private final Set<PrioritizedItem<E>> set = new LinkedHashSet<>();
     private int lowestPriority = Integer.MAX_VALUE;
     private int lastId = 0;
 

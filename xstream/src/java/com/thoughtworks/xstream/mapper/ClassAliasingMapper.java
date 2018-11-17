@@ -13,7 +13,12 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 import com.thoughtworks.xstream.core.util.Primitives;
 
 
@@ -25,9 +30,9 @@ import com.thoughtworks.xstream.core.util.Primitives;
  */
 public class ClassAliasingMapper extends MapperWrapper {
 
-    private final Map<Class<?>, String> typeToName = new HashMap<>();
-    private final Map<String, String> classToName = new HashMap<>();
-    private transient Map<String, String> nameToType = new HashMap<>();
+    private final Map<Class<?>, String> typeToName = new UnifiedMap<>();
+    private final Map<String, String> classToName = new UnifiedMap<>();
+    private transient Map<String, String> nameToType = new UnifiedMap<>();
 
     public ClassAliasingMapper(final Mapper wrapped) {
         super(wrapped);

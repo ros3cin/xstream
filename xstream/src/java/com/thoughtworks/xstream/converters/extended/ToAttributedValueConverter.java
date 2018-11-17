@@ -18,7 +18,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -222,10 +228,10 @@ public class ToAttributedValueConverter implements Converter {
         final Object result = reflectionProvider.newInstance(context.getRequiredType());
         final Class<?> resultType = result.getClass();
 
-        final Set<FastField> seenFields = new HashSet<>();
+        final Set<FastField> seenFields = new TreeSet<>();
         final Iterator<String> it = reader.getAttributeNames();
 
-        final Set<String> systemAttributes = new HashSet<>();
+        final Set<String> systemAttributes = new TreeSet<>();
         systemAttributes.add(mapper.aliasForSystemAttribute("class"));
 
         // Process attributes before recursing into child elements.

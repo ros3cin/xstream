@@ -22,7 +22,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
 import com.thoughtworks.xstream.converters.reflection.MissingFieldException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
 import com.thoughtworks.xstream.core.Caching;
@@ -36,7 +42,7 @@ import com.thoughtworks.xstream.core.Caching;
  */
 public class PropertyDictionary implements Caching {
     private transient Map<Class<?>, Map<String, PropertyDescriptor>> propertyNameCache = Collections.synchronizedMap(
-        new HashMap<Class<?>, Map<String, PropertyDescriptor>>());
+        new UnifiedMap<Class<?>, Map<String, PropertyDescriptor>>());
     private final PropertySorter sorter;
 
     public PropertyDictionary() {

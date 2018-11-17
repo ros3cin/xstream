@@ -16,7 +16,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 import com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.StreamException;
@@ -94,7 +101,7 @@ public class BinaryStreamWriter implements ExtendedHierarchicalStreamWriter {
     private class IdRegistry {
 
         private long nextId = 0;
-        private final Map<String, Long> ids = new HashMap<>();
+        private final Map<String, Long> ids = new UnifiedMap<>();
 
         public long getId(final String value) {
             Long id = ids.get(value);

@@ -12,7 +12,12 @@ package com.thoughtworks.xstream.io.naming;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 
 /**
  * A NameCoder that encodes and decodes names based on a map.
@@ -41,11 +46,11 @@ public class StaticNameCoder implements NameCoder {
      * @since 1.4
      */
     public StaticNameCoder(final Map<String, String> java2Node, final Map<String, String> java2Attribute) {
-        this.java2Node = new HashMap<>(java2Node);
+        this.java2Node = new UnifiedMap<>(java2Node);
         if (java2Node == java2Attribute || java2Attribute == null) {
             this.java2Attribute = this.java2Node;
         } else {
-            this.java2Attribute = new HashMap<>(java2Attribute);
+            this.java2Attribute = new UnifiedMap<>(java2Attribute);
         }
         readResolve();
     }
@@ -85,7 +90,7 @@ public class StaticNameCoder implements NameCoder {
     }
 
     private Map<String, String> invertMap(final Map<String, String> map) {
-        final Map<String, String> inverseMap = new HashMap<>(map.size());
+        final Map<String, String> inverseMap = new UnifiedMap<>(map.size());
         for (final Map.Entry<String, String> entry : map.entrySet()) {
             inverseMap.put(entry.getValue(), entry.getKey());
         }

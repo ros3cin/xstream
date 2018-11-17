@@ -17,7 +17,14 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 import com.thoughtworks.xstream.converters.ErrorWriter;
 import com.thoughtworks.xstream.io.ExtendedHierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
@@ -221,7 +228,7 @@ public class BinaryStreamReader implements ExtendedHierarchicalStreamReader {
 
     private static class IdRegistry {
 
-        private final Map<Long, String> map = new HashMap<>();
+        private final Map<Long, String> map = new UnifiedMap<>();
 
         public void put(final long id, final String value) {
             map.put(Long.valueOf(id), value);

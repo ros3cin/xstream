@@ -30,7 +30,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAliasType;
@@ -71,8 +78,8 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
     private transient ElementIgnoringMapper elementIgnoringMapper;
     private transient AttributeMapper attributeMapper;
     private transient LocalConversionMapper localConversionMapper;
-    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new HashMap<>();
-    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new HashSet<Class<?>>());
+    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new UnifiedMap<>();
+    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new TreeSet<Class<?>>());
 
     /**
      * Construct an AnnotationMapper.
@@ -474,7 +481,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                     + (targetType != null ? " for type " + targetType.getName() : ""), e);
             }
             if (converterMapping == null) {
-                converterMapping = new HashMap<>();
+                converterMapping = new UnifiedMap<>();
                 converterCache.put(converterType, converterMapping);
             }
             converterMapping.put(parameter, converter);

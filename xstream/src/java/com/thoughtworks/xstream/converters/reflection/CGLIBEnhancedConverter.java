@@ -33,7 +33,14 @@ import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.CGLIBMapper;
 import com.thoughtworks.xstream.mapper.Mapper;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.CallbackFilter;
 import net.sf.cglib.proxy.Enhancer;
@@ -72,7 +79,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
             final Mapper mapper, final ReflectionProvider reflectionProvider,
             final ClassLoaderReference classLoaderReference) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoaderReference);
-        fieldCache = new HashMap<>();
+        fieldCache = new UnifiedMap<>();
     }
 
     /**
@@ -230,8 +237,8 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
 
         try {
             source.setCallbacks(reverseEngineeringCallbacks);
-            final Set<Class<?>> interfaces = new HashSet<>();
-            final Set<Method> methods = new HashSet<>();
+            final Set<Class<?>> interfaces = new LinkedHashSet<>();
+            final Set<Method> methods = new LinkedHashSet<>();
             Class<?> type = source.getClass();
             do {
                 methods.addAll(Arrays.asList(type.getDeclaredMethods()));

@@ -12,7 +12,12 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.eclipse.collections.impl.list.mutable.FastList;
+import org.apache.commons.collections4.map.HashedMap;
+import org.eclipse.collections.impl.set.mutable.UnifiedSet;
+import org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet;
+import org.eclipse.collections.impl.map.mutable.UnifiedMap;
+import org.apache.commons.collections4.list.TreeList;
 
 /**
  * Abstract base class for AttributeAliassingMapper and its system version.
@@ -22,8 +27,8 @@ import java.util.Map;
  */
 public abstract class AbstractAttributeAliasingMapper extends MapperWrapper {
 
-    protected final Map<String, String> aliasToName = new HashMap<>();
-    protected transient Map<String, String> nameToAlias = new HashMap<>();
+    protected final Map<String, String> aliasToName = new UnifiedMap<>();
+    protected transient Map<String, String> nameToAlias = new UnifiedMap<>();
 
     public AbstractAttributeAliasingMapper(final Mapper wrapped) {
         super(wrapped);
@@ -35,7 +40,7 @@ public abstract class AbstractAttributeAliasingMapper extends MapperWrapper {
     }
 
     Object readResolve() {
-        nameToAlias = new HashMap<>();
+        nameToAlias = new UnifiedMap<>();
         for (final Map.Entry<String, String> entry : aliasToName.entrySet()) {
             nameToAlias.put(entry.getValue(), entry.getKey());
         }
