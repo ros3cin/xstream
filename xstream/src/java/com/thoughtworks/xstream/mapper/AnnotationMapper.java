@@ -78,8 +78,8 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
     private transient ElementIgnoringMapper elementIgnoringMapper;
     private transient AttributeMapper attributeMapper;
     private transient LocalConversionMapper localConversionMapper;
-    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new UnifiedMap<>();
-    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new TreeSet<Class<?>>());
+    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new HashMap<>();
+    private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new HashSet<Class<?>>());
 
     /**
      * Construct an AnnotationMapper.

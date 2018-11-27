@@ -43,10 +43,10 @@ import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
 public class AttributeMapper extends MapperWrapper {
 
     private final Map<String, Class<?>> fieldNameToTypeMap = new UnifiedMap<>();
-    private final Set<Class<?>> typeSet = new TreeSet<>();
+    private final Set<Class<?>> typeSet = new HashSet<>();
     private final ConverterLookup converterLookup;
     private final ReflectionProvider reflectionProvider;
-    private final Set<Field> fieldToUseAsAttribute = new TreeSet<>();
+    private final Set<Field> fieldToUseAsAttribute = new HashSet<>();
 
     public AttributeMapper(
             final Mapper wrapped, final ConverterLookup converterLookup, final ReflectionProvider refProvider) {

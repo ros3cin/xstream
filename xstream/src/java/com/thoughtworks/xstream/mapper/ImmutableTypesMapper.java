@@ -34,8 +34,8 @@ import java.util.TreeSet;
  */
 public class ImmutableTypesMapper extends MapperWrapper {
 
-    private final Set<Class<?>> unreferenceableTypes = new TreeSet<>();
-    private final Set<Class<?>> immutableTypes = new TreeSet<>();
+    private final Set<Class<?>> unreferenceableTypes = new HashSet<>();
+    private final Set<Class<?>> immutableTypes = new HashSet<>();
 
     public ImmutableTypesMapper(final Mapper wrapped) {
         super(wrapped);

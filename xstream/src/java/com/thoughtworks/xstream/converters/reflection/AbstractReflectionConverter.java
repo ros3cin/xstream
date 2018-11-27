@@ -107,7 +107,7 @@ public abstract class AbstractReflectionConverter implements Converter, Caching 
 
         // Attributes might be preferred to child elements ...
         reflectionProvider.visitSerializableFields(source, new ReflectionProvider.Visitor() {
-            final Set<String> writtenAttributes = new TreeSet<>();
+            final Set<String> writtenAttributes = new HashSet<>();
 
             @Override
             public void visit(final String fieldName, final Class<?> type, final Class<?> definedIn,

@@ -32,7 +32,7 @@ import com.thoughtworks.xstream.core.util.FastField;
 public class ElementIgnoringMapper extends MapperWrapper {
 
     protected final Set<Pattern> unknownElementsToIgnore = new LinkedHashSet<>();
-    protected final Set<FastField> fieldsToOmit = new TreeSet<>();
+    protected final Set<FastField> fieldsToOmit = new HashSet<>();
 
     public ElementIgnoringMapper(final Mapper wrapped) {
         super(wrapped);
