@@ -16,7 +16,6 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Store IDs against given object references.
  * <p>
@@ -26,10 +25,12 @@ import java.util.Map;
  */
 public class ObjectIdDictionary<E> {
 
-    private final Map<? super Wrapper, E> map = new HashMap<>();
+    private final Map<? super Wrapper, E> map = new java.util.LinkedHashMap<>();
+
     private final ReferenceQueue<Object> queue = new ReferenceQueue<>();
 
     private static interface Wrapper {
+
         @Override
         int hashCode();
 
@@ -45,6 +46,7 @@ public class ObjectIdDictionary<E> {
     private static class IdWrapper implements Wrapper {
 
         private final Object obj;
+
         private final int hashCode;
 
         public IdWrapper(final Object obj) {
@@ -59,7 +61,7 @@ public class ObjectIdDictionary<E> {
 
         @Override
         public boolean equals(final Object other) {
-            return obj == ((Wrapper)other).get();
+            return obj == ((Wrapper) other).get();
         }
 
         @Override
@@ -89,7 +91,7 @@ public class ObjectIdDictionary<E> {
 
         @Override
         public boolean equals(final Object other) {
-            return get() == ((Wrapper)other).get();
+            return get() == ((Wrapper) other).get();
         }
 
         @Override
@@ -127,7 +129,7 @@ public class ObjectIdDictionary<E> {
     @SuppressWarnings("unchecked")
     private void cleanup() {
         WeakIdWrapper wrapper;
-        while ((wrapper = (WeakIdWrapper)queue.poll()) != null) {
+        while ((wrapper = (WeakIdWrapper) queue.poll()) != null) {
             map.remove(wrapper);
         }
     }

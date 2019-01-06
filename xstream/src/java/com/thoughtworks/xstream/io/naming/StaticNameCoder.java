@@ -13,7 +13,6 @@ package com.thoughtworks.xstream.io.naming;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * A NameCoder that encodes and decodes names based on a map.
  * <p>
@@ -21,31 +20,33 @@ import java.util.Map;
  * target format. If a name cannot be found in the map, it is assumed not to be mapped at all. Note that the values of
  * the map should be unique also, otherwise the decoding will produce wrong results.
  * </p>
- * 
+ *
  * @author J&ouml;rg Schaible
  * @since 1.4
  */
 public class StaticNameCoder implements NameCoder {
 
     private final Map<String, String> java2Node;
+
     private final Map<String, String> java2Attribute;
 
     private transient Map<String, String> node2Java;
+
     private transient Map<String, String> attribute2Java;
 
     /**
      * Construct a StaticNameCoder.
-     * 
+     *
      * @param java2Node mapping of Java names to nodes
      * @param java2Attribute mapping of Java names to attributes
      * @since 1.4
      */
     public StaticNameCoder(final Map<String, String> java2Node, final Map<String, String> java2Attribute) {
-        this.java2Node = new HashMap<>(java2Node);
+        this.java2Node = new java.util.LinkedHashMap<>(java2Node);
         if (java2Node == java2Attribute || java2Attribute == null) {
             this.java2Attribute = this.java2Node;
         } else {
-            this.java2Attribute = new HashMap<>(java2Attribute);
+            this.java2Attribute = new java.util.LinkedHashMap<>(java2Attribute);
         }
         readResolve();
     }

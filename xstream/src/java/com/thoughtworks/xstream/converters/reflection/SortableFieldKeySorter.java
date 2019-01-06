@@ -16,10 +16,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.core.Caching;
-
 
 /**
  * The default implementation for sorting fields. Invoke registerFieldOrder in order to set the field order for an
@@ -31,7 +29,8 @@ import com.thoughtworks.xstream.core.Caching;
 public class SortableFieldKeySorter implements FieldKeySorter, Caching {
 
     private final static FieldKey[] EMPTY_FIELD_KEY_ARRAY = {};
-    private final Map<Class<?>, Comparator<FieldKey>> map = new HashMap<>();
+
+    private final Map<Class<?>, Comparator<FieldKey>> map = new java.util.LinkedHashMap<>();
 
     @Override
     public Map<FieldKey, Field> sort(final Class<?> type, final Map<FieldKey, Field> keyedByFieldKey) {
@@ -63,6 +62,7 @@ public class SortableFieldKeySorter implements FieldKeySorter, Caching {
     private class FieldComparator implements Comparator<FieldKey> {
 
         private final String[] fieldOrder;
+
         private final Class<?> type;
 
         public FieldComparator(final Class<?> type, final String[] fields) {
@@ -82,8 +82,7 @@ public class SortableFieldKeySorter implements FieldKeySorter, Caching {
             }
             if (firstPosition == -1 || secondPosition == -1) {
                 // field not defined!!!
-                final ConversionException exception = new ConversionException(
-                    "Incomplete list of serialized fields for type");
+                final ConversionException exception = new ConversionException("Incomplete list of serialized fields for type");
                 exception.add("sort-type", type.getName());
                 throw exception;
             }
@@ -94,7 +93,6 @@ public class SortableFieldKeySorter implements FieldKeySorter, Caching {
         public int compare(final FieldKey first, final FieldKey second) {
             return compare(first.getFieldName(), second.getFieldName());
         }
-
     }
 
     @Override

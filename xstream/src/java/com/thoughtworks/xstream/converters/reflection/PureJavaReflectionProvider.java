@@ -26,9 +26,7 @@ import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
 import com.thoughtworks.xstream.core.util.Fields;
-
 
 /**
  * Pure Java ObjectFactory that instantiates objects using standard Java reflection, however the types of objects that
@@ -48,6 +46,7 @@ import com.thoughtworks.xstream.core.util.Fields;
 public class PureJavaReflectionProvider implements ReflectionProvider {
 
     private transient Map<Class<?>, byte[]> serializedDataCache;
+
     protected FieldDictionary fieldDictionary;
 
     public PureJavaReflectionProvider() {
@@ -82,9 +81,9 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
             oaex = new ObjectAccessException("Cannot construct type", e);
         } catch (final InvocationTargetException e) {
             if (e.getTargetException() instanceof RuntimeException) {
-                throw (RuntimeException)e.getTargetException();
+                throw (RuntimeException) e.getTargetException();
             } else if (e.getTargetException() instanceof Error) {
-                throw (Error)e.getTargetException();
+                throw (Error) e.getTargetException();
             } else {
                 oaex = new ObjectAccessException("Constructor for type threw an exception", e.getTargetException());
             }
@@ -107,15 +106,17 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
                     stream.writeByte(ObjectStreamConstants.TC_CLASSDESC);
                     stream.writeUTF(type.getName());
                     stream.writeLong(ObjectStreamClass.lookup(type).getSerialVersionUID());
-                    stream.writeByte(2); // classDescFlags (2 = Serializable)
-                    stream.writeShort(0); // field count
+                    // classDescFlags (2 = Serializable)
+                    stream.writeByte(2);
+                    // field count
+                    stream.writeShort(0);
                     stream.writeByte(ObjectStreamConstants.TC_ENDBLOCKDATA);
                     stream.writeByte(ObjectStreamConstants.TC_NULL);
                     data = bytes.toByteArray();
                     serializedDataCache.put(type, data);
                 }
-
                 final ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(data)) {
+
                     @Override
                     protected Class<?> resolveClass(final ObjectStreamClass desc) throws ClassNotFoundException {
                         return Class.forName(desc.getName(), false, type.getClassLoader());
@@ -134,7 +135,7 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
 
     @Override
     public void visitSerializableFields(final Object object, final ReflectionProvider.Visitor visitor) {
-        for (final Iterator<Field> iterator = fieldDictionary.fieldsFor(object.getClass()); iterator.hasNext();) {
+        for (final Iterator<Field> iterator = fieldDictionary.fieldsFor(object.getClass()); iterator.hasNext(); ) {
             final Field field = iterator.next();
             if (!fieldModifiersSupported(field)) {
                 continue;
@@ -200,6 +201,6 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
     }
 
     protected void init() {
-        serializedDataCache = new HashMap<>();
+        serializedDataCache = new java.util.LinkedHashMap<>();
     }
 }
