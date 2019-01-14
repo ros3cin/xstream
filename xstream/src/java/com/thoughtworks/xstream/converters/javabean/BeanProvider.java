@@ -20,11 +20,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorWritingException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
-
 
 public class BeanProvider implements JavaBeanProvider {
 
@@ -33,6 +31,7 @@ public class BeanProvider implements JavaBeanProvider {
      */
     @Deprecated
     protected static final Object[] NO_PARAMS = new Object[0];
+
     protected PropertyDictionary propertyDictionary;
 
     /**
@@ -155,7 +154,6 @@ public class BeanProvider implements JavaBeanProvider {
      */
     @Deprecated
     protected Constructor<?> getDefaultConstrutor(final Class<?> type) {
-
         final Constructor<?>[] constructors = type.getConstructors();
         for (final Constructor<?> c : constructors) {
             if (c.getParameterTypes().length == 0 && Modifier.isPublic(c.getModifiers())) {
@@ -166,9 +164,8 @@ public class BeanProvider implements JavaBeanProvider {
     }
 
     protected PropertyDescriptor[] getSerializableProperties(final Object object) {
-        final List<PropertyDescriptor> result = new ArrayList<>();
-        for (final Iterator<PropertyDescriptor> iter = propertyDictionary.propertiesFor(object.getClass()); iter
-            .hasNext();) {
+        final List<PropertyDescriptor> result = new org.apache.commons.collections4.list.TreeList<>();
+        for (final Iterator<PropertyDescriptor> iter = propertyDictionary.propertiesFor(object.getClass()); iter.hasNext(); ) {
             final PropertyDescriptor descriptor = iter.next();
             if (canStreamProperty(descriptor)) {
                 result.add(descriptor);
@@ -194,5 +191,6 @@ public class BeanProvider implements JavaBeanProvider {
      * @deprecated As of 1.4 use {@link JavaBeanProvider.Visitor}
      */
     @Deprecated
-    public interface Visitor extends JavaBeanProvider.Visitor {}
+    public interface Visitor extends JavaBeanProvider.Visitor {
+    }
 }

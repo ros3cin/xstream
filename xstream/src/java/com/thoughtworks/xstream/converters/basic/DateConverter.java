@@ -19,13 +19,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorReporter;
 import com.thoughtworks.xstream.converters.ErrorWriter;
 import com.thoughtworks.xstream.core.JVM;
 import com.thoughtworks.xstream.core.util.ThreadSafeSimpleDateFormat;
-
 
 /**
  * Converts a {@link Date} to a string as a date format, retaining precision down to milliseconds.
@@ -50,17 +48,20 @@ import com.thoughtworks.xstream.core.util.ThreadSafeSimpleDateFormat;
 public class DateConverter extends AbstractSingleValueConverter implements ErrorReporter {
 
     private static final String[] DEFAULT_ACCEPTABLE_FORMATS;
+
     private static final String DEFAULT_PATTERN;
+
     private static final String DEFAULT_ERA_PATTERN;
+
     private static final TimeZone UTC;
+
     private static final long ERA_START;
 
     static {
         UTC = TimeZone.getTimeZone("UTC");
-
         final String defaultPattern = "yyyy-MM-dd HH:mm:ss.S z";
         final String defaultEraPattern = "yyyy-MM-dd G HH:mm:ss.S z";
-        final List<String> acceptablePatterns = new ArrayList<>();
+        final List<String> acceptablePatterns = new org.apache.commons.collections4.list.TreeList<>();
         final boolean utcSupported = JVM.canParseUTCDateFormat();
         DEFAULT_PATTERN = utcSupported ? defaultPattern : "yyyy-MM-dd HH:mm:ss.S 'UTC'";
         DEFAULT_ERA_PATTERN = utcSupported ? defaultEraPattern : "yyyy-MM-dd G HH:mm:ss.S 'UTC'";
@@ -83,7 +84,6 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
         // backwards compatibility
         acceptablePatterns.add("yyyy-MM-dd HH:mm:ssa");
         DEFAULT_ACCEPTABLE_FORMATS = acceptablePatterns.toArray(new String[acceptablePatterns.size()]);
-
         final Calendar cal = Calendar.getInstance();
         cal.setTimeZone(UTC);
         cal.clear();
@@ -92,7 +92,9 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
     }
 
     private final ThreadSafeSimpleDateFormat defaultFormat;
+
     private final ThreadSafeSimpleDateFormat defaultEraFormat;
+
     private final ThreadSafeSimpleDateFormat[] acceptableFormats;
 
     /**
@@ -164,9 +166,7 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
      * @param lenient the lenient setting of {@link SimpleDateFormat#setLenient(boolean)}
      * @since 1.4
      */
-    public DateConverter(
-            final String defaultFormat, final String[] acceptableFormats, final TimeZone timeZone,
-            final boolean lenient) {
+    public DateConverter(final String defaultFormat, final String[] acceptableFormats, final TimeZone timeZone, final boolean lenient) {
         this(DEFAULT_ERA_PATTERN, defaultFormat, acceptableFormats, Locale.ENGLISH, timeZone, lenient);
     }
 
@@ -182,21 +182,16 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
      * @param lenient the lenient setting of {@link SimpleDateFormat#setLenient(boolean)}
      * @since 1.4.4
      */
-    public DateConverter(
-            final String defaultEraFormat, final String defaultFormat, final String[] acceptableFormats,
-            final Locale locale, final TimeZone timeZone, final boolean lenient) {
+    public DateConverter(final String defaultEraFormat, final String defaultFormat, final String[] acceptableFormats, final Locale locale, final TimeZone timeZone, final boolean lenient) {
         if (defaultEraFormat != null) {
             this.defaultEraFormat = new ThreadSafeSimpleDateFormat(defaultEraFormat, timeZone, locale, 4, 20, lenient);
         } else {
             this.defaultEraFormat = null;
         }
         this.defaultFormat = new ThreadSafeSimpleDateFormat(defaultFormat, timeZone, locale, 4, 20, lenient);
-        this.acceptableFormats = acceptableFormats != null
-            ? new ThreadSafeSimpleDateFormat[acceptableFormats.length]
-            : new ThreadSafeSimpleDateFormat[0];
+        this.acceptableFormats = acceptableFormats != null ? new ThreadSafeSimpleDateFormat[acceptableFormats.length] : new ThreadSafeSimpleDateFormat[0];
         for (int i = 0; i < this.acceptableFormats.length; i++) {
-            this.acceptableFormats[i] = new ThreadSafeSimpleDateFormat(acceptableFormats[i], timeZone, locale, 1, 20,
-                lenient);
+            this.acceptableFormats[i] = new ThreadSafeSimpleDateFormat(acceptableFormats[i], timeZone, locale, 1, 20, lenient);
         }
     }
 
@@ -211,21 +206,21 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
             try {
                 return defaultEraFormat.parse(str);
             } catch (final ParseException e) {
-                // try next ...
+            // try next ...
             }
         }
         if (defaultEraFormat != defaultFormat) {
             try {
                 return defaultFormat.parse(str);
             } catch (final ParseException e) {
-                // try next ...
+            // try next ...
             }
         }
         for (final ThreadSafeSimpleDateFormat acceptableFormat : acceptableFormats) {
             try {
                 return acceptableFormat.parse(str);
             } catch (final ParseException e3) {
-                // no worries, let's try the next format.
+            // no worries, let's try the next format.
             }
         }
         // no dateFormats left to try
@@ -236,7 +231,7 @@ public class DateConverter extends AbstractSingleValueConverter implements Error
 
     @Override
     public String toString(final Object obj) {
-        final Date date = (Date)obj;
+        final Date date = (Date) obj;
         if (date.getTime() < ERA_START && defaultEraFormat != null) {
             return defaultEraFormat.format(date);
         } else {

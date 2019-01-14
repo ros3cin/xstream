@@ -17,11 +17,9 @@ import java.lang.reflect.Modifier;
 import java.text.AttributedCharacterIterator;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 import com.thoughtworks.xstream.core.util.Fields;
-
 
 /**
  * An abstract converter implementation for constants of {@link java.text.AttributedCharacterIterator.Attribute} and
@@ -30,37 +28,35 @@ import com.thoughtworks.xstream.core.util.Fields;
  * @author J&ouml;rg Schaible
  * @since 1.2.2
  */
-public class AbstractAttributedCharacterIteratorAttributeConverter<T extends AttributedCharacterIterator.Attribute>
-    extends AbstractSingleValueConverter {
+public class AbstractAttributedCharacterIteratorAttributeConverter<T extends AttributedCharacterIterator.Attribute> extends AbstractSingleValueConverter {
 
-    private static final Map<String, Map<String, ? extends AttributedCharacterIterator.Attribute>> instanceMaps =
-            new HashMap<>();
+    private static final Map<String, Map<String, ? extends AttributedCharacterIterator.Attribute>> instanceMaps = new org.apache.commons.collections4.map.HashedMap<>();
+
     private static final Method getName;
 
     static {
         Method method = null;
         try {
-            method = AttributedCharacterIterator.Attribute.class.getDeclaredMethod("getName", (Class[])null);
+            method = AttributedCharacterIterator.Attribute.class.getDeclaredMethod("getName", (Class[]) null);
             if (!method.isAccessible()) {
                 method.setAccessible(true);
             }
         } catch (final SecurityException e) {
-            // ignore for now
+        // ignore for now
         } catch (final NoSuchMethodException e) {
-            // ignore for now
+        // ignore for now
         }
         getName = method;
     }
 
     private final Class<? extends T> type;
+
     private transient Map<String, T> attributeMap;
 
     public AbstractAttributedCharacterIteratorAttributeConverter(final Class<? extends T> type) {
         super();
         if (!AttributedCharacterIterator.Attribute.class.isAssignableFrom(type)) {
-            throw new IllegalArgumentException(type.getName()
-                + " is not a "
-                + AttributedCharacterIterator.Attribute.class.getName());
+            throw new IllegalArgumentException(type.getName() + " is not a " + AttributedCharacterIterator.Attribute.class.getName());
         }
         this.type = type;
         readResolve();
@@ -74,7 +70,7 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
     @Override
     public String toString(final Object source) {
         @SuppressWarnings("unchecked")
-        final T t = (T)source;
+        final T t = (T) source;
         return getName(t);
     }
 
@@ -82,7 +78,7 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
         Exception ex = null;
         if (getName != null) {
             try {
-                return (String)getName.invoke(attribute);
+                return (String) getName.invoke(attribute);
             } catch (final IllegalAccessException e) {
                 ex = e;
             } catch (final InvocationTargetException e) {
@@ -112,15 +108,15 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
 
     private Object readResolve() {
         @SuppressWarnings("unchecked")
-        final Map<String, T> typedMap = (Map<String, T>)instanceMaps.get(type.getName());
+        final Map<String, T> typedMap = (Map<String, T>) instanceMaps.get(type.getName());
         attributeMap = typedMap;
         if (attributeMap == null) {
-            attributeMap = new HashMap<>();
+            attributeMap = new org.apache.commons.collections4.map.HashedMap<>();
             final Field instanceMap = Fields.locate(type, Map.class, true);
             if (instanceMap != null) {
                 try {
                     @SuppressWarnings("unchecked")
-                    final Map<String, T> map = (Map<String, T>)Fields.read(instanceMap, null);
+                    final Map<String, T> map = (Map<String, T>) Fields.read(instanceMap, null);
                     if (map != null) {
                         boolean valid = true;
                         for (final Map.Entry<String, T> entry : map.entrySet()) {
@@ -139,7 +135,7 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
                     for (final Field field : fields) {
                         if (field.getType() == type == Modifier.isStatic(field.getModifiers())) {
                             @SuppressWarnings("unchecked")
-                            final T attribute = (T)Fields.read(field, null);
+                            final T attribute = (T) Fields.read(field, null);
                             attributeMap.put(toString(attribute), attribute);
                         }
                     }
@@ -155,5 +151,4 @@ public class AbstractAttributedCharacterIteratorAttributeConverter<T extends Att
         }
         return this;
     }
-
 }

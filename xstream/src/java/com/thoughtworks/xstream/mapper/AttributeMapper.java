@@ -16,17 +16,15 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
 
-
 /**
  * Mapper that allows the usage of attributes for fields and corresponding types or specified arbitrary types. It is
  * responsible for the lookup of the {@link SingleValueConverter} for item types and attribute names.
- * 
+ *
  * @author Paul Hammant
  * @author Ian Cartwright
  * @author J&ouml;rg Schaible
@@ -36,14 +34,17 @@ import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
  */
 public class AttributeMapper extends MapperWrapper {
 
-    private final Map<String, Class<?>> fieldNameToTypeMap = new HashMap<>();
-    private final Set<Class<?>> typeSet = new HashSet<>();
-    private final ConverterLookup converterLookup;
-    private final ReflectionProvider reflectionProvider;
-    private final Set<Field> fieldToUseAsAttribute = new HashSet<>();
+    private final Map<String, Class<?>> fieldNameToTypeMap = new org.apache.commons.collections4.map.HashedMap<>();
 
-    public AttributeMapper(
-            final Mapper wrapped, final ConverterLookup converterLookup, final ReflectionProvider refProvider) {
+    private final Set<Class<?>> typeSet = new java.util.LinkedHashSet<>();
+
+    private final ConverterLookup converterLookup;
+
+    private final ReflectionProvider reflectionProvider;
+
+    private final Set<Field> fieldToUseAsAttribute = new java.util.LinkedHashSet<>();
+
+    public AttributeMapper(final Mapper wrapped, final ConverterLookup converterLookup, final ReflectionProvider refProvider) {
         super(wrapped);
         this.converterLookup = converterLookup;
         reflectionProvider = refProvider;
@@ -60,15 +61,14 @@ public class AttributeMapper extends MapperWrapper {
     private SingleValueConverter getLocalConverterFromItemType(final Class<?> type) {
         final Converter converter = converterLookup.lookupConverterForType(type);
         if (converter != null && converter instanceof SingleValueConverter) {
-            return (SingleValueConverter)converter;
+            return (SingleValueConverter) converter;
         } else {
             return null;
         }
     }
 
     @Override
-    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type,
-            final Class<?> definedIn) {
+    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type, final Class<?> definedIn) {
         if (shouldLookForSingleValueConverter(fieldName, type, definedIn)) {
             final SingleValueConverter converter = getLocalConverterFromItemType(type);
             if (converter != null) {
@@ -78,8 +78,7 @@ public class AttributeMapper extends MapperWrapper {
         return super.getConverterFromItemType(fieldName, type, definedIn);
     }
 
-    public boolean shouldLookForSingleValueConverter(final String fieldName, final Class<?> type,
-            final Class<?> definedIn) {
+    public boolean shouldLookForSingleValueConverter(final String fieldName, final Class<?> type, final Class<?> definedIn) {
         if (typeSet.contains(type)) {
             return true;
         } else if (fieldNameToTypeMap.get(fieldName) == type) {
@@ -102,8 +101,7 @@ public class AttributeMapper extends MapperWrapper {
     }
 
     @Override
-    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute,
-            final Class<?> type) {
+    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute, final Class<?> type) {
         if (shouldLookForSingleValueConverter(attribute, type, definedIn)) {
             final SingleValueConverter converter = getLocalConverterFromItemType(type);
             if (converter != null) {
@@ -115,7 +113,7 @@ public class AttributeMapper extends MapperWrapper {
 
     /**
      * Tells this mapper to use an attribute for this field.
-     * 
+     *
      * @param field the field itself
      * @since 1.2.2
      */
@@ -125,7 +123,7 @@ public class AttributeMapper extends MapperWrapper {
 
     /**
      * Tells this mapper to use an attribute for this field.
-     * 
+     *
      * @param definedIn the declaring class of the field
      * @param fieldName the name of the field
      * @throws IllegalArgumentException if the field does not exist

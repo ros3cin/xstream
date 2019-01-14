@@ -16,11 +16,9 @@ import java.lang.reflect.Modifier;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
 import com.thoughtworks.xstream.core.util.Primitives;
-
 
 public class ImplicitCollectionMapper extends MapperWrapper {
 
@@ -31,7 +29,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
         this.reflectionProvider = reflectionProvider;
     }
 
-    private final Map<Class<?>, ImplicitCollectionMapperForClass> classNameToMapper = new HashMap<>();
+    private final Map<Class<?>, ImplicitCollectionMapperForClass> classNameToMapper = new org.apache.commons.collections4.map.HashedMap<>();
 
     private ImplicitCollectionMapperForClass getMapper(final Class<?> declaredFor, final String fieldName) {
         Class<?> definedIn = declaredFor;
@@ -60,8 +58,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
     }
 
     @Override
-    public String getFieldNameForItemTypeAndName(final Class<?> definedIn, final Class<?> itemType,
-            final String itemFieldName) {
+    public String getFieldNameForItemTypeAndName(final Class<?> definedIn, final Class<?> itemType, final String itemFieldName) {
         final ImplicitCollectionMapperForClass mapper = getMapper(definedIn, null);
         if (mapper != null) {
             return mapper.getFieldNameForItemTypeAndName(itemType, itemFieldName);
@@ -81,8 +78,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
     }
 
     @Override
-    public ImplicitCollectionMapping getImplicitCollectionDefForFieldName(final Class<?> itemType,
-            final String fieldName) {
+    public ImplicitCollectionMapping getImplicitCollectionDefForFieldName(final Class<?> itemType, final String fieldName) {
         final ImplicitCollectionMapperForClass mapper = getMapper(itemType, fieldName);
         if (mapper != null) {
             return mapper.getImplicitCollectionDefForFieldName(fieldName);
@@ -95,13 +91,11 @@ public class ImplicitCollectionMapper extends MapperWrapper {
         add(definedIn, fieldName, null, itemType);
     }
 
-    public void add(final Class<?> definedIn, final String fieldName, final String itemFieldName,
-            final Class<?> itemType) {
+    public void add(final Class<?> definedIn, final String fieldName, final String itemFieldName, final Class<?> itemType) {
         add(definedIn, fieldName, itemFieldName, itemType, null);
     }
 
-    public void add(final Class<?> definedIn, final String fieldName, final String itemFieldName, Class<?> itemType,
-            final String keyFieldName) {
+    public void add(final Class<?> definedIn, final String fieldName, final String itemFieldName, Class<?> itemType, final String keyFieldName) {
         Field field = null;
         if (definedIn != null) {
             Class<?> declaredIn = definedIn;
@@ -137,11 +131,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
                 } else {
                     itemType = itemType.isPrimitive() ? Primitives.box(itemType) : itemType;
                     if (!componentType.isAssignableFrom(itemType)) {
-                        throw new InitializationException("Field \""
-                            + fieldName
-                            + "\" declares an array, but the array type is not compatible with "
-                            + itemType.getName());
-
+                        throw new InitializationException("Field \"" + fieldName + "\" declares an array, but the array type is not compatible with " + itemType.getName());
                     }
                 }
             }
@@ -151,10 +141,14 @@ public class ImplicitCollectionMapper extends MapperWrapper {
     }
 
     private class ImplicitCollectionMapperForClass {
+
         private final Class<?> definedIn;
-        private final Map<NamedItemType, ImplicitCollectionMappingImpl> namedItemTypeToDef = new HashMap<>();
-        private final Map<String, ImplicitCollectionMappingImpl> itemFieldNameToDef = new HashMap<>();
-        private final Map<String, ImplicitCollectionMappingImpl> fieldNameToDef = new HashMap<>();
+
+        private final Map<NamedItemType, ImplicitCollectionMappingImpl> namedItemTypeToDef = new org.apache.commons.collections4.map.HashedMap<>();
+
+        private final Map<String, ImplicitCollectionMappingImpl> itemFieldNameToDef = new org.apache.commons.collections4.map.HashedMap<>();
+
+        private final Map<String, ImplicitCollectionMappingImpl> fieldNameToDef = new org.apache.commons.collections4.map.HashedMap<>();
 
         ImplicitCollectionMapperForClass(final Class<?> definedIn) {
             this.definedIn = definedIn;
@@ -173,9 +167,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
                             return def.getFieldName();
                         }
                     } else {
-                        if (unnamed == null
-                            || unnamed.getItemType() == null
-                            || def.getItemType() != null && unnamed.getItemType().isAssignableFrom(def.getItemType())) {
+                        if (unnamed == null || unnamed.getItemType() == null || def.getItemType() != null && unnamed.getItemType().isAssignableFrom(def.getItemType())) {
                             unnamed = def;
                         }
                     }
@@ -230,18 +222,19 @@ public class ImplicitCollectionMapper extends MapperWrapper {
                 itemFieldNameToDef.put(def.getItemFieldName(), def);
             }
         }
-
     }
 
     private static class ImplicitCollectionMappingImpl implements ImplicitCollectionMapping {
+
         private final String fieldName;
+
         private final String itemFieldName;
+
         private final Class<?> itemType;
+
         private final String keyFieldName;
 
-        ImplicitCollectionMappingImpl(
-                final String fieldName, final Class<?> itemType, final String itemFieldName,
-                final String keyFieldName) {
+        ImplicitCollectionMappingImpl(final String fieldName, final Class<?> itemType, final String itemFieldName, final String keyFieldName) {
             this.fieldName = fieldName;
             this.itemFieldName = itemFieldName;
             this.itemType = itemType;
@@ -274,7 +267,9 @@ public class ImplicitCollectionMapper extends MapperWrapper {
     }
 
     private static class NamedItemType {
+
         Class<?> itemType;
+
         String itemFieldName;
 
         NamedItemType(final Class<?> itemType, final String itemFieldName) {
@@ -285,7 +280,7 @@ public class ImplicitCollectionMapper extends MapperWrapper {
         @Override
         public boolean equals(final Object obj) {
             if (obj instanceof NamedItemType) {
-                final NamedItemType b = (NamedItemType)obj;
+                final NamedItemType b = (NamedItemType) obj;
                 return itemType.equals(b.itemType) && isEquals(itemFieldName, b.itemFieldName);
             } else {
                 return false;

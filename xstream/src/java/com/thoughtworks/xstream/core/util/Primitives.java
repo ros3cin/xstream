@@ -13,27 +13,25 @@ package com.thoughtworks.xstream.core.util;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Utility class for primitives.
- * 
+ *
  * @author J&ouml;rg Schaible
  * @since 1.2.1
  */
 public final class Primitives {
-    private final static Map<Class<?>, Class<?>> BOX = new HashMap<>();
-    private final static Map<Class<?>, Class<?>> UNBOX = new HashMap<>();
-    private final static Map<String, Class<?>> NAMED_PRIMITIVE = new HashMap<>();
-    private final static Map<Class<?>, Character> REPRESENTING_CHAR = new HashMap<>();
+
+    private final static Map<Class<?>, Class<?>> BOX = new org.apache.commons.collections4.map.HashedMap<>();
+
+    private final static Map<Class<?>, Class<?>> UNBOX = new org.apache.commons.collections4.map.HashedMap<>();
+
+    private final static Map<String, Class<?>> NAMED_PRIMITIVE = new org.apache.commons.collections4.map.HashedMap<>();
+
+    private final static Map<Class<?>, Character> REPRESENTING_CHAR = new org.apache.commons.collections4.map.HashedMap<>();
 
     static {
-        final Class<?>[][] boxing = new Class[][]{
-            {Byte.TYPE, Byte.class}, {Character.TYPE, Character.class}, {Short.TYPE, Short.class},
-            {Integer.TYPE, Integer.class}, {Long.TYPE, Long.class}, {Float.TYPE, Float.class},
-            {Double.TYPE, Double.class}, {Boolean.TYPE, Boolean.class}, {Void.TYPE, Void.class},};
-        final Character[] representingChars = {
-            new Character('B'), new Character('C'), new Character('S'), new Character('I'), new Character('J'),
-            new Character('F'), new Character('D'), new Character('Z'), null};
+        final Class<?>[][] boxing = new Class[][] { { Byte.TYPE, Byte.class }, { Character.TYPE, Character.class }, { Short.TYPE, Short.class }, { Integer.TYPE, Integer.class }, { Long.TYPE, Long.class }, { Float.TYPE, Float.class }, { Double.TYPE, Double.class }, { Boolean.TYPE, Boolean.class }, { Void.TYPE, Void.class } };
+        final Character[] representingChars = { new Character('B'), new Character('C'), new Character('S'), new Character('I'), new Character('J'), new Character('F'), new Character('D'), new Character('Z'), null };
         for (int i = 0; i < boxing.length; i++) {
             final Class<?> primitiveType = boxing[i][0];
             final Class<?> boxedType = boxing[i][1];
@@ -46,7 +44,7 @@ public final class Primitives {
 
     /**
      * Get the boxed type for a primitive.
-     * 
+     *
      * @param type the primitive type
      * @return the boxed type or null
      */
@@ -56,7 +54,7 @@ public final class Primitives {
 
     /**
      * Get the primitive type for a boxed one.
-     * 
+     *
      * @param type the boxed type
      * @return the primitive type or null
      */
@@ -66,7 +64,7 @@ public final class Primitives {
 
     /**
      * Check for a boxed type.
-     * 
+     *
      * @param type the type to check
      * @return <code>true</code> if the type is boxed
      * @since 1.4
@@ -77,7 +75,7 @@ public final class Primitives {
 
     /**
      * Get the primitive type by name.
-     * 
+     *
      * @param name the name of the type
      * @return the Java type or <code>null</code>
      * @since 1.4
@@ -88,7 +86,7 @@ public final class Primitives {
 
     /**
      * Get the representing character of a primitive type.
-     * 
+     *
      * @param type the primitive type
      * @return the representing character or 0
      * @since 1.4

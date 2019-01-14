@@ -19,15 +19,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-
 /**
  * Mapper that allows a package name to be replaced with an alias.
- * 
+ *
  * @author J&ouml;rg Schaible
  */
 public class PackageAliasingMapper extends MapperWrapper implements Serializable {
 
     private static final long serialVersionUID = 20151010L;
+
     private static final Comparator<String> REVERSE = new Comparator<String>() {
 
         @Override
@@ -37,6 +37,7 @@ public class PackageAliasingMapper extends MapperWrapper implements Serializable
     };
 
     private Map<String, String> packageToName = new TreeMap<>(REVERSE);
+
     protected transient Map<String, String> nameToPackage = new HashMap<>();
 
     public PackageAliasingMapper(final Mapper wrapped) {
@@ -79,14 +80,12 @@ public class PackageAliasingMapper extends MapperWrapper implements Serializable
             dot = elementName.lastIndexOf('.', length);
             final String name = dot < 0 ? "" : elementName.substring(0, dot) + '.';
             final String packageName = nameToPackage.get(name);
-
             if (packageName != null) {
                 elementName = packageName + (dot < 0 ? elementName : elementName.substring(dot + 1));
                 break;
             }
             length = dot - 1;
         } while (dot >= 0);
-
         return super.realClass(elementName);
     }
 
@@ -97,9 +96,9 @@ public class PackageAliasingMapper extends MapperWrapper implements Serializable
     private void readObject(final ObjectInputStream in) throws IOException, ClassNotFoundException {
         packageToName = new TreeMap<>(REVERSE);
         @SuppressWarnings("unchecked")
-        final Map<String, String> map = (Map<String, String>)in.readObject();
+        final Map<String, String> map = (Map<String, String>) in.readObject();
         packageToName.putAll(map);
-        nameToPackage = new HashMap<>();
+        nameToPackage = new org.apache.commons.collections4.map.HashedMap<>();
         for (final Map.Entry<String, String> entry : packageToName.entrySet()) {
             nameToPackage.put(entry.getValue(), entry.getKey());
         }

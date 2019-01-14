@@ -13,7 +13,6 @@ package com.thoughtworks.xstream.converters.extended;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
@@ -22,7 +21,6 @@ import com.thoughtworks.xstream.core.util.Primitives;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.Mapper;
-
 
 /**
  * An array converter that uses predefined names for its items.
@@ -36,7 +34,9 @@ import com.thoughtworks.xstream.mapper.Mapper;
 public class NamedArrayConverter implements Converter {
 
     private final Class<?> arrayType;
+
     private final String itemName;
+
     private final Mapper mapper;
 
     /**
@@ -66,9 +66,7 @@ public class NamedArrayConverter implements Converter {
         final int length = Array.getLength(source);
         for (int i = 0; i < length; ++i) {
             final Object item = Array.get(source, i);
-            final Class<?> itemType = item == null
-                ? Mapper.Null.class
-                : arrayType.getComponentType().isPrimitive() ? Primitives.unbox(item.getClass()) : item.getClass();
+            final Class<?> itemType = item == null ? Mapper.Null.class : arrayType.getComponentType().isPrimitive() ? Primitives.unbox(item.getClass()) : item.getClass();
             writer.startNode(itemName, itemType);
             if (!itemType.equals(arrayType.getComponentType())) {
                 final String attributeName = mapper.aliasForSystemAttribute("class");
@@ -85,7 +83,7 @@ public class NamedArrayConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Object> list = new ArrayList<>();
+        final List<Object> list = new org.apache.commons.collections4.list.TreeList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             final Object item;
@@ -105,5 +103,4 @@ public class NamedArrayConverter implements Converter {
         }
         return array;
     }
-
 }

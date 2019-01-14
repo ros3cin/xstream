@@ -14,7 +14,6 @@ package com.thoughtworks.xstream.mapper;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Mapper that specifies which types are basic immutable types. Types that are marked as immutable will be written
  * multiple times in the serialization stream without using references.
@@ -29,7 +28,8 @@ import java.util.Set;
 public class ImmutableTypesMapper extends MapperWrapper {
 
     private final Set<Class<?>> unreferenceableTypes = new HashSet<>();
-    private final Set<Class<?>> immutableTypes = new HashSet<>();
+
+    private final Set<Class<?>> immutableTypes = new java.util.LinkedHashSet<>();
 
     public ImmutableTypesMapper(final Mapper wrapped) {
         super(wrapped);

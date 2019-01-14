@@ -13,9 +13,7 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.core.util.Primitives;
-
 
 /**
  * Mapper that allows a fully qualified class name to be replaced with an alias.
@@ -25,8 +23,10 @@ import com.thoughtworks.xstream.core.util.Primitives;
  */
 public class ClassAliasingMapper extends MapperWrapper {
 
-    private final Map<Class<?>, String> typeToName = new HashMap<>();
-    private final Map<String, String> classToName = new HashMap<>();
+    private final Map<Class<?>, String> typeToName = new org.apache.commons.collections4.map.HashedMap<>();
+
+    private final Map<String, String> classToName = new org.apache.commons.collections4.map.HashedMap<>();
+
     private transient Map<String, String> nameToType = new HashMap<>();
 
     public ClassAliasingMapper(final Mapper wrapped) {
@@ -61,7 +61,6 @@ public class ClassAliasingMapper extends MapperWrapper {
     @Override
     public Class<?> realClass(String elementName) {
         final String mappedName = nameToType.get(elementName);
-
         if (mappedName != null) {
             final Class<?> type = Primitives.primitiveType(mappedName);
             if (type != null) {
@@ -69,7 +68,6 @@ public class ClassAliasingMapper extends MapperWrapper {
             }
             elementName = mappedName;
         }
-
         return super.realClass(elementName);
     }
 
@@ -90,7 +88,7 @@ public class ClassAliasingMapper extends MapperWrapper {
     }
 
     private Object readResolve() {
-        nameToType = new HashMap<>();
+        nameToType = new org.apache.commons.collections4.map.HashedMap<>();
         for (final String type : classToName.keySet()) {
             nameToType.put(classToName.get(type), type);
         }

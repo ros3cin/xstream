@@ -13,9 +13,7 @@ package com.thoughtworks.xstream.io.path;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.core.util.FastStack;
-
 
 /**
  * Represents a path to a single node in the tree.
@@ -47,28 +45,31 @@ import com.thoughtworks.xstream.core.util.FastStack;
  * <li>../../../another[3]/node</li>
  * </ul>
  * <h3>Example</h3>
- * 
+ *
  * <pre>
  * Path a = new Path(&quot;/html/body/div[1]/table[2]/tr[3]/td/div&quot;);
  * Path b = new Path(&quot;/html/body/div/table[2]/tr[6]/td/form&quot;);
- * 
+ *
  * Path relativePath = a.relativeTo(b); // produces: &quot;../../../tr[6]/td/form&quot;
  * Path c = a.apply(relativePath); // same as Path b.
  * </pre>
- * 
+ *
  * @see PathTracker
  * @author Joe Walnes
  */
 public class Path {
 
     private final String[] chunks;
+
     private transient String pathAsString;
+
     private transient String pathExplicit;
-    private static final Path DOT = new Path(new String[]{"."});
+
+    private static final Path DOT = new Path(new String[] { "." });
 
     public Path(final String pathAsString) {
         // String.split() too slow. StringTokenizer too crappy.
-        final List<String> result = new ArrayList<>();
+        final List<String> result = new org.apache.commons.collections4.list.TreeList<>();
         int currentIndex = 0;
         int nextSeparator;
         this.pathAsString = pathAsString;
@@ -90,7 +91,6 @@ public class Path {
         } else {
             return s.substring(start, end);
         }
-
     }
 
     public Path(final String[] chunks) {
@@ -142,8 +142,7 @@ public class Path {
         if (!(o instanceof Path)) {
             return false;
         }
-
-        final Path other = (Path)o;
+        final Path other = (Path) o;
         if (chunks.length != other.chunks.length) {
             return false;
         }
@@ -152,7 +151,6 @@ public class Path {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -169,14 +167,12 @@ public class Path {
         final int depthOfPathDivergence = depthOfPathDivergence(chunks, that.chunks);
         final String[] result = new String[chunks.length + that.chunks.length - 2 * depthOfPathDivergence];
         int count = 0;
-
         for (int i = depthOfPathDivergence; i < chunks.length; i++) {
             result[count++] = "..";
         }
         for (int j = depthOfPathDivergence; j < that.chunks.length; j++) {
             result[count++] = that.chunks[j];
         }
-
         if (count == 0) {
             return DOT;
         } else {
@@ -196,11 +192,9 @@ public class Path {
 
     public Path apply(final Path relativePath) {
         final FastStack<String> absoluteStack = new FastStack<>(16);
-
         for (final String chunk : chunks) {
             absoluteStack.push(chunk);
         }
-
         for (final String relativeChunk : relativePath.chunks) {
             if (relativeChunk.equals("..")) {
                 absoluteStack.pop();
@@ -208,12 +202,10 @@ public class Path {
                 absoluteStack.push(relativeChunk);
             }
         }
-
         final String[] result = new String[absoluteStack.size()];
         for (int i = 0; i < result.length; i++) {
             result[i] = absoluteStack.get(i);
         }
-
         return new Path(result);
     }
 

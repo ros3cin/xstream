@@ -17,9 +17,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
 import javax.swing.plaf.FontUIResource;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
@@ -28,13 +26,13 @@ import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.Mapper;
 
-
 /**
  * Converts an AWT {@link Font}.
  */
 public class FontConverter implements Converter {
 
     private final SingleValueConverter textAttributeConverter;
+
     private final Mapper mapper;
 
     /**
@@ -64,14 +62,13 @@ public class FontConverter implements Converter {
 
     @Override
     public boolean canConvert(final Class<?> type) {
-        // String comparison is used here because Font.class loads the class which in turns instantiates AWT,
         // which is nasty if you don't want it.
         return type.getName().equals("java.awt.Font") || type.getName().equals("javax.swing.plaf.FontUIResource");
     }
 
     @Override
     public void marshal(final Object source, final HierarchicalStreamWriter writer, final MarshallingContext context) {
-        final Font font = (Font)source;
+        final Font font = (Font) source;
         final Map<TextAttribute, ?> attributes = font.getAttributes();
         if (mapper != null) {
             final String classAlias = mapper.aliasForSystemAttribute("class");
@@ -87,9 +84,11 @@ public class FontConverter implements Converter {
                 writer.endNode();
             }
         } else {
-            writer.startNode("attributes"); // <attributes>
+            // <attributes>
+            writer.startNode("attributes");
             context.convertAnother(attributes);
-            writer.endNode(); // </attributes>
+            // </attributes>
+            writer.endNode();
         }
     }
 
@@ -100,14 +99,13 @@ public class FontConverter implements Converter {
             reader.moveDown();
             if (!reader.getNodeName().equals("attributes")) {
                 final String classAlias = mapper.aliasForSystemAttribute("class");
-                attributes = new HashMap<>();
+                attributes = new org.apache.commons.collections4.map.HashedMap<>();
                 do {
                     if (!attributes.isEmpty()) {
                         reader.moveDown();
                     }
                     final Class<?> type = mapper.realClass(reader.getAttribute(classAlias));
-                    final TextAttribute attribute = (TextAttribute)textAttributeConverter.fromString(reader
-                        .getNodeName());
+                    final TextAttribute attribute = (TextAttribute) textAttributeConverter.fromString(reader.getNodeName());
                     final Object value = type == Mapper.Null.class ? null : context.convertAnother(null, type);
                     attributes.put(attribute, value);
                     reader.moveUp();
@@ -115,15 +113,15 @@ public class FontConverter implements Converter {
             } else {
                 // in <attributes>
                 @SuppressWarnings("unchecked")
-                final Map<TextAttribute, Object> typedAttributes = (Map<TextAttribute, Object>)context.convertAnother(
-                    null, Map.class);
+                final Map<TextAttribute, Object> typedAttributes = (Map<TextAttribute, Object>) context.convertAnother(null, Map.class);
                 attributes = typedAttributes;
-                reader.moveUp(); // out of </attributes>
+                // out of </attributes>
+                reader.moveUp();
             }
         } else {
             attributes = Collections.emptyMap();
         }
-        for (final Iterator<?> iter = attributes.values().iterator(); iter.hasNext();) {
+        for (final Iterator<?> iter = attributes.values().iterator(); iter.hasNext(); ) {
             if (iter.next() == null) {
                 iter.remove();
             }

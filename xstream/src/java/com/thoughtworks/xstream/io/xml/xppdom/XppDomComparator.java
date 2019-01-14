@@ -15,19 +15,19 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Comparator for {@link XppDom}. Comparator can trace the XPath where the comparison failed.
- * 
+ *
  * @author J&ouml;rg Schaible
  * @since 1.4.1
  */
 public class XppDomComparator implements Comparator<XppDom> {
+
     private final ThreadLocal<String> xpath;
 
     /**
      * Creates a new Xpp3DomComparator object.
-     * 
+     *
      * @since 1.4.1
      */
     public XppDomComparator() {
@@ -36,7 +36,7 @@ public class XppDomComparator implements Comparator<XppDom> {
 
     /**
      * Creates a new Xpp3DomComparator object with XPath identification.
-     * 
+     *
      * @param xpath the reference for the XPath
      * @since 1.4.1
      */
@@ -46,7 +46,6 @@ public class XppDomComparator implements Comparator<XppDom> {
 
     @Override
     public int compare(final XppDom dom1, final XppDom dom2) {
-
         final StringBuilder xpath = new StringBuilder("/");
         final int s = compareInternal(dom1, dom2, xpath, -1);
         if (this.xpath != null) {
@@ -56,7 +55,6 @@ public class XppDomComparator implements Comparator<XppDom> {
                 this.xpath.set(null);
             }
         }
-
         return s;
     }
 
@@ -68,23 +66,18 @@ public class XppDomComparator implements Comparator<XppDom> {
         if (count >= 0) {
             xpath.append('[').append(count).append(']');
         }
-
         if (s != 0) {
             xpath.append('?');
-
             return s;
         }
-
         final String[] attributes = dom1.getAttributeNames();
         final String[] attributes2 = dom2.getAttributeNames();
         final int len = attributes.length;
         s = attributes2.length - len;
         if (s != 0) {
             xpath.append("::count(@*)");
-
             return s < 0 ? 1 : -1;
         }
-
         Arrays.sort(attributes);
         Arrays.sort(attributes2);
         for (int i = 0; i < len; ++i) {
@@ -92,34 +85,26 @@ public class XppDomComparator implements Comparator<XppDom> {
             s = attribute.compareTo(attributes2[i]);
             if (s != 0) {
                 xpath.append("[@").append(attribute).append("?]");
-
                 return s;
             }
-
             s = dom1.getAttribute(attribute).compareTo(dom2.getAttribute(attribute));
             if (s != 0) {
                 xpath.append("[@").append(attribute).append(']');
-
                 return s;
             }
         }
-
         final int children = dom1.getChildCount();
         s = dom2.getChildCount() - children;
         if (s != 0) {
             xpath.append("::count(*)");
-
             return s < 0 ? 1 : -1;
         }
-
         if (children > 0) {
             if (dom1.getValue() != null || dom2.getValue() != null) {
                 throw new IllegalArgumentException("XppDom cannot handle mixed mode at " + xpath + "::text()");
             }
-
             xpath.append('/');
-
-            final Map<String, int[]> names = new HashMap<>();
+            final Map<String, int[]> names = new org.apache.commons.collections4.map.HashedMap<>();
             for (int i = 0; i < children; ++i) {
                 final XppDom child1 = dom1.getChild(i);
                 final XppDom child2 = dom2.getChild(i);
@@ -127,7 +112,6 @@ public class XppDomComparator implements Comparator<XppDom> {
                 if (!names.containsKey(child)) {
                     names.put(child, new int[1]);
                 }
-
                 s = compareInternal(child1, child2, xpath, names.get(child)[0]++);
                 if (s != 0) {
                     return s;
@@ -141,16 +125,12 @@ public class XppDomComparator implements Comparator<XppDom> {
             } else {
                 s = value2 == null ? 1 : value1.compareTo(value2);
             }
-
             if (s != 0) {
                 xpath.append("::text()");
-
                 return s;
             }
         }
-
         xpath.setLength(pathlen);
-
         return s;
     }
 }

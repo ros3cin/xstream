@@ -13,20 +13,19 @@ package com.thoughtworks.xstream.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.InitializationException;
-
 
 /**
  * Mapper that resolves default implementations of classes. For example, mapper.serializedClass(ArrayList.class) will
  * return java.util.List. Calling mapper.defaultImplementationOf(List.class) will return ArrayList.
- * 
+ *
  * @author Joe Walnes
  */
 public class DefaultImplementationsMapper extends MapperWrapper {
 
-    private final Map<Class<?>, Class<?>> typeToImpl = new HashMap<>();
-    private transient Map<Class<?>, Class<?>> implToType = new HashMap<>();
+    private final Map<Class<?>, Class<?>> typeToImpl = new org.apache.commons.collections4.map.HashedMap<>();
+
+    private transient Map<Class<?>, Class<?>> implToType = new org.apache.commons.collections4.map.HashedMap<>();
 
     public DefaultImplementationsMapper(final Mapper wrapped) {
         super(wrapped);
@@ -49,8 +48,7 @@ public class DefaultImplementationsMapper extends MapperWrapper {
 
     public void addDefaultImplementation(final Class<?> defaultImplementation, final Class<?> ofType) {
         if (defaultImplementation != null && defaultImplementation.isInterface()) {
-            throw new InitializationException("Default implementation is not a concrete class: "
-                + defaultImplementation.getName());
+            throw new InitializationException("Default implementation is not a concrete class: " + defaultImplementation.getName());
         }
         typeToImpl.put(ofType, defaultImplementation);
         implToType.put(defaultImplementation, ofType);
@@ -72,7 +70,7 @@ public class DefaultImplementationsMapper extends MapperWrapper {
     }
 
     private Object readResolve() {
-        implToType = new HashMap<>();
+        implToType = new org.apache.commons.collections4.map.HashedMap<>();
         for (final Class<?> type : typeToImpl.keySet()) {
             implToType.put(typeToImpl.get(type), type);
         }

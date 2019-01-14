@@ -13,7 +13,6 @@ package com.thoughtworks.xstream.converters.extended;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
@@ -24,7 +23,6 @@ import com.thoughtworks.xstream.core.StringCodec;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 
-
 /**
  * Converts a byte array by default to a single Base64 encoding string.
  *
@@ -34,6 +32,7 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 public class EncodedByteArrayConverter implements Converter, SingleValueConverter {
 
     private static final ByteConverter byteConverter = new ByteConverter();
+
     private final StringCodec codec;
 
     /**
@@ -65,7 +64,8 @@ public class EncodedByteArrayConverter implements Converter, SingleValueConverte
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final String data = reader.getValue(); // needs to be called before hasMoreChildren.
+        // needs to be called before hasMoreChildren.
+        final String data = reader.getValue();
         if (!reader.hasMoreChildren()) {
             return fromString(data);
         } else {
@@ -74,14 +74,14 @@ public class EncodedByteArrayConverter implements Converter, SingleValueConverte
         }
     }
 
-    private Object unmarshalIndividualByteElements(final HierarchicalStreamReader reader,
-            final UnmarshallingContext context) {
+    private Object unmarshalIndividualByteElements(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
         // have to create a temporary list because we don't know the size of the array
-        final List<Byte> bytes = new ArrayList<>();
+        final List<Byte> bytes = new org.apache.commons.collections4.list.TreeList<>();
         boolean firstIteration = true;
-        while (firstIteration || reader.hasMoreChildren()) { // hangover from previous hasMoreChildren
+        while (firstIteration || reader.hasMoreChildren()) {
+            // hangover from previous hasMoreChildren
             reader.moveDown();
-            bytes.add((Byte)byteConverter.fromString(reader.getValue()));
+            bytes.add((Byte) byteConverter.fromString(reader.getValue()));
             reader.moveUp();
             firstIteration = false;
         }
@@ -95,7 +95,7 @@ public class EncodedByteArrayConverter implements Converter, SingleValueConverte
 
     @Override
     public String toString(final Object obj) {
-        return codec.encode((byte[])obj);
+        return codec.encode((byte[]) obj);
     }
 
     @Override

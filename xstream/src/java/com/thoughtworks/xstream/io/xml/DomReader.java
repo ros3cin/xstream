@@ -13,21 +13,20 @@ package com.thoughtworks.xstream.io.xml;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
-
 import com.thoughtworks.xstream.io.naming.NameCoder;
-
 
 public class DomReader extends AbstractDocumentReader {
 
     private Element currentElement;
+
     private final StringBuilder textBuffer;
+
     private List<Element> childElements;
 
     public DomReader(final Element rootElement) {
@@ -59,7 +58,7 @@ public class DomReader extends AbstractDocumentReader {
      */
     @Deprecated
     public DomReader(final Element rootElement, final XmlFriendlyReplacer replacer) {
-        this(rootElement, (NameCoder)replacer);
+        this(rootElement, (NameCoder) replacer);
     }
 
     /**
@@ -68,7 +67,7 @@ public class DomReader extends AbstractDocumentReader {
      */
     @Deprecated
     public DomReader(final Document document, final XmlFriendlyReplacer replacer) {
-        this(document.getDocumentElement(), (NameCoder)replacer);
+        this(document.getDocumentElement(), (NameCoder) replacer);
     }
 
     @Override
@@ -84,7 +83,7 @@ public class DomReader extends AbstractDocumentReader {
         for (int i = 0; i < length; i++) {
             final Node childNode = childNodes.item(i);
             if (childNode instanceof Text) {
-                final Text text = (Text)childNode;
+                final Text text = (Text) childNode;
                 textBuffer.append(text.getData());
             }
         }
@@ -99,7 +98,7 @@ public class DomReader extends AbstractDocumentReader {
 
     @Override
     public String getAttribute(final int index) {
-        return ((Attr)currentElement.getAttributes().item(index)).getValue();
+        return ((Attr) currentElement.getAttributes().item(index)).getValue();
     }
 
     @Override
@@ -109,7 +108,7 @@ public class DomReader extends AbstractDocumentReader {
 
     @Override
     public String getAttributeName(final int index) {
-        return decodeAttribute(((Attr)currentElement.getAttributes().item(index)).getName());
+        return decodeAttribute(((Attr) currentElement.getAttributes().item(index)).getName());
     }
 
     @Override
@@ -129,13 +128,13 @@ public class DomReader extends AbstractDocumentReader {
 
     @Override
     protected void reassignCurrentElement(final Object current) {
-        currentElement = (Element)current;
+        currentElement = (Element) current;
         final NodeList childNodes = currentElement.getChildNodes();
-        childElements = new ArrayList<>();
+        childElements = new org.apache.commons.collections4.list.TreeList<>();
         for (int i = 0; i < childNodes.getLength(); i++) {
             final Node node = childNodes.item(i);
             if (node instanceof Element) {
-                childElements.add((Element)node);
+                childElements.add((Element) node);
             }
         }
     }
@@ -146,7 +145,7 @@ public class DomReader extends AbstractDocumentReader {
         for (int i = 0; i < childNodes.getLength(); i++) {
             final Node node = childNodes.item(i);
             if (node instanceof Element) {
-                return decodeNode(((Element)node).getTagName());
+                return decodeNode(((Element) node).getTagName());
             }
         }
         return null;

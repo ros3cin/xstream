@@ -14,9 +14,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
-
 import com.thoughtworks.xstream.core.util.FastField;
-
 
 /**
  * Mapper that allows an field of a specific class to be omitted entirely.
@@ -26,7 +24,8 @@ import com.thoughtworks.xstream.core.util.FastField;
 public class ElementIgnoringMapper extends MapperWrapper {
 
     protected final Set<Pattern> unknownElementsToIgnore = new LinkedHashSet<>();
-    protected final Set<FastField> fieldsToOmit = new HashSet<>();
+
+    protected final Set<FastField> fieldsToOmit = new java.util.LinkedHashSet<>();
 
     public ElementIgnoringMapper(final Mapper wrapped) {
         super(wrapped);

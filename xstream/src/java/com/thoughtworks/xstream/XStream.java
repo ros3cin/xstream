@@ -66,7 +66,6 @@ import java.util.UUID;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
@@ -180,7 +179,6 @@ import com.thoughtworks.xstream.security.RegExpTypePermission;
 import com.thoughtworks.xstream.security.TypeHierarchyPermission;
 import com.thoughtworks.xstream.security.TypePermission;
 import com.thoughtworks.xstream.security.WildcardTypePermission;
-
 
 /**
  * Simple facade to XStream library, a Java-XML serialization tool.
@@ -315,37 +313,63 @@ public class XStream {
     // CAUTION: The sequence of the fields is intentional for an optimal XML output of a
     // self-serialization!
     private final ReflectionProvider reflectionProvider;
+
     private final HierarchicalStreamDriver hierarchicalStreamDriver;
+
     private final ClassLoaderReference classLoaderReference;
+
     private MarshallingStrategy marshallingStrategy;
+
     private final ConverterLookup converterLookup;
+
     private final ConverterRegistry converterRegistry;
+
     private final Mapper mapper;
 
     private PackageAliasingMapper packageAliasingMapper;
+
     private ClassAliasingMapper classAliasingMapper;
+
     private FieldAliasingMapper fieldAliasingMapper;
+
     private ElementIgnoringMapper elementIgnoringMapper;
+
     private AttributeAliasingMapper attributeAliasingMapper;
+
     private SystemAttributeAliasingMapper systemAttributeAliasingMapper;
+
     private AttributeMapper attributeMapper;
+
     private DefaultImplementationsMapper defaultImplementationsMapper;
+
     private ImmutableTypesMapper immutableTypesMapper;
+
     private ImplicitCollectionMapper implicitCollectionMapper;
+
     private LocalConversionMapper localConversionMapper;
+
     private SecurityMapper securityMapper;
+
     private AnnotationMapper annotationMapper;
 
     public static final int NO_REFERENCES = 1001;
+
     public static final int ID_REFERENCES = 1002;
+
     public static final int XPATH_RELATIVE_REFERENCES = 1003;
+
     public static final int XPATH_ABSOLUTE_REFERENCES = 1004;
+
     public static final int SINGLE_NODE_XPATH_RELATIVE_REFERENCES = 1005;
+
     public static final int SINGLE_NODE_XPATH_ABSOLUTE_REFERENCES = 1006;
 
     public static final int PRIORITY_VERY_HIGH = 10000;
+
     public static final int PRIORITY_NORMAL = 0;
+
     public static final int PRIORITY_LOW = -10;
+
     public static final int PRIORITY_VERY_LOW = -20;
 
     private static final Pattern IGNORE_ALL = Pattern.compile(".*");
@@ -396,8 +420,7 @@ public class XStream {
      * @param hierarchicalStreamDriver the driver instance
      * @throws InitializationException in case of an initialization problem
      */
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver hierarchicalStreamDriver) {
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver hierarchicalStreamDriver) {
         this(reflectionProvider, hierarchicalStreamDriver, new ClassLoaderReference(new CompositeClassLoader()));
     }
 
@@ -411,9 +434,7 @@ public class XStream {
      * @throws InitializationException in case of an initialization problem
      * @since 1.4.5
      */
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoaderReference classLoaderReference) {
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoaderReference classLoaderReference) {
         this(reflectionProvider, driver, classLoaderReference, null);
     }
 
@@ -426,9 +447,7 @@ public class XStream {
      * @deprecated As of 1.4.5 use {@link #XStream(ReflectionProvider, HierarchicalStreamDriver, ClassLoaderReference)}
      */
     @Deprecated
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoader classLoader) {
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoader classLoader) {
         this(reflectionProvider, driver, classLoader, null);
     }
 
@@ -446,9 +465,7 @@ public class XStream {
      *             {@link #XStream(ReflectionProvider, HierarchicalStreamDriver, ClassLoaderReference, Mapper)}
      */
     @Deprecated
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoader classLoader, final Mapper mapper) {
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoader classLoader, final Mapper mapper) {
         this(reflectionProvider, driver, new ClassLoaderReference(classLoader), mapper, new DefaultConverterLookup());
     }
 
@@ -466,22 +483,19 @@ public class XStream {
      * @throws InitializationException in case of an initialization problem
      * @since 1.4.5
      */
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoaderReference classLoaderReference, final Mapper mapper) {
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoaderReference classLoaderReference, final Mapper mapper) {
         this(reflectionProvider, driver, classLoaderReference, mapper, new DefaultConverterLookup());
     }
 
-    private XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoaderReference classLoader, final Mapper mapper,
-            final DefaultConverterLookup defaultConverterLookup) {
+    private XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoaderReference classLoader, final Mapper mapper, final DefaultConverterLookup defaultConverterLookup) {
         this(reflectionProvider, driver, classLoader, mapper, new ConverterLookup() {
+
             @Override
             public Converter lookupConverterForType(final Class<?> type) {
                 return defaultConverterLookup.lookupConverterForType(type);
             }
         }, new ConverterRegistry() {
+
             @Override
             public void registerConverter(final Converter converter, final int priority) {
                 defaultConverterLookup.registerConverter(converter, priority);
@@ -506,12 +520,8 @@ public class XStream {
      *             {@link #XStream(ReflectionProvider, HierarchicalStreamDriver, ClassLoaderReference, Mapper, ConverterLookup, ConverterRegistry)}
      */
     @Deprecated
-    public XStream(
-            final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoader classLoader, final Mapper mapper, final ConverterLookup converterLookup,
-            final ConverterRegistry converterRegistry) {
-        this(reflectionProvider, driver, new ClassLoaderReference(classLoader), mapper, converterLookup,
-            converterRegistry);
+    public XStream(final ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoader classLoader, final Mapper mapper, final ConverterLookup converterLookup, final ConverterRegistry converterRegistry) {
+        this(reflectionProvider, driver, new ClassLoaderReference(classLoader), mapper, converterLookup, converterRegistry);
     }
 
     /**
@@ -534,10 +544,7 @@ public class XStream {
      * @throws InitializationException in case of an initialization problem
      * @since 1.4.5
      */
-    public XStream(
-            ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver,
-            final ClassLoaderReference classLoaderReference, final Mapper mapper, final ConverterLookup converterLookup,
-            final ConverterRegistry converterRegistry) {
+    public XStream(ReflectionProvider reflectionProvider, final HierarchicalStreamDriver driver, final ClassLoaderReference classLoaderReference, final Mapper mapper, final ConverterLookup converterLookup, final ConverterRegistry converterRegistry) {
         if (reflectionProvider == null) {
             reflectionProvider = JVM.newReflectionProvider();
         }
@@ -547,7 +554,6 @@ public class XStream {
         this.converterLookup = converterLookup;
         this.converterRegistry = converterRegistry;
         this.mapper = mapper == null ? buildMapper() : mapper;
-
         setupMappers();
         setupSecurity();
         setupAliases();
@@ -578,23 +584,20 @@ public class XStream {
         mapper = new LocalConversionMapper(mapper);
         mapper = new ImmutableTypesMapper(mapper);
         if (JVM.isVersion(8)) {
-            mapper = buildMapperDynamically("com.thoughtworks.xstream.mapper.LambdaMapper", new Class[]{Mapper.class},
-                new Object[]{mapper});
+            mapper = buildMapperDynamically("com.thoughtworks.xstream.mapper.LambdaMapper", new Class[] { Mapper.class }, new Object[] { mapper });
         }
         mapper = new SecurityMapper(mapper);
-        mapper = new AnnotationMapper(mapper, converterRegistry, converterLookup, classLoaderReference,
-            reflectionProvider);
-        mapper = wrapMapper((MapperWrapper)mapper);
+        mapper = new AnnotationMapper(mapper, converterRegistry, converterLookup, classLoaderReference, reflectionProvider);
+        mapper = wrapMapper((MapperWrapper) mapper);
         mapper = new CachingMapper(mapper);
         return mapper;
     }
 
-    private Mapper buildMapperDynamically(final String className, final Class<?>[] constructorParamTypes,
-            final Object[] constructorParamValues) {
+    private Mapper buildMapperDynamically(final String className, final Class<?>[] constructorParamTypes, final Object[] constructorParamValues) {
         try {
             final Class<?> type = Class.forName(className, false, classLoaderReference.getReference());
             final Constructor<?> constructor = type.getConstructor(constructorParamTypes);
-            return (Mapper)constructor.newInstance(constructorParamValues);
+            return (Mapper) constructor.newInstance(constructorParamValues);
         } catch (final Exception e) {
             throw new InitializationException("Could not instantiate mapper : " + className, e);
         } catch (final LinkageError e) {
@@ -634,7 +637,6 @@ public class XStream {
         if (securityMapper == null) {
             return;
         }
-
         addPermission(NullPermission.NULL);
         addPermission(PrimitiveTypePermission.PRIMITIVES);
         addPermission(ArrayTypePermission.ARRAYS);
@@ -648,12 +650,9 @@ public class XStream {
         allowTypeHierarchy(Number.class);
         allowTypeHierarchy(Throwable.class);
         allowTypeHierarchy(TimeZone.class);
-        //allowTypeHierarchy(Path.class);
-
-        final Set<Class<?>> types = new HashSet<>();
-        types.addAll(Arrays.<Class<?>>asList(BitSet.class, Charset.class, Class.class, Currency.class, Date.class,
-            DecimalFormatSymbols.class, File.class, Locale.class, Object.class, Pattern.class, StackTraceElement.class,
-            String.class, StringBuffer.class, StringBuilder.class, URL.class, URI.class, UUID.class));
+        // allowTypeHierarchy(Path.class);
+        final Set<Class<?>> types = new java.util.LinkedHashSet<>();
+        types.addAll(Arrays.<Class<?>>asList(BitSet.class, Charset.class, Class.class, Currency.class, Date.class, DecimalFormatSymbols.class, File.class, Locale.class, Object.class, Pattern.class, StackTraceElement.class, String.class, StringBuffer.class, StringBuilder.class, URL.class, URI.class, UUID.class));
         if (JVM.isSQLAvailable()) {
             types.add(JVM.loadClassForName("java.sql.Timestamp"));
             types.add(JVM.loadClassForName("java.sql.Time"));
@@ -703,14 +702,13 @@ public class XStream {
      */
     @Deprecated
     public static void setupDefaultSecurity(final XStream xstream) {
-        // Do intentionally nothing
+    // Do intentionally nothing
     }
 
     protected void setupAliases() {
         if (classAliasingMapper == null) {
             return;
         }
-
         alias("null", Mapper.Null.class);
         alias("int", Integer.class);
         alias("float", Float.class);
@@ -724,7 +722,6 @@ public class XStream {
         alias("object", Object.class);
         alias("big-int", BigInteger.class);
         alias("big-decimal", BigDecimal.class);
-
         alias("string", String.class);
         alias("string-buffer", StringBuffer.class);
         alias("string-builder", StringBuilder.class);
@@ -742,14 +739,12 @@ public class XStream {
         alias("bit-set", BitSet.class);
         alias("trace", StackTraceElement.class);
         alias("currency", Currency.class);
-
         alias("map", Map.class);
         alias("entry", Map.Entry.class);
         alias("properties", Properties.class);
         alias("list", List.class);
         alias("set", Set.class);
         alias("sorted-set", SortedSet.class);
-
         alias("linked-list", LinkedList.class);
         alias("vector", Vector.class);
         alias("tree-map", TreeMap.class);
@@ -758,7 +753,6 @@ public class XStream {
         alias("linked-hash-map", LinkedHashMap.class);
         alias("linked-hash-set", LinkedHashSet.class);
         alias("concurrent-hash-map", ConcurrentHashMap.class);
-
         alias("enum-set", EnumSet.class);
         alias("enum-map", EnumMap.class);
         alias("empty-list", Collections.EMPTY_LIST.getClass());
@@ -767,7 +761,6 @@ public class XStream {
         alias("singleton-list", Collections.singletonList(this).getClass());
         alias("singleton-map", Collections.singletonMap(this, null).getClass());
         alias("singleton-set", Collections.singleton(this).getClass());
-
         if (JVM.isAWTAvailable()) {
             // Instantiating these two classes starts the AWT system, which is undesirable.
             // Calling loadClass ensures a reference to the class is found but they are not
@@ -776,18 +769,15 @@ public class XStream {
             alias("awt-font", JVM.loadClassForName("java.awt.Font", false));
             alias("awt-text-attribute", JVM.loadClassForName("java.awt.font.TextAttribute"));
         }
-
         final Class<?> type = JVM.loadClassForName("javax.activation.ActivationDataFlavor");
         if (type != null) {
             alias("activation-data-flavor", type);
         }
-
         if (JVM.isSQLAvailable()) {
             alias("sql-timestamp", JVM.loadClassForName("java.sql.Timestamp"));
             alias("sql-time", JVM.loadClassForName("java.sql.Time"));
             alias("sql-date", JVM.loadClassForName("java.sql.Date"));
         }
-
         if (JVM.isVersion(8)) {
             alias("fixed-clock", JVM.loadClassForName("java.time.Clock$FixedClock"));
             alias("offset-clock", JVM.loadClassForName("java.time.Clock$OffsetClock"));
@@ -825,17 +815,13 @@ public class XStream {
             alias("temporal-value-range", JVM.loadClassForName("java.time.temporal.ValueRange"));
             alias("week-fields", JVM.loadClassForName("java.time.temporal.WeekFields"));
         }
-
         aliasType("charset", Charset.class);
-        //aliasType("path", Path.class);
-
         if (JVM.loadClassForName("javax.security.auth.Subject") != null) {
             aliasDynamically("auth-subject", "javax.security.auth.Subject");
         }
         if (JVM.loadClassForName("javax.xml.datatype.Duration") != null) {
             aliasDynamically("xml-duration", "javax.xml.datatype.Duration");
         }
-
         if (JVM.loadClassForName("java.lang.invoke.SerializedLambda") != null) {
             aliasDynamically("serialized-lambda", "java.lang.invoke.SerializedLambda");
         }
@@ -861,20 +847,17 @@ public class XStream {
 
     protected void setupConverters() {
         registerConverter(new ReflectionConverter(mapper, reflectionProvider), PRIORITY_VERY_LOW);
-
         registerConverter(new SerializableConverter(mapper, reflectionProvider, classLoaderReference), PRIORITY_LOW);
         registerConverter(new ExternalizableConverter(mapper, classLoaderReference), PRIORITY_LOW);
-
         registerConverter(new NullConverter(), PRIORITY_VERY_HIGH);
         registerConverter(new IntConverter(), PRIORITY_NORMAL);
         registerConverter(new FloatConverter(), PRIORITY_NORMAL);
         registerConverter(new DoubleConverter(), PRIORITY_NORMAL);
         registerConverter(new LongConverter(), PRIORITY_NORMAL);
         registerConverter(new ShortConverter(), PRIORITY_NORMAL);
-        registerConverter((Converter)new CharConverter(), PRIORITY_NORMAL);
+        registerConverter((Converter) new CharConverter(), PRIORITY_NORMAL);
         registerConverter(new BooleanConverter(), PRIORITY_NORMAL);
         registerConverter(new ByteConverter(), PRIORITY_NORMAL);
-
         registerConverter(new StringConverter(), PRIORITY_NORMAL);
         registerConverter(new StringBufferConverter(), PRIORITY_NORMAL);
         registerConverter(new StringBuilderConverter(), PRIORITY_NORMAL);
@@ -893,7 +876,6 @@ public class XStream {
         registerConverter(new BigIntegerConverter(), PRIORITY_NORMAL);
         registerConverter(new BigDecimalConverter(), PRIORITY_NORMAL);
         registerConverter(new PathConverter(), PRIORITY_NORMAL);
-
         registerConverter(new ArrayConverter(mapper), PRIORITY_NORMAL);
         registerConverter(new CharArrayConverter(), PRIORITY_NORMAL);
         registerConverter(new CollectionConverter(mapper), PRIORITY_NORMAL);
@@ -903,11 +885,10 @@ public class XStream {
         registerConverter(new SingletonCollectionConverter(mapper), PRIORITY_NORMAL);
         registerConverter(new SingletonMapConverter(mapper), PRIORITY_NORMAL);
         registerConverter(new PropertiesConverter(), PRIORITY_NORMAL);
-        registerConverter((Converter)new EncodedByteArrayConverter(), PRIORITY_NORMAL);
+        registerConverter((Converter) new EncodedByteArrayConverter(), PRIORITY_NORMAL);
         registerConverter(new EnumConverter(), PRIORITY_NORMAL);
         registerConverter(new EnumSetConverter(mapper), PRIORITY_NORMAL);
         registerConverter(new EnumMapConverter(mapper), PRIORITY_NORMAL);
-
         registerConverter(new FileConverter(), PRIORITY_NORMAL);
         if (JVM.isSQLAvailable()) {
             registerConverter(new SqlTimestampConverter(), PRIORITY_NORMAL);
@@ -915,56 +896,33 @@ public class XStream {
             registerConverter(new SqlDateConverter(), PRIORITY_NORMAL);
         }
         if (JVM.isVersion(8)) {
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ChronologyConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.DurationConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.HijrahDateConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.JapaneseDateConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.JapaneseEraConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.InstantConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalDateConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalDateTimeConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalTimeConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.MinguoDateConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.MonthDayConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.OffsetDateTimeConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.OffsetTimeConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.PeriodConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.SystemClockConverter",
-                PRIORITY_NORMAL, new Class[]{Mapper.class}, new Object[]{mapper});
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ThaiBuddhistDateConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ValueRangeConverter",
-                PRIORITY_NORMAL, new Class[]{Mapper.class}, new Object[]{mapper});
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.WeekFieldsConverter",
-                PRIORITY_NORMAL, new Class[]{Mapper.class}, new Object[]{mapper});
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.YearConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.YearMonthConverter", PRIORITY_NORMAL,
-                null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ZonedDateTimeConverter",
-                PRIORITY_NORMAL, null, null);
-            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ZoneIdConverter", PRIORITY_NORMAL,
-                null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ChronologyConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.DurationConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.HijrahDateConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.JapaneseDateConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.JapaneseEraConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.InstantConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalDateConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalDateTimeConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.LocalTimeConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.MinguoDateConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.MonthDayConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.OffsetDateTimeConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.OffsetTimeConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.PeriodConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.SystemClockConverter", PRIORITY_NORMAL, new Class[] { Mapper.class }, new Object[] { mapper });
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ThaiBuddhistDateConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ValueRangeConverter", PRIORITY_NORMAL, new Class[] { Mapper.class }, new Object[] { mapper });
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.WeekFieldsConverter", PRIORITY_NORMAL, new Class[] { Mapper.class }, new Object[] { mapper });
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.YearConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.YearMonthConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ZonedDateTimeConverter", PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.time.ZoneIdConverter", PRIORITY_NORMAL, null, null);
         }
         registerConverter(new DynamicProxyConverter(mapper, classLoaderReference), PRIORITY_NORMAL);
         registerConverter(new JavaClassConverter(classLoaderReference), PRIORITY_NORMAL);
         registerConverter(new JavaMethodConverter(classLoaderReference), PRIORITY_NORMAL);
         registerConverter(new JavaFieldConverter(classLoaderReference), PRIORITY_NORMAL);
-
         if (JVM.isAWTAvailable()) {
             registerConverter(new FontConverter(mapper), PRIORITY_NORMAL);
             registerConverter(new ColorConverter(), PRIORITY_NORMAL);
@@ -973,38 +931,30 @@ public class XStream {
         if (JVM.isSwingAvailable()) {
             registerConverter(new LookAndFeelConverter(mapper, reflectionProvider), PRIORITY_NORMAL);
         }
-
         if (JVM.loadClassForName("javax.security.auth.Subject") != null) {
-            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.SubjectConverter",
-                PRIORITY_NORMAL, new Class[]{Mapper.class}, new Object[]{mapper});
+            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.SubjectConverter", PRIORITY_NORMAL, new Class[] { Mapper.class }, new Object[] { mapper });
         }
         if (JVM.loadClassForName("javax.xml.datatype.Duration") != null) {
-            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.DurationConverter",
-                PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.DurationConverter", PRIORITY_NORMAL, null, null);
         }
         if (JVM.loadClassForName("javax.activation.ActivationDataFlavor") != null) {
-            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.ActivationDataFlavorConverter",
-                PRIORITY_NORMAL, null, null);
+            registerConverterDynamically("com.thoughtworks.xstream.converters.extended.ActivationDataFlavorConverter", PRIORITY_NORMAL, null, null);
         }
         if (JVM.isVersion(8)) {
-            registerConverterDynamically("com.thoughtworks.xstream.converters.reflection.LambdaConverter",
-                PRIORITY_NORMAL, new Class[]{Mapper.class, ReflectionProvider.class, ClassLoaderReference.class},
-                new Object[]{mapper, reflectionProvider, classLoaderReference});
+            registerConverterDynamically("com.thoughtworks.xstream.converters.reflection.LambdaConverter", PRIORITY_NORMAL, new Class[] { Mapper.class, ReflectionProvider.class, ClassLoaderReference.class }, new Object[] { mapper, reflectionProvider, classLoaderReference });
         }
-
         registerConverter(new SelfStreamingInstanceChecker(converterLookup, this), PRIORITY_NORMAL);
     }
 
-    private void registerConverterDynamically(final String className, final int priority,
-            final Class<?>[] constructorParamTypes, final Object[] constructorParamValues) {
+    private void registerConverterDynamically(final String className, final int priority, final Class<?>[] constructorParamTypes, final Object[] constructorParamValues) {
         try {
             final Class<?> type = Class.forName(className, false, classLoaderReference.getReference());
             final Constructor<?> constructor = type.getConstructor(constructorParamTypes);
             final Object instance = constructor.newInstance(constructorParamValues);
             if (instance instanceof Converter) {
-                registerConverter((Converter)instance, priority);
+                registerConverter((Converter) instance, priority);
             } else if (instance instanceof SingleValueConverter) {
-                registerConverter((SingleValueConverter)instance, priority);
+                registerConverter((SingleValueConverter) instance, priority);
             }
         } catch (final Exception e) {
             throw new InitializationException("Could not instantiate converter : " + className, e);
@@ -1017,7 +967,6 @@ public class XStream {
         if (immutableTypesMapper == null) {
             return;
         }
-
         // primitives are always immutable
         addImmutableType(boolean.class, false);
         addImmutableType(Boolean.class, false);
@@ -1035,7 +984,6 @@ public class XStream {
         addImmutableType(Long.class, false);
         addImmutableType(short.class, false);
         addImmutableType(Short.class, false);
-
         // additional types
         addImmutableType(Mapper.Null.class, false);
         addImmutableType(BigDecimal.class, false);
@@ -1044,12 +992,9 @@ public class XStream {
         addImmutableType(URL.class, false);
         addImmutableType(File.class, false);
         addImmutableType(Class.class, false);
-        //addImmutableType(Paths.get(".").getClass(), false);
-
         if (JVM.isAWTAvailable()) {
             addImmutableTypeDynamically("java.awt.font.TextAttribute", false);
         }
-
         addImmutableType(UUID.class, false);
         addImmutableType(URI.class, false);
         addImmutableType(Charset.class, false);
@@ -1057,7 +1002,6 @@ public class XStream {
         addImmutableType(Collections.EMPTY_LIST.getClass(), false);
         addImmutableType(Collections.EMPTY_SET.getClass(), false);
         addImmutableType(Collections.EMPTY_MAP.getClass(), false);
-
         if (JVM.isVersion(8)) {
             addImmutableTypeDynamically("java.time.Duration", false);
             addImmutableTypeDynamically("java.time.Instant", false);
@@ -1316,9 +1260,8 @@ public class XStream {
     public <T> T unmarshal(final HierarchicalStreamReader reader, final T root, final DataHolder dataHolder) {
         try {
             @SuppressWarnings("unchecked")
-            final T t = (T)marshallingStrategy.unmarshal(root, reader, dataHolder, converterLookup, mapper);
+            final T t = (T) marshallingStrategy.unmarshal(root, reader, dataHolder, converterLookup, mapper);
             return t;
-
         } catch (final ConversionException e) {
             final Package pkg = getClass().getPackage();
             final String version = pkg != null ? pkg.getImplementationVersion() : null;
@@ -1536,9 +1479,7 @@ public class XStream {
      */
     public void addImmutableType(final Class<?> type, final boolean isReferenceable) {
         if (immutableTypesMapper == null) {
-            throw new com.thoughtworks.xstream.InitializationException("No "
-                + ImmutableTypesMapper.class.getName()
-                + " available");
+            throw new com.thoughtworks.xstream.InitializationException("No " + ImmutableTypesMapper.class.getName() + " available");
         }
         immutableTypesMapper.addImmutableType(type, isReferenceable);
     }
@@ -1608,8 +1549,7 @@ public class XStream {
      * @param converter the converter to use
      * @since 1.3
      */
-    public void registerLocalConverter(final Class<?> definedIn, final String fieldName,
-            final SingleValueConverter converter) {
+    public void registerLocalConverter(final Class<?> definedIn, final String fieldName, final SingleValueConverter converter) {
         final Converter wrapper = new SingleValueConverterWrapper(converter);
         registerLocalConverter(definedIn, fieldName, wrapper);
     }
@@ -1651,31 +1591,27 @@ public class XStream {
      * @see #NO_REFERENCES
      */
     public void setMode(final int mode) {
-        switch (mode) {
-        case NO_REFERENCES:
-            setMarshallingStrategy(new TreeMarshallingStrategy());
-            break;
-        case ID_REFERENCES:
-            setMarshallingStrategy(new ReferenceByIdMarshallingStrategy());
-            break;
-        case XPATH_RELATIVE_REFERENCES:
-            setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(
-                ReferenceByXPathMarshallingStrategy.RELATIVE));
-            break;
-        case XPATH_ABSOLUTE_REFERENCES:
-            setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(
-                ReferenceByXPathMarshallingStrategy.ABSOLUTE));
-            break;
-        case SINGLE_NODE_XPATH_RELATIVE_REFERENCES:
-            setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.RELATIVE
-                | ReferenceByXPathMarshallingStrategy.SINGLE_NODE));
-            break;
-        case SINGLE_NODE_XPATH_ABSOLUTE_REFERENCES:
-            setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.ABSOLUTE
-                | ReferenceByXPathMarshallingStrategy.SINGLE_NODE));
-            break;
-        default:
-            throw new IllegalArgumentException("Unknown mode : " + mode);
+        switch(mode) {
+            case NO_REFERENCES:
+                setMarshallingStrategy(new TreeMarshallingStrategy());
+                break;
+            case ID_REFERENCES:
+                setMarshallingStrategy(new ReferenceByIdMarshallingStrategy());
+                break;
+            case XPATH_RELATIVE_REFERENCES:
+                setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.RELATIVE));
+                break;
+            case XPATH_ABSOLUTE_REFERENCES:
+                setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.ABSOLUTE));
+                break;
+            case SINGLE_NODE_XPATH_RELATIVE_REFERENCES:
+                setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.RELATIVE | ReferenceByXPathMarshallingStrategy.SINGLE_NODE));
+                break;
+            case SINGLE_NODE_XPATH_ABSOLUTE_REFERENCES:
+                setMarshallingStrategy(new ReferenceByXPathMarshallingStrategy(ReferenceByXPathMarshallingStrategy.ABSOLUTE | ReferenceByXPathMarshallingStrategy.SINGLE_NODE));
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown mode : " + mode);
         }
     }
 
@@ -1713,8 +1649,7 @@ public class XStream {
      * @param itemType item type to be aliases be the itemFieldName
      * @throws InitializationException if no {@link ImplicitCollectionMapper} is available
      */
-    public void addImplicitCollection(final Class<?> ownerType, final String fieldName, final String itemFieldName,
-            final Class<?> itemType) {
+    public void addImplicitCollection(final Class<?> ownerType, final String fieldName, final String itemFieldName, final Class<?> itemType) {
         addImplicitMap(ownerType, fieldName, itemFieldName, itemType, null);
     }
 
@@ -1766,8 +1701,7 @@ public class XStream {
      * @param keyFieldName the name of the field of the itemType that is used for the key in the map
      * @since 1.4
      */
-    public void addImplicitMap(final Class<?> ownerType, final String fieldName, final Class<?> itemType,
-            final String keyFieldName) {
+    public void addImplicitMap(final Class<?> ownerType, final String fieldName, final Class<?> itemType, final String keyFieldName) {
         addImplicitMap(ownerType, fieldName, null, itemType, keyFieldName);
     }
 
@@ -1782,8 +1716,7 @@ public class XStream {
      * @param keyFieldName the name of the field of the itemType that is used for the key in the map
      * @since 1.4
      */
-    public void addImplicitMap(final Class<?> ownerType, final String fieldName, final String itemName,
-            final Class<?> itemType, final String keyFieldName) {
+    public void addImplicitMap(final Class<?> ownerType, final String fieldName, final String itemName, final Class<?> itemType, final String keyFieldName) {
         if (implicitCollectionMapper == null) {
             throw new InitializationException("No " + ImplicitCollectionMapper.class.getName() + " available");
         }
@@ -1840,8 +1773,7 @@ public class XStream {
      * @see #createObjectInputStream(com.thoughtworks.xstream.io.HierarchicalStreamReader)
      * @since 1.0.3
      */
-    public ObjectOutputStream createObjectOutputStream(final Writer writer, final String rootNodeName)
-            throws IOException {
+    public ObjectOutputStream createObjectOutputStream(final Writer writer, final String rootNodeName) throws IOException {
         return createObjectOutputStream(hierarchicalStreamDriver.createWriter(writer), rootNodeName);
     }
 
@@ -1867,8 +1799,7 @@ public class XStream {
      * @see #createObjectInputStream(com.thoughtworks.xstream.io.HierarchicalStreamReader)
      * @since 1.3
      */
-    public ObjectOutputStream createObjectOutputStream(final OutputStream out, final String rootNodeName)
-            throws IOException {
+    public ObjectOutputStream createObjectOutputStream(final OutputStream out, final String rootNodeName) throws IOException {
         return createObjectOutputStream(hierarchicalStreamDriver.createWriter(out), rootNodeName);
     }
 
@@ -1896,8 +1827,7 @@ public class XStream {
      * @see #createObjectInputStream(com.thoughtworks.xstream.io.HierarchicalStreamReader)
      * @since 1.0.3
      */
-    public ObjectOutputStream createObjectOutputStream(final HierarchicalStreamWriter writer, final String rootNodeName)
-            throws IOException {
+    public ObjectOutputStream createObjectOutputStream(final HierarchicalStreamWriter writer, final String rootNodeName) throws IOException {
         return createObjectOutputStream(writer, rootNodeName, null);
     }
 
@@ -1909,12 +1839,11 @@ public class XStream {
      * @since 1.4.10
      */
     @SuppressWarnings("resource")
-    public ObjectOutputStream createObjectOutputStream(final HierarchicalStreamWriter writer, final String rootNodeName,
-            final DataHolder dataHolder)
-            throws IOException {
+    public ObjectOutputStream createObjectOutputStream(final HierarchicalStreamWriter writer, final String rootNodeName, final DataHolder dataHolder) throws IOException {
         final StatefulWriter statefulWriter = new StatefulWriter(writer);
         statefulWriter.startNode(rootNodeName, null);
         return new CustomObjectOutputStream(new CustomObjectOutputStream.StreamCallback() {
+
             @Override
             public void writeToStream(final Object object) {
                 marshal(object, statefulWriter, dataHolder);
@@ -1995,9 +1924,9 @@ public class XStream {
      * @see #createObjectInputStream(com.thoughtworks.xstream.io.HierarchicalStreamReader)
      * @since 1.4.10
      */
-    public ObjectInputStream createObjectInputStream(final HierarchicalStreamReader reader, final DataHolder dataHolder)
-            throws IOException {
+    public ObjectInputStream createObjectInputStream(final HierarchicalStreamReader reader, final DataHolder dataHolder) throws IOException {
         return new CustomObjectInputStream(new CustomObjectInputStream.StreamCallback() {
+
             @Override
             public Object readFromStream() throws EOFException {
                 if (!reader.hasMoreChildren()) {
@@ -2020,8 +1949,7 @@ public class XStream {
             }
 
             @Override
-            public void registerValidation(final ObjectInputValidation validation, final int priority)
-                    throws NotActiveException {
+            public void registerValidation(final ObjectInputValidation validation, final int priority) throws NotActiveException {
                 throw new NotActiveException("stream inactive");
             }
 

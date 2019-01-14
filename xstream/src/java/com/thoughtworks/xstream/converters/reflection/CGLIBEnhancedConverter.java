@@ -24,7 +24,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
@@ -33,14 +32,12 @@ import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.CGLIBMapper;
 import com.thoughtworks.xstream.mapper.Mapper;
-
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.CallbackFilter;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.Factory;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.NoOp;
-
 
 /**
  * Converts a proxy created by the CGLIB {@link Enhancer}. Such a proxy is recreated while deserializing the proxy. The
@@ -56,8 +53,11 @@ import net.sf.cglib.proxy.NoOp;
  * @since 1.2
  */
 public class CGLIBEnhancedConverter extends SerializableConverter {
+
     private static String DEFAULT_NAMING_MARKER = "$$EnhancerByCGLIB$$";
+
     private static String CALLBACK_MARKER = "CGLIB$CALLBACK_";
+
     private transient Map<String, List<Field>> fieldCache;
 
     /**
@@ -68,21 +68,18 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
      * @param classLoaderReference the reference to the {@link ClassLoader} of the XStream instance
      * @since 1.4.5
      */
-    public CGLIBEnhancedConverter(
-            final Mapper mapper, final ReflectionProvider reflectionProvider,
-            final ClassLoaderReference classLoaderReference) {
+    public CGLIBEnhancedConverter(final Mapper mapper, final ReflectionProvider reflectionProvider, final ClassLoaderReference classLoaderReference) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoaderReference);
-        fieldCache = new HashMap<>();
+        fieldCache = new org.apache.commons.collections4.map.HashedMap<>();
     }
 
     /**
      * @deprecated As of 1.4.5 use {@link #CGLIBEnhancedConverter(Mapper, ReflectionProvider, ClassLoaderReference)}
      */
     @Deprecated
-    public CGLIBEnhancedConverter(
-            final Mapper mapper, final ReflectionProvider reflectionProvider, final ClassLoader classLoader) {
+    public CGLIBEnhancedConverter(final Mapper mapper, final ReflectionProvider reflectionProvider, final ClassLoader classLoader) {
         super(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), classLoader);
-        fieldCache = new HashMap<>();
+        fieldCache = new org.apache.commons.collections4.map.HashedMap<>();
     }
 
     /**
@@ -90,14 +87,12 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
      */
     @Deprecated
     public CGLIBEnhancedConverter(final Mapper mapper, final ReflectionProvider reflectionProvider) {
-        this(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), CGLIBEnhancedConverter.class
-            .getClassLoader());
+        this(mapper, new CGLIBFilteringReflectionProvider(reflectionProvider), CGLIBEnhancedConverter.class.getClassLoader());
     }
 
     @Override
     public boolean canConvert(final Class<?> type) {
-        return Enhancer.isEnhanced(type) && type.getName().indexOf(DEFAULT_NAMING_MARKER) > 0
-            || type == CGLIBMapper.Marker.class;
+        return Enhancer.isEnhanced(type) && type.getName().indexOf(DEFAULT_NAMING_MARKER) > 0 || type == CGLIBMapper.Marker.class;
     }
 
     @Override
@@ -122,13 +117,12 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         writer.setValue(String.valueOf(hasFactory));
         writer.endNode();
         Map<?, ?> callbackIndexMap = null;
-        final Callback[] callbacks = hasFactory ? ((Factory)source).getCallbacks() : getCallbacks(source);
+        final Callback[] callbacks = hasFactory ? ((Factory) source).getCallbacks() : getCallbacks(source);
         if (callbacks.length > 1) {
             if (hasFactory) {
-                callbackIndexMap = createCallbackIndexMap((Factory)source);
+                callbackIndexMap = createCallbackIndexMap((Factory) source);
             } else {
-                final ConversionException exception = new ConversionException(
-                    "Cannot handle CGLIB enhanced proxies without factory that have multiple callbacks");
+                final ConversionException exception = new ConversionException("Cannot handle CGLIB enhanced proxies without factory that have multiple callbacks");
                 exception.add("proxy-superclass", type.getSuperclass().getName());
                 exception.add("number-of-callbacks", String.valueOf(callbacks.length));
                 throw exception;
@@ -164,7 +158,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
             writer.setValue(String.valueOf(serialVersionUID));
             writer.endNode();
         } catch (final NoSuchFieldException e) {
-            // OK, ignore
+        // OK, ignore
         } catch (final IllegalAccessException e) {
             final ObjectAccessException exception = new ObjectAccessException("Cannot access field", e);
             exception.add("field", type.getName() + ".serialVersionUID");
@@ -195,11 +189,11 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                 }
             }
         }
-        final List<Callback> list = new ArrayList<>();
+        final List<Callback> list = new org.apache.commons.collections4.list.TreeList<>();
         for (int i = 0; i < fields.size(); ++i) {
             try {
                 final Field field = fields.get(i);
-                final Callback callback = (Callback)field.get(source);
+                final Callback callback = (Callback) field.get(source);
                 list.add(callback);
             } catch (final IllegalAccessException e) {
                 final ObjectAccessException exception = new ObjectAccessException("Cannot access field", e);
@@ -223,15 +217,13 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                 reverseEngineeringCallbacks[i] = NoOp.INSTANCE;
                 idxNoOp = i;
             } else {
-                reverseEngineeringCallbacks[i] = createReverseEngineeredCallbackOfProperType(callback, i,
-                    callbackIndexMap);
+                reverseEngineeringCallbacks[i] = createReverseEngineeredCallbackOfProperType(callback, i, callbackIndexMap);
             }
         }
-
         try {
             source.setCallbacks(reverseEngineeringCallbacks);
-            final Set<Class<?>> interfaces = new HashSet<>();
-            final Set<Method> methods = new HashSet<>();
+            final Set<Class<?>> interfaces = new java.util.LinkedHashSet<>();
+            final Set<Method> methods = new java.util.LinkedHashSet<>();
             Class<?> type = source.getClass();
             do {
                 methods.addAll(Arrays.asList(type.getDeclaredMethods()));
@@ -240,17 +232,16 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                 interfaces.addAll(Arrays.asList(implementedInterfaces));
                 type = type.getSuperclass();
             } while (type != null);
-            for (final Iterator<Class<?>> iterator = interfaces.iterator(); iterator.hasNext();) {
+            for (final Iterator<Class<?>> iterator = interfaces.iterator(); iterator.hasNext(); ) {
                 type = iterator.next();
                 methods.addAll(Arrays.asList(type.getDeclaredMethods()));
             }
-            for (final Iterator<Method> iter = methods.iterator(); iter.hasNext();) {
+            for (final Iterator<Method> iter = methods.iterator(); iter.hasNext(); ) {
                 final Method method = iter.next();
                 if (!method.isAccessible()) {
                     method.setAccessible(true);
                 }
-                if (Factory.class.isAssignableFrom(method.getDeclaringClass())
-                    || (method.getModifiers() & (Modifier.FINAL | Modifier.STATIC)) > 0) {
+                if (Factory.class.isAssignableFrom(method.getDeclaringClass()) || (method.getModifiers() & (Modifier.FINAL | Modifier.STATIC)) > 0) {
                     iter.remove();
                     continue;
                 }
@@ -261,18 +252,15 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                         calledMethod = source.getClass().getMethod(method.getName(), method.getParameterTypes());
                     }
                     callbackIndexMap.put(null, method);
-                    calledMethod.invoke(source, parameterTypes == null
-                        ? (Object[])null
-                        : createNullArguments(parameterTypes));
+                    calledMethod.invoke(source, parameterTypes == null ? (Object[]) null : createNullArguments(parameterTypes));
                 } catch (final IllegalAccessException e) {
                     final ObjectAccessException exception = new ObjectAccessException("Cannot access method", e);
                     exception.add("method", calledMethod.toString());
                     throw exception;
                 } catch (final InvocationTargetException e) {
-                    // OK, ignore
+                // OK, ignore
                 } catch (final NoSuchMethodException e) {
-                    final ConversionException exception = new ConversionException(
-                        "CGLIB enhanced proxies wit abstract nethod that has not been implemented");
+                    final ConversionException exception = new ConversionException("CGLIB enhanced proxies wit abstract nethod that has not been implemented");
                     exception.add("proxy-superclass", type.getSuperclass().getName());
                     exception.add("method", method.toString());
                     throw exception;
@@ -290,7 +278,6 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         } finally {
             source.setCallbacks(originalCallbacks);
         }
-
         callbackIndexMap.remove(null);
         return callbackIndexMap;
     }
@@ -301,9 +288,9 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
             final Class<?> type = parameterTypes[i];
             if (type.isPrimitive()) {
                 if (type == byte.class) {
-                    arguments[i] = new Byte((byte)0);
+                    arguments[i] = new Byte((byte) 0);
                 } else if (type == short.class) {
-                    arguments[i] = new Short((short)0);
+                    arguments[i] = new Short((short) 0);
                 } else if (type == int.class) {
                     arguments[i] = new Integer(0);
                 } else if (type == long.class) {
@@ -322,8 +309,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         return arguments;
     }
 
-    private Callback createReverseEngineeredCallbackOfProperType(final Callback callback, final int index,
-            final Map<? super Object, ? super Object> callbackIndexMap) {
+    private Callback createReverseEngineeredCallbackOfProperType(final Callback callback, final int index, final Map<? super Object, ? super Object> callbackIndexMap) {
         Class<?> iface = null;
         Class<?>[] interfaces = callback.getClass().getInterfaces();
         for (int i = 0; i < interfaces.length; i++) {
@@ -341,21 +327,20 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
                 i = -1;
             }
         }
-        return (Callback)Proxy.newProxyInstance(iface.getClassLoader(), new Class[]{iface},
-            new ReverseEngineeringInvocationHandler(index, callbackIndexMap));
+        return (Callback) Proxy.newProxyInstance(iface.getClassLoader(), new Class[] { iface }, new ReverseEngineeringInvocationHandler(index, callbackIndexMap));
     }
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
         final Enhancer enhancer = new Enhancer();
         reader.moveDown();
-        enhancer.setSuperclass((Class<?>)context.convertAnother(null, Class.class));
+        enhancer.setSuperclass((Class<?>) context.convertAnother(null, Class.class));
         reader.moveUp();
         reader.moveDown();
-        final List<Class<?>> interfaces = new ArrayList<>();
+        final List<Class<?>> interfaces = new org.apache.commons.collections4.list.TreeList<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
-            interfaces.add((Class<?>)context.convertAnother(null, mapper.realClass(reader.getNodeName())));
+            interfaces.add((Class<?>) context.convertAnother(null, mapper.realClass(reader.getNodeName())));
             reader.moveUp();
         }
         enhancer.setInterfaces(interfaces.toArray(new Class[interfaces.size()]));
@@ -364,7 +349,6 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         final boolean useFactory = Boolean.valueOf(reader.getValue()).booleanValue();
         enhancer.setUseFactory(useFactory);
         reader.moveUp();
-
         final List<Callback> callbacksToEnhance = new ArrayList<>();
         final List<Callback> callbacks = new ArrayList<>();
         Map<Method, Integer> callbackIndexMap = null;
@@ -372,7 +356,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         if ("callbacks".equals(reader.getNodeName())) {
             reader.moveDown();
             @SuppressWarnings("unchecked")
-            final Map<Method, Integer> typedMap = (Map<Method, Integer>)context.convertAnother(null, HashMap.class);
+            final Map<Method, Integer> typedMap = (Map<Method, Integer>) context.convertAnother(null, HashMap.class);
             callbackIndexMap = typedMap;
             reader.moveUp();
             while (reader.hasMoreChildren()) {
@@ -405,9 +389,8 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         return serializationMembers.callReadResolve(result);
     }
 
-    private void readCallback(final HierarchicalStreamReader reader, final UnmarshallingContext context,
-            final List<Callback> callbacksToEnhance, final List<Callback> callbacks) {
-        final Callback callback = (Callback)context.convertAnother(null, mapper.realClass(reader.getNodeName()));
+    private void readCallback(final HierarchicalStreamReader reader, final UnmarshallingContext context, final List<Callback> callbacksToEnhance, final List<Callback> callbacks) {
+        final Callback callback = (Callback) context.convertAnother(null, mapper.realClass(reader.getNodeName()));
         callbacks.add(callback);
         if (callback == null) {
             callbacksToEnhance.add(NoOp.INSTANCE);
@@ -419,7 +402,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     private Object create(final Enhancer enhancer, final List<Callback> callbacks, final boolean useFactory) {
         final Object result = enhancer.create();
         if (useFactory) {
-            ((Factory)result).setCallbacks(callbacks.toArray(new Callback[callbacks.size()]));
+            ((Factory) result).setCallbacks(callbacks.toArray(new Callback[callbacks.size()]));
         }
         return result;
     }
@@ -435,7 +418,7 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     @Override
     protected Object readResolve() {
         super.readResolve();
-        fieldCache = new HashMap<>();
+        fieldCache = new org.apache.commons.collections4.map.HashedMap<>();
         return this;
     }
 
@@ -448,9 +431,9 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         @Override
         public void visitSerializableFields(final Object object, final Visitor visitor) {
             wrapped.visitSerializableFields(object, new Visitor() {
+
                 @Override
-                public void visit(final String name, final Class<?> type, final Class<?> definedIn,
-                        final Object value) {
+                public void visit(final String name, final Class<?> type, final Class<?> definedIn, final Object value) {
                     if (!name.startsWith("CGLIB$")) {
                         visitor.visit(name, type, definedIn, value);
                     }
@@ -460,11 +443,12 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
     }
 
     private static final class ReverseEngineeringInvocationHandler implements InvocationHandler {
+
         private final Integer index;
+
         private final Map<? super Object, ? super Object> indexMap;
 
-        public ReverseEngineeringInvocationHandler(
-                final int index, final Map<? super Object, ? super Object> indexMap) {
+        public ReverseEngineeringInvocationHandler(final int index, final Map<? super Object, ? super Object> indexMap) {
             this.indexMap = indexMap;
             this.index = Integer.valueOf(index);
         }
@@ -487,13 +471,11 @@ public class CGLIBEnhancedConverter extends SerializableConverter {
         @Override
         public int accept(final Method method) {
             if (!callbackIndexMap.containsKey(method)) {
-                final ConversionException exception = new ConversionException(
-                    "CGLIB callback not detected in reverse engineering");
+                final ConversionException exception = new ConversionException("CGLIB callback not detected in reverse engineering");
                 exception.add("CGLIB-callback", method.toString());
                 throw exception;
             }
             return callbackIndexMap.get(method).intValue();
         }
-
     }
 }

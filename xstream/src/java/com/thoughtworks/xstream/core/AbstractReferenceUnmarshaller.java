@@ -12,14 +12,12 @@ package com.thoughtworks.xstream.core;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.ConverterLookup;
 import com.thoughtworks.xstream.core.util.FastStack;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.mapper.Mapper;
-
 
 /**
  * Abstract base class for a TreeUnmarshaller, that resolves references.
@@ -32,18 +30,19 @@ import com.thoughtworks.xstream.mapper.Mapper;
 public abstract class AbstractReferenceUnmarshaller<R> extends TreeUnmarshaller {
 
     private static final Object NULL = new Object();
-    private final Map<R, Object> values = new HashMap<>();
+
+    private final Map<R, Object> values = new org.apache.commons.collections4.map.HashedMap<>();
+
     private final FastStack<R> parentStack = new FastStack<>(16);
 
-    public AbstractReferenceUnmarshaller(
-            final Object root, final HierarchicalStreamReader reader, final ConverterLookup converterLookup,
-            final Mapper mapper) {
+    public AbstractReferenceUnmarshaller(final Object root, final HierarchicalStreamReader reader, final ConverterLookup converterLookup, final Mapper mapper) {
         super(root, reader, converterLookup, mapper);
     }
 
     @Override
     protected Object convert(final Object parent, final Class<?> type, final Converter converter) {
-        if (parentStack.size() > 0) { // handles circular references
+        if (parentStack.size() > 0) {
+            // handles circular references
             final R parentReferenceKey = parentStack.peek();
             if (parentReferenceKey != null) {
                 // see AbstractCircularReferenceTest.testWeirdCircularReference()

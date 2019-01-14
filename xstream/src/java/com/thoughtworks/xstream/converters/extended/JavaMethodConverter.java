@@ -15,7 +15,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
@@ -26,10 +25,9 @@ import com.thoughtworks.xstream.core.ClassLoaderReference;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 
-
 /**
  * Converts a {@link Method}.
- * 
+ *
  * @author Aslak Helles&oslash;y
  * @author J&ouml;rg Schaible
  */
@@ -39,7 +37,7 @@ public class JavaMethodConverter implements Converter {
 
     /**
      * Construct a JavaMethodConverter.
-     * 
+     *
      * @param classLoaderReference the reference to the {@link ClassLoader} of the XStream instance
      * @since 1.4.5
      */
@@ -57,7 +55,7 @@ public class JavaMethodConverter implements Converter {
 
     /**
      * Construct a JavaMethodConverter.
-     * 
+     *
      * @param javaClassConverter the converter to use
      * @since 1.4.5
      */
@@ -76,30 +74,26 @@ public class JavaMethodConverter implements Converter {
     @Override
     public void marshal(final Object source, final HierarchicalStreamWriter writer, final MarshallingContext context) {
         if (source instanceof Method) {
-            final Method method = (Method)source;
+            final Method method = (Method) source;
             final String declaringClassName = javaClassConverter.toString(method.getDeclaringClass());
             marshalMethod(writer, declaringClassName, method.getName(), method.getParameterTypes());
         } else {
-            final Constructor<?> method = (Constructor<?>)source;
+            final Constructor<?> method = (Constructor<?>) source;
             final String declaringClassName = javaClassConverter.toString(method.getDeclaringClass());
             marshalMethod(writer, declaringClassName, null, method.getParameterTypes());
         }
     }
 
-    private void marshalMethod(final HierarchicalStreamWriter writer, final String declaringClassName,
-            final String methodName, final Class<?>[] parameterTypes) {
-
+    private void marshalMethod(final HierarchicalStreamWriter writer, final String declaringClassName, final String methodName, final Class<?>[] parameterTypes) {
         writer.startNode("class");
         writer.setValue(declaringClassName);
         writer.endNode();
-
         if (methodName != null) {
             // it's a method and not a ctor
             writer.startNode("name");
             writer.setValue(methodName);
             writer.endNode();
         }
-
         writer.startNode("parameter-types");
         for (final Class<?> parameterType : parameterTypes) {
             writer.startNode("class");
@@ -113,30 +107,26 @@ public class JavaMethodConverter implements Converter {
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
         try {
             final boolean isMethodNotConstructor = context.getRequiredType().equals(Method.class);
-
             reader.moveDown();
             final String declaringClassName = reader.getValue();
-            final Class<?> declaringClass = (Class<?>)javaClassConverter.fromString(declaringClassName);
+            final Class<?> declaringClass = (Class<?>) javaClassConverter.fromString(declaringClassName);
             reader.moveUp();
-
             String methodName = null;
             if (isMethodNotConstructor) {
                 reader.moveDown();
                 methodName = reader.getValue();
                 reader.moveUp();
             }
-
             reader.moveDown();
-            final List<Class<?>> parameterTypeList = new ArrayList<>();
+            final List<Class<?>> parameterTypeList = new org.apache.commons.collections4.list.TreeList<>();
             while (reader.hasMoreChildren()) {
                 reader.moveDown();
                 final String parameterTypeName = reader.getValue();
-                parameterTypeList.add((Class<?>)javaClassConverter.fromString(parameterTypeName));
+                parameterTypeList.add((Class<?>) javaClassConverter.fromString(parameterTypeName));
                 reader.moveUp();
             }
             final Class<?>[] parameterTypes = parameterTypeList.toArray(new Class[parameterTypeList.size()]);
             reader.moveUp();
-
             if (isMethodNotConstructor) {
                 return declaringClass.getDeclaredMethod(methodName, parameterTypes);
             } else {

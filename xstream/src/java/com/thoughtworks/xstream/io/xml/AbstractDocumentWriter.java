@@ -12,29 +12,28 @@ package com.thoughtworks.xstream.io.xml;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.core.util.FastStack;
 import com.thoughtworks.xstream.io.naming.NameCoder;
-
 
 /**
  * A generic {@link com.thoughtworks.xstream.io.HierarchicalStreamWriter} for DOM writer implementations. The
  * implementation manages a list of top level DOM nodes. Every time the last node is closed on the node stack, the next
  * started node is added to the list. This list can be retrieved using the {@link DocumentWriter#getTopLevelNodes()}
  * method.
- * 
+ *
  * @author Laurent Bihanic
  * @author J&ouml;rg Schaible
  * @since 1.2.1
  */
 public abstract class AbstractDocumentWriter extends AbstractXmlWriter implements DocumentWriter {
 
-    private final List<Object> result = new ArrayList<>();
+    private final List<Object> result = new org.apache.commons.collections4.list.TreeList<>();
+
     private final FastStack<Object> nodeStack = new FastStack<>(16);
 
     /**
      * Constructs an AbstractDocumentWriter.
-     * 
+     *
      * @param container the top level container for the nodes to create (may be <code>null</code>)
      * @param nameCoder the object that creates XML-friendly names
      * @since 1.4
@@ -49,7 +48,7 @@ public abstract class AbstractDocumentWriter extends AbstractXmlWriter implement
 
     /**
      * Constructs an AbstractDocumentWriter.
-     * 
+     *
      * @param container the top level container for the nodes to create (may be <code>null</code>)
      * @param replacer the object that creates XML-friendly names
      * @since 1.2.1
@@ -57,7 +56,7 @@ public abstract class AbstractDocumentWriter extends AbstractXmlWriter implement
      */
     @Deprecated
     public AbstractDocumentWriter(final Object container, final XmlFriendlyReplacer replacer) {
-        this(container, (NameCoder)replacer);
+        this(container, (NameCoder) replacer);
     }
 
     @Override
@@ -69,7 +68,7 @@ public abstract class AbstractDocumentWriter extends AbstractXmlWriter implement
     /**
      * Create a node. The provided node name is not yet XML friendly. If {@link #getCurrent()} returns <code>null</code>
      * the node is a top level node.
-     * 
+     *
      * @param name the node name
      * @return the new node
      * @since 1.2.1
@@ -87,7 +86,7 @@ public abstract class AbstractDocumentWriter extends AbstractXmlWriter implement
 
     /**
      * Called when a node ends. Hook for derived implementations.
-     * 
+     *
      * @since 1.2.1
      */
     public void endNodeInternally() {
@@ -107,11 +106,11 @@ public abstract class AbstractDocumentWriter extends AbstractXmlWriter implement
 
     @Override
     public void flush() {
-        // don't need to do anything
+    // don't need to do anything
     }
 
     @Override
     public void close() {
-        // don't need to do anything
+    // don't need to do anything
     }
 }

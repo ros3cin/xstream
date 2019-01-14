@@ -17,7 +17,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -29,18 +28,21 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.DynamicProxyMapper;
 import com.thoughtworks.xstream.mapper.Mapper;
 
-
 /**
  * Converts a dynamic proxy to XML, storing the implemented interfaces and handler.
- * 
+ *
  * @author Joe Walnes
  */
 public class DynamicProxyConverter implements Converter {
 
     private final ClassLoaderReference classLoaderReference;
+
     private final Mapper mapper;
+
     private static final Field HANDLER = Fields.locate(Proxy.class, InvocationHandler.class, false);
+
     private static final InvocationHandler DUMMY = new InvocationHandler() {
+
         @Override
         public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
             return null;
@@ -57,7 +59,7 @@ public class DynamicProxyConverter implements Converter {
 
     /**
      * Construct a DynamicProxyConverter.
-     * 
+     *
      * @param mapper the Mapper chain
      * @param classLoaderReference the reference to the {@link ClassLoader} of the XStream instance
      * @since 1.4.5
@@ -104,7 +106,7 @@ public class DynamicProxyConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final List<Class<?>> interfaces = new ArrayList<>();
+        final List<Class<?>> interfaces = new org.apache.commons.collections4.list.TreeList<>();
         InvocationHandler handler = null;
         Class<?> handlerType = null;
         while (reader.hasMoreChildren()) {
@@ -127,10 +129,11 @@ public class DynamicProxyConverter implements Converter {
         final Class<?>[] interfacesAsArray = new Class[interfaces.size()];
         interfaces.toArray(interfacesAsArray);
         Object proxy = null;
-        if (HANDLER != null) { // we will not be able to resolve references to the proxy
+        if (HANDLER != null) {
+            // we will not be able to resolve references to the proxy
             proxy = Proxy.newProxyInstance(classLoaderReference.getReference(), interfacesAsArray, DUMMY);
         }
-        handler = (InvocationHandler)context.convertAnother(proxy, handlerType);
+        handler = (InvocationHandler) context.convertAnother(proxy, handlerType);
         reader.moveUp();
         if (HANDLER != null) {
             Fields.write(HANDLER, proxy, handler);

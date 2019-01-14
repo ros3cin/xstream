@@ -14,13 +14,11 @@ package com.thoughtworks.xstream.converters.extended;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-
 
 /**
  * Converts an AWT {@link Color}, using four nested elements: red, green, blue, alpha.
@@ -31,14 +29,13 @@ public class ColorConverter implements Converter {
 
     @Override
     public boolean canConvert(final Class<?> type) {
-        // String comparison is used here because Color.class loads the class which in turns instantiates AWT,
         // which is nasty if you don't want it.
         return type.getName().equals("java.awt.Color");
     }
 
     @Override
     public void marshal(final Object source, final HierarchicalStreamWriter writer, final MarshallingContext context) {
-        final Color color = (Color)source;
+        final Color color = (Color) source;
         write("red", color.getRed(), writer);
         write("green", color.getGreen(), writer);
         write("blue", color.getBlue(), writer);
@@ -47,15 +44,13 @@ public class ColorConverter implements Converter {
 
     @Override
     public Object unmarshal(final HierarchicalStreamReader reader, final UnmarshallingContext context) {
-        final Map<String, Integer> elements = new HashMap<>();
+        final Map<String, Integer> elements = new org.apache.commons.collections4.map.HashedMap<>();
         while (reader.hasMoreChildren()) {
             reader.moveDown();
             elements.put(reader.getNodeName(), Integer.valueOf(reader.getValue()));
             reader.moveUp();
         }
-        return new Color(elements.get("red").intValue(), elements.get("green").intValue(), elements
-            .get("blue")
-            .intValue(), elements.get("alpha").intValue());
+        return new Color(elements.get("red").intValue(), elements.get("green").intValue(), elements.get("blue").intValue(), elements.get("alpha").intValue());
     }
 
     private void write(final String fieldName, final int value, final HierarchicalStreamWriter writer) {
