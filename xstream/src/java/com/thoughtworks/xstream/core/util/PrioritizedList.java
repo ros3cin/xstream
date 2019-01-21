@@ -15,20 +15,21 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-
 /**
  * List that allows items to be added with a priority that will affect the order in which they are later iterated over.
  * Objects with a high priority will appear before objects with a low priority in the list. If two objects of the same
  * priority are added to the list, the most recently added one will be iterated over first. Implementation uses a
  * TreeSet, which has a guaranteed add time of O(log(n)).
- * 
+ *
  * @author Joe Walnes
  * @author Guilherme Silveira
  */
 public class PrioritizedList<E> implements Iterable<E> {
 
-    private final Set<PrioritizedItem<E>> set = new TreeSet<>();
+    private final Set<PrioritizedItem<E>> set = new org.eclipse.collections.impl.set.sorted.mutable.TreeSortedSet<>();
+
     private int lowestPriority = Integer.MAX_VALUE;
+
     private int lastId = 0;
 
     public void add(final E item, final int priority) {
@@ -46,7 +47,9 @@ public class PrioritizedList<E> implements Iterable<E> {
     private static class PrioritizedItem<V> implements Comparable<PrioritizedItem<V>> {
 
         final V value;
+
         final int priority;
+
         final int id;
 
         public PrioritizedItem(final V value, final int priority, final int id) {
@@ -74,10 +77,9 @@ public class PrioritizedList<E> implements Iterable<E> {
                 return false;
             }
             @SuppressWarnings("unchecked")
-            final PrioritizedItem<V> other = (PrioritizedItem<V>)obj;
+            final PrioritizedItem<V> other = (PrioritizedItem<V>) obj;
             return this.id == other.id;
         }
-
     }
 
     private static class PrioritizedItemIterator<V> implements Iterator<V> {
@@ -102,7 +104,5 @@ public class PrioritizedList<E> implements Iterable<E> {
         public V next() {
             return iterator.next().value;
         }
-
     }
-
 }

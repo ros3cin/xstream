@@ -16,39 +16,42 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-
 /**
  * Simple Document Object Model for XmlPullParser implementations.
- * 
+ *
  * @author Jason van Zyl
  * @author Joe Walnes
  * @author J&ouml;rg Schaible
  * @since 1.4
  */
 public class XppDom implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private final String name;
+
     private String value;
+
     private Map<String, String> attributes;
+
     private final List<XppDom> childList;
+
     transient private Map<String, XppDom> childMap;
+
     private XppDom parent;
 
     public XppDom(final String name) {
         this.name = name;
         childList = new ArrayList<>();
-        childMap = new HashMap<>();
+        childMap = new org.apache.commons.collections4.map.HashedMap<>();
     }
 
     // ----------------------------------------------------------------------
     // Name handling
     // ----------------------------------------------------------------------
-
     public String getName() {
         return name;
     }
@@ -56,7 +59,6 @@ public class XppDom implements Serializable {
     // ----------------------------------------------------------------------
     // Value handling
     // ----------------------------------------------------------------------
-
     public String getValue() {
         return value;
     }
@@ -68,7 +70,6 @@ public class XppDom implements Serializable {
     // ----------------------------------------------------------------------
     // Attribute handling
     // ----------------------------------------------------------------------
-
     public String[] getAttributeNames() {
         if (null == attributes) {
             return new String[0];
@@ -78,21 +79,19 @@ public class XppDom implements Serializable {
     }
 
     public String getAttribute(final String name) {
-        return null != attributes ? (String)attributes.get(name) : null;
+        return null != attributes ? (String) attributes.get(name) : null;
     }
 
     public void setAttribute(final String name, final String value) {
         if (null == attributes) {
-            attributes = new HashMap<>();
+            attributes = new org.apache.commons.collections4.map.HashedMap<>();
         }
-
         attributes.put(name, value);
     }
 
     // ----------------------------------------------------------------------
     // Child handling
     // ----------------------------------------------------------------------
-
     public XppDom getChild(final int i) {
         return childList.get(i);
     }
@@ -121,14 +120,12 @@ public class XppDom implements Serializable {
         } else {
             final ArrayList<XppDom> children = new ArrayList<>();
             final int size = childList.size();
-
             for (int i = 0; i < size; i++) {
                 final XppDom configuration = childList.get(i);
                 if (name.equals(configuration.getName())) {
                     children.add(configuration);
                 }
             }
-
             return children.toArray(new XppDom[0]);
         }
     }
@@ -137,14 +134,12 @@ public class XppDom implements Serializable {
         if (null == childList) {
             return 0;
         }
-
         return childList.size();
     }
 
     // ----------------------------------------------------------------------
     // Parent handling
     // ----------------------------------------------------------------------
-
     public XppDom getParent() {
         return parent;
     }
@@ -156,9 +151,8 @@ public class XppDom implements Serializable {
     // ----------------------------------------------------------------------
     // Serialization
     // ----------------------------------------------------------------------
-
     Object readResolve() {
-        childMap = new HashMap<>();
+        childMap = new org.apache.commons.collections4.map.HashedMap<>();
         for (final XppDom element : childList) {
             childMap.put(element.getName(), element);
         }
@@ -168,37 +162,31 @@ public class XppDom implements Serializable {
     // ----------------------------------------------------------------------
     // DOM builder
     // ----------------------------------------------------------------------
-
     /**
      * Build an XPP DOM hierarchy. The {@link java.io.InputStream} or {@link java.io.Reader} used by the parser must
      * have already been set. The method does not close it after reading the document's end.
-     * 
+     *
      * @param parser the XPP instance
      * @throws XmlPullParserException if the parser turns into an invalid state or reads invalid XML
      * @throws IOException if the data cannot be read
      */
     public static XppDom build(final XmlPullParser parser) throws XmlPullParserException, IOException {
-        final List<XppDom> elements = new ArrayList<>();
-        final List<StringBuilder> values = new ArrayList<>();
+        final List<XppDom> elements = new org.apache.commons.collections4.list.TreeList<>();
+        final List<StringBuilder> values = new org.apache.commons.collections4.list.TreeList<>();
         XppDom node = null;
-
         int eventType = parser.getEventType();
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if (eventType == XmlPullParser.START_TAG) {
                 final String rawName = parser.getName();
-
                 // Use XppDom when deprecated Xpp3Dom is removed
                 final XppDom child = new Xpp3Dom(rawName);
-
                 final int depth = elements.size();
                 if (depth > 0) {
                     final XppDom parent = elements.get(depth - 1);
                     parent.addChild(child);
                 }
-
                 elements.add(child);
                 values.add(new StringBuilder());
-
                 final int attributesSize = parser.getAttributeCount();
                 for (int i = 0; i < attributesSize; i++) {
                     final String name = parser.getAttributeName(i);
@@ -213,23 +201,19 @@ public class XppDom implements Serializable {
                 final int depth = elements.size() - 1;
                 final XppDom finalNode = elements.remove(depth);
                 final String accumulatedValue = values.remove(depth).toString();
-
                 String finishedValue;
                 if (0 == accumulatedValue.length()) {
                     finishedValue = null;
                 } else {
                     finishedValue = accumulatedValue;
                 }
-
                 finalNode.setValue(finishedValue);
                 if (0 == depth) {
                     node = finalNode;
                 }
             }
-
             eventType = parser.next();
         }
-
         return node;
     }
 }

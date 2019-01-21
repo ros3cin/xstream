@@ -42,7 +42,7 @@ import java.util.List;
  *   <li>The thread's context classloader (and all its parents)</li>
  *   <li>The classloader for XStream (and all its parents)</li>
  * </ul>
- * 
+ *
  * <p>The added classloaders are kept with weak references to allow an application container to reload classes.</p>
  *
  * @author Joe Walnes
@@ -50,6 +50,7 @@ import java.util.List;
  * @since 1.0.3
  */
 public class CompositeClassLoader extends ClassLoader {
+
     static {
         // see http://www.cs.duke.edu/csed/java/jdk1.7/technotes/guides/lang/cl-mt.html
         try {
@@ -59,16 +60,19 @@ public class CompositeClassLoader extends ClassLoader {
             }
             m.invoke(null);
         } catch (final Exception e) {
-            // ignore errors, JVM will synchronize class for Java 7 or higher
+        // ignore errors, JVM will synchronize class for Java 7 or higher
         }
     }
 
     private final ReferenceQueue<ClassLoader> queue = new ReferenceQueue<>();
-    private final List<WeakReference<ClassLoader>> classLoaders = new ArrayList<>();
+
+    private final List<WeakReference<ClassLoader>> classLoaders = new java.util.LinkedList<>();
 
     public CompositeClassLoader() {
-        addInternal(Object.class.getClassLoader()); // bootstrap loader.
-        addInternal(getClass().getClassLoader()); // whichever classloader loaded this jar.
+        // bootstrap loader.
+        addInternal(Object.class.getClassLoader());
+        // whichever classloader loaded this jar.
+        addInternal(getClass().getClassLoader());
     }
 
     /**
@@ -84,7 +88,7 @@ public class CompositeClassLoader extends ClassLoader {
 
     private void addInternal(final ClassLoader classLoader) {
         WeakReference<ClassLoader> refClassLoader = null;
-        for (final Iterator<WeakReference<ClassLoader>> iterator = classLoaders.iterator(); iterator.hasNext();) {
+        for (final Iterator<WeakReference<ClassLoader>> iterator = classLoaders.iterator(); iterator.hasNext(); ) {
             final WeakReference<ClassLoader> ref = iterator.next();
             final ClassLoader cl = ref.get();
             if (cl == null) {
@@ -100,16 +104,15 @@ public class CompositeClassLoader extends ClassLoader {
     @Override
     public Class<?> loadClass(final String name) throws ClassNotFoundException {
         final List<ClassLoader> copy = new ArrayList<>(classLoaders.size());
-        synchronized(this) {
+        synchronized (this) {
             cleanup();
-            for(final WeakReference<ClassLoader> ref : classLoaders) {
+            for (final WeakReference<ClassLoader> ref : classLoaders) {
                 final ClassLoader cl = ref.get();
                 if (cl != null) {
                     copy.add(cl);
                 }
             }
         }
-
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         for (final ClassLoader classLoader : copy) {
             if (classLoader == contextClassLoader) {
@@ -118,12 +121,9 @@ public class CompositeClassLoader extends ClassLoader {
             try {
                 return classLoader.loadClass(name);
             } catch (final ClassNotFoundException notFound) {
-                // ok.. try another one
+            // ok.. try another one
             }
         }
-
-        // One last try - the context class loader associated with the current thread. Often used in j2ee servers.
-        // Note: The contextClassLoader cannot be added to the classLoaders list up front as the thread that constructs
         // XStream is potentially different to thread that uses it.
         if (contextClassLoader != null) {
             return contextClassLoader.loadClass(name);
@@ -134,8 +134,7 @@ public class CompositeClassLoader extends ClassLoader {
 
     private void cleanup() {
         Reference<? extends ClassLoader> ref;
-        while ((ref = queue.poll()) != null)
-        {
+        while ((ref = queue.poll()) != null) {
             classLoaders.remove(ref);
         }
     }

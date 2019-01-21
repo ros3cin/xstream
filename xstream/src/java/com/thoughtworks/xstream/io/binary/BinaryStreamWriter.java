@@ -16,11 +16,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.io.ExtendedHierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.StreamException;
-
 
 /**
  * @since 1.2
@@ -28,7 +26,9 @@ import com.thoughtworks.xstream.io.StreamException;
 public class BinaryStreamWriter implements ExtendedHierarchicalStreamWriter {
 
     private final IdRegistry idRegistry = new IdRegistry();
+
     private final DataOutputStream out;
+
     private final Token.Formatter tokenFormatter = new Token.Formatter();
 
     public BinaryStreamWriter(final OutputStream outputStream) {
@@ -94,7 +94,8 @@ public class BinaryStreamWriter implements ExtendedHierarchicalStreamWriter {
     private class IdRegistry {
 
         private long nextId = 0;
-        private final Map<String, Long> ids = new HashMap<>();
+
+        private final Map<String, Long> ids = new java.util.LinkedHashMap<>();
 
         public long getId(final String value) {
             Long id = ids.get(value);
@@ -105,6 +106,5 @@ public class BinaryStreamWriter implements ExtendedHierarchicalStreamWriter {
             }
             return id.longValue();
         }
-
     }
 }

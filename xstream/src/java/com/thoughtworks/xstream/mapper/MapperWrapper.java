@@ -14,38 +14,54 @@ package com.thoughtworks.xstream.mapper;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 
-
 public abstract class MapperWrapper implements Mapper {
+
     private final Mapper wrapped;
+
     private final Mapper aliasForAttributeMapper;
+
     private final Mapper aliasForSystemAttributeMapper;
+
     private final Mapper attributeForAliasMapper;
+
     private final Mapper defaultImplementationOfMapper;
+
     private final Mapper getConverterFromAttributeMapper;
+
     private final Mapper getConverterFromItemTypeMapper;
+
     private final Mapper getFieldNameForItemTypeAndNameMapper;
+
     private final Mapper getImplicitCollectionDefForFieldNameMapper;
+
     private final Mapper getItemTypeForItemFieldNameMapper;
+
     private final Mapper getLocalConverterMapper;
+
     private final Mapper isIgnoredElementMapper;
+
     private final Mapper isImmutableValueTypeMapper;
+
     private final Mapper isReferenceableMapper;
+
     private final Mapper realClassMapper;
+
     private final Mapper realMemberMapper;
+
     private final Mapper serializedClassMapper;
+
     private final Mapper serializedMemberMapper;
+
     private final Mapper shouldSerializeMemberMapper;
 
     public MapperWrapper(final Mapper wrapped) {
         this.wrapped = wrapped;
-
         if (wrapped instanceof MapperWrapper) {
-            final MapperWrapper wrapper = (MapperWrapper)wrapped;
-            final Map<String, Mapper> wrapperMap = new HashMap<>();
+            final MapperWrapper wrapper = (MapperWrapper) wrapped;
+            final Map<String, Mapper> wrapperMap = new org.apache.commons.collections4.map.HashedMap<>();
             wrapperMap.put("aliasForAttribute", wrapper.aliasForAttributeMapper);
             wrapperMap.put("aliasForSystemAttribute", wrapper.aliasForSystemAttributeMapper);
             wrapperMap.put("attributeForAlias", wrapper.attributeForAliasMapper);
@@ -64,7 +80,6 @@ public abstract class MapperWrapper implements Mapper {
             wrapperMap.put("serializedClass", wrapper.serializedClassMapper);
             wrapperMap.put("serializedMember", wrapper.serializedMemberMapper);
             wrapperMap.put("shouldSerializeMember", wrapper.shouldSerializeMemberMapper);
-
             final Method[] methods = wrapped.getClass().getMethods();
             for (final Method method : methods) {
                 if (method.getDeclaringClass() != MapperWrapper.class) {
@@ -74,7 +89,6 @@ public abstract class MapperWrapper implements Mapper {
                     }
                 }
             }
-
             aliasForAttributeMapper = wrapperMap.get("aliasForAttribute");
             aliasForSystemAttributeMapper = wrapperMap.get("aliasForSystemAttribute");
             attributeForAliasMapper = wrapperMap.get("attributeForAlias");
@@ -113,7 +127,6 @@ public abstract class MapperWrapper implements Mapper {
             serializedMemberMapper = wrapped;
             shouldSerializeMemberMapper = wrapped;
         }
-
     }
 
     @Override
@@ -167,8 +180,7 @@ public abstract class MapperWrapper implements Mapper {
     }
 
     @Override
-    public String getFieldNameForItemTypeAndName(final Class<?> definedIn, final Class<?> itemType,
-            final String itemFieldName) {
+    public String getFieldNameForItemTypeAndName(final Class<?> definedIn, final Class<?> itemType, final String itemFieldName) {
         return getFieldNameForItemTypeAndNameMapper.getFieldNameForItemTypeAndName(definedIn, itemType, itemFieldName);
     }
 
@@ -178,8 +190,7 @@ public abstract class MapperWrapper implements Mapper {
     }
 
     @Override
-    public ImplicitCollectionMapping getImplicitCollectionDefForFieldName(final Class<?> itemType,
-            final String fieldName) {
+    public ImplicitCollectionMapping getImplicitCollectionDefForFieldName(final Class<?> itemType, final String fieldName) {
         return getImplicitCollectionDefForFieldNameMapper.getImplicitCollectionDefForFieldName(itemType, fieldName);
     }
 
@@ -201,13 +212,12 @@ public abstract class MapperWrapper implements Mapper {
     @Override
     public <T extends Mapper> T lookupMapperOfType(final Class<T> type) {
         @SuppressWarnings("unchecked")
-        final T t = type.isAssignableFrom(getClass()) ? (T)this : wrapped.lookupMapperOfType(type);
+        final T t = type.isAssignableFrom(getClass()) ? (T) this : wrapped.lookupMapperOfType(type);
         return t;
     }
 
     @Override
-    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type,
-            final Class<?> definedIn) {
+    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type, final Class<?> definedIn) {
         return getConverterFromItemTypeMapper.getConverterFromItemType(fieldName, type, definedIn);
     }
 
@@ -221,9 +231,7 @@ public abstract class MapperWrapper implements Mapper {
     }
 
     @Override
-    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute,
-            final Class<?> type) {
+    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute, final Class<?> type) {
         return getConverterFromAttributeMapper.getConverterFromAttribute(definedIn, attribute, type);
     }
-
 }

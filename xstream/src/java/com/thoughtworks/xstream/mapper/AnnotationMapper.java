@@ -30,7 +30,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import com.thoughtworks.xstream.InitializationException;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAliasType;
@@ -52,7 +51,6 @@ import com.thoughtworks.xstream.core.JVM;
 import com.thoughtworks.xstream.core.util.DependencyInjectionFactory;
 import com.thoughtworks.xstream.core.util.TypedNull;
 
-
 /**
  * A mapper that uses annotations to prepare the remaining mappers in the chain.
  *
@@ -62,16 +60,27 @@ import com.thoughtworks.xstream.core.util.TypedNull;
 public class AnnotationMapper extends MapperWrapper implements AnnotationConfiguration {
 
     private boolean locked;
+
     private transient Object[] arguments;
+
     private final ConverterRegistry converterRegistry;
+
     private transient ClassAliasingMapper classAliasingMapper;
+
     private transient DefaultImplementationsMapper defaultImplementationsMapper;
+
     private transient ImplicitCollectionMapper implicitCollectionMapper;
+
     private transient FieldAliasingMapper fieldAliasingMapper;
+
     private transient ElementIgnoringMapper elementIgnoringMapper;
+
     private transient AttributeMapper attributeMapper;
+
     private transient LocalConversionMapper localConversionMapper;
-    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new HashMap<>();
+
+    private final Map<Class<?>, Map<List<Object>, Converter>> converterCache = new java.util.LinkedHashMap<>();
+
     private final Set<Class<?>> annotatedTypes = Collections.synchronizedSet(new HashSet<Class<?>>());
 
     /**
@@ -80,20 +89,14 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
      * @param wrapped the next {@link Mapper} in the chain
      * @since 1.4.5
      */
-    public AnnotationMapper(
-            final Mapper wrapped, final ConverterRegistry converterRegistry, final ConverterLookup converterLookup,
-            final ClassLoaderReference classLoaderReference, final ReflectionProvider reflectionProvider) {
+    public AnnotationMapper(final Mapper wrapped, final ConverterRegistry converterRegistry, final ConverterLookup converterLookup, final ClassLoaderReference classLoaderReference, final ReflectionProvider reflectionProvider) {
         super(wrapped);
         this.converterRegistry = converterRegistry;
         annotatedTypes.add(Object.class);
         setupMappers();
         locked = true;
-
         final ClassLoader classLoader = classLoaderReference.getReference();
-        arguments = new Object[]{
-            this, classLoaderReference, reflectionProvider, converterLookup, new JVM(), classLoader != null
-                ? classLoader
-                : new TypedNull<>(ClassLoader.class)};
+        arguments = new Object[] { this, classLoaderReference, reflectionProvider, converterLookup, new JVM(), classLoader != null ? classLoader : new TypedNull<>(ClassLoader.class) };
     }
 
     /**
@@ -105,9 +108,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
      *             {@link #AnnotationMapper(Mapper, ConverterRegistry, ConverterLookup, ClassLoaderReference, ReflectionProvider)}
      */
     @Deprecated
-    public AnnotationMapper(
-            final Mapper wrapped, final ConverterRegistry converterRegistry, final ConverterLookup converterLookup,
-            final ClassLoader classLoader, final ReflectionProvider reflectionProvider, final JVM jvm) {
+    public AnnotationMapper(final Mapper wrapped, final ConverterRegistry converterRegistry, final ConverterLookup converterLookup, final ClassLoader classLoader, final ReflectionProvider reflectionProvider, final JVM jvm) {
         this(wrapped, converterRegistry, converterLookup, new ClassLoaderReference(classLoader), reflectionProvider);
     }
 
@@ -158,7 +159,6 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
             return;
         }
         locked = true;
-
         final Set<Class<?>> types = new UnprocessedTypesSet();
         for (final Class<?> initialType : initialTypes) {
             types.add(initialType);
@@ -170,7 +170,6 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
         if (initialType == null) {
             return;
         }
-
         final Set<Class<?>> types = new UnprocessedTypesSet();
         types.add(initialType);
         processTypes(types);
@@ -181,7 +180,6 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
             final Iterator<Class<?>> iter = types.iterator();
             final Class<?> type = iter.next();
             iter.remove();
-
             synchronized (type) {
                 if (annotatedTypes.contains(type)) {
                     continue;
@@ -190,30 +188,22 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                     if (type.isPrimitive()) {
                         continue;
                     }
-
                     addParametrizedTypes(type, types);
-
                     processConverterAnnotations(type);
                     processAliasAnnotation(type, types);
                     processAliasTypeAnnotation(type);
-
                     if (type.isInterface()) {
                         continue;
                     }
-
                     final Field[] fields = type.getDeclaredFields();
                     for (final Field field : fields) {
-                        if (field.isEnumConstant()
-                            || (field.getModifiers() & (Modifier.STATIC | Modifier.TRANSIENT)) > 0) {
+                        if (field.isEnumConstant() || (field.getModifiers() & (Modifier.STATIC | Modifier.TRANSIENT)) > 0) {
                             continue;
                         }
-
                         addParametrizedTypes(field.getGenericType(), types);
-
                         if (field.isSynthetic()) {
                             continue;
                         }
-
                         processFieldAliasAnnotation(field);
                         processAsAttributeAnnotation(field);
                         processImplicitAnnotation(field);
@@ -230,21 +220,21 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
     private void addParametrizedTypes(Type type, final Set<Class<?>> types) {
         final Set<Type> processedTypes = new HashSet<>();
         final Set<Type> localTypes = new LinkedHashSet<Type>() {
+
             private static final long serialVersionUID = 20151010L;
 
             @Override
             public boolean add(final Type o) {
                 if (o instanceof Class) {
-                    return types.add((Class<?>)o);
+                    return types.add((Class<?>) o);
                 }
                 return o == null || processedTypes.contains(o) ? false : super.add(o);
             }
-
         };
         while (type != null) {
             processedTypes.add(type);
             if (type instanceof Class) {
-                final Class<?> clazz = (Class<?>)type;
+                final Class<?> clazz = (Class<?>) type;
                 types.add(clazz);
                 if (!clazz.isPrimitive()) {
                     final TypeVariable<?>[] typeParameters = clazz.getTypeParameters();
@@ -257,23 +247,22 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                     }
                 }
             } else if (type instanceof TypeVariable) {
-                final TypeVariable<?> typeVariable = (TypeVariable<?>)type;
+                final TypeVariable<?> typeVariable = (TypeVariable<?>) type;
                 final Type[] bounds = typeVariable.getBounds();
                 for (final Type bound : bounds) {
                     localTypes.add(bound);
                 }
             } else if (type instanceof ParameterizedType) {
-                final ParameterizedType parametrizedType = (ParameterizedType)type;
+                final ParameterizedType parametrizedType = (ParameterizedType) type;
                 localTypes.add(parametrizedType.getRawType());
                 final Type[] actualArguments = parametrizedType.getActualTypeArguments();
                 for (final Type actualArgument : actualArguments) {
                     localTypes.add(actualArgument);
                 }
             } else if (type instanceof GenericArrayType) {
-                final GenericArrayType arrayType = (GenericArrayType)type;
+                final GenericArrayType arrayType = (GenericArrayType) type;
                 localTypes.add(arrayType.getGenericComponentType());
             }
-
             if (!localTypes.isEmpty()) {
                 final Iterator<Type> iter = localTypes.iterator();
                 type = iter.next();
@@ -288,9 +277,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
         if (converterRegistry != null) {
             final XStreamConverters convertersAnnotation = type.getAnnotation(XStreamConverters.class);
             final XStreamConverter converterAnnotation = type.getAnnotation(XStreamConverter.class);
-            final List<XStreamConverter> annotations = convertersAnnotation != null
-                ? new ArrayList<XStreamConverter>(Arrays.asList(convertersAnnotation.value()))
-                : new ArrayList<XStreamConverter>();
+            final List<XStreamConverter> annotations = convertersAnnotation != null ? new ArrayList<XStreamConverter>(Arrays.asList(convertersAnnotation.value())) : new ArrayList<XStreamConverter>();
             if (converterAnnotation != null) {
                 annotations.add(converterAnnotation);
             }
@@ -300,10 +287,7 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                     if (converterAnnotation != null || converter.canConvert(type)) {
                         converterRegistry.registerConverter(converter, annotation.priority());
                     } else {
-                        throw new InitializationException("Converter "
-                            + annotation.value().getName()
-                            + " cannot handle annotated class "
-                            + type.getName());
+                        throw new InitializationException("Converter " + annotation.value().getName() + " cannot handle annotated class " + type.getName());
                     }
                 }
             }
@@ -321,7 +305,8 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
                 // Alias for Interface/Class with an impl
                 defaultImplementationsMapper.addDefaultImplementation(aliasAnnotation.impl(), type);
                 if (type.isInterface()) {
-                    types.add(aliasAnnotation.impl()); // alias Interface's impl
+                    // alias Interface's impl
+                    types.add(aliasAnnotation.impl());
                 }
             }
         }
@@ -371,15 +356,13 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
             if (!field.getType().isArray()) {
                 final Type genericType = field.getGenericType();
                 if (genericType instanceof ParameterizedType) {
-                    final Type[] actualTypeArguments = ((ParameterizedType)genericType).getActualTypeArguments();
+                    final Type[] actualTypeArguments = ((ParameterizedType) genericType).getActualTypeArguments();
                     final Type typeArgument = actualTypeArguments[isMap ? 1 : 0];
                     itemType = getClass(typeArgument);
                 }
             }
             if (isMap) {
-                implicitCollectionMapper.add(field.getDeclaringClass(), fieldName, itemFieldName != null
-                    && !"".equals(itemFieldName) ? itemFieldName : null, itemType, keyFieldName != null
-                        && !"".equals(keyFieldName) ? keyFieldName : null);
+                implicitCollectionMapper.add(field.getDeclaringClass(), fieldName, itemFieldName != null && !"".equals(itemFieldName) ? itemFieldName : null, itemType, keyFieldName != null && !"".equals(keyFieldName) ? keyFieldName : null);
             } else {
                 if (itemFieldName != null && !"".equals(itemFieldName)) {
                     implicitCollectionMapper.add(field.getDeclaringClass(), fieldName, itemFieldName, itemType);
@@ -457,21 +440,16 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
             } else {
                 args = arguments;
             }
-
             final Converter converter;
             try {
-                if (SingleValueConverter.class.isAssignableFrom(converterType)
-                    && !Converter.class.isAssignableFrom(converterType)) {
-                    final SingleValueConverter svc = (SingleValueConverter)DependencyInjectionFactory.newInstance(
-                        converterType, args);
+                if (SingleValueConverter.class.isAssignableFrom(converterType) && !Converter.class.isAssignableFrom(converterType)) {
+                    final SingleValueConverter svc = (SingleValueConverter) DependencyInjectionFactory.newInstance(converterType, args);
                     converter = new SingleValueConverterWrapper(svc);
                 } else {
-                    converter = (Converter)DependencyInjectionFactory.newInstance(converterType, args);
+                    converter = (Converter) DependencyInjectionFactory.newInstance(converterType, args);
                 }
             } catch (final Exception e) {
-                throw new InitializationException("Cannot instantiate converter "
-                    + converterType.getName()
-                    + (targetType != null ? " for type " + targetType.getName() : ""), e);
+                throw new InitializationException("Cannot instantiate converter " + converterType.getName() + (targetType != null ? " for type " + targetType.getName() : ""), e);
             }
             if (converterMapping == null) {
                 converterMapping = new HashMap<>();
@@ -486,9 +464,9 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
     private Class<?> getClass(final Type typeArgument) {
         Class<?> type = null;
         if (typeArgument instanceof ParameterizedType) {
-            type = (Class<?>)((ParameterizedType)typeArgument).getRawType();
+            type = (Class<?>) ((ParameterizedType) typeArgument).getRawType();
         } else if (typeArgument instanceof Class) {
-            type = (Class<?>)typeArgument;
+            type = (Class<?>) typeArgument;
         }
         return type;
     }
@@ -520,13 +498,14 @@ public class AnnotationMapper extends MapperWrapper implements AnnotationConfigu
         for (int i = 0; i < max; i++) {
             arguments[i] = in.readObject();
             if (arguments[i] instanceof ClassLoaderReference) {
-                arguments[max + 1] = ((ClassLoaderReference)arguments[i]).getReference();
+                arguments[max + 1] = ((ClassLoaderReference) arguments[i]).getReference();
             }
         }
         arguments[max] = new JVM();
     }
 
     private final class UnprocessedTypesSet extends LinkedHashSet<Class<?>> {
+
         private static final long serialVersionUID = 20151010L;
 
         @Override

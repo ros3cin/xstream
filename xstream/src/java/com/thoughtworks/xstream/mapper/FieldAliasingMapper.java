@@ -14,9 +14,7 @@ package com.thoughtworks.xstream.mapper;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
 import com.thoughtworks.xstream.core.util.FastField;
-
 
 /**
  * Mapper that allows a field of a specific class to be replaced with a shorter alias.
@@ -25,8 +23,10 @@ import com.thoughtworks.xstream.core.util.FastField;
  */
 public class FieldAliasingMapper extends MapperWrapper {
 
-    protected final Map<FastField, String> fieldToAliasMap = new HashMap<>();
-    protected final Map<FastField, String> aliasToFieldMap = new HashMap<>();
+    protected final Map<FastField, String> fieldToAliasMap = new org.apache.commons.collections4.map.HashedMap<>();
+
+    protected final Map<FastField, String> aliasToFieldMap = new org.apache.commons.collections4.map.HashedMap<>();
+
     private final ElementIgnoringMapper elementIgnoringMapper;
 
     public FieldAliasingMapper(final Mapper wrapped) {
@@ -85,9 +85,7 @@ public class FieldAliasingMapper extends MapperWrapper {
 
     private String getMember(final Class<?> type, final String name, final Map<FastField, String> map) {
         String member = null;
-        for (Class<?> declaringType = type; member == null
-            && declaringType != Object.class
-            && declaringType != null; declaringType = declaringType.getSuperclass()) {
+        for (Class<?> declaringType = type; member == null && declaringType != Object.class && declaringType != null; declaringType = declaringType.getSuperclass()) {
             member = map.get(key(declaringType, name));
         }
         return member;

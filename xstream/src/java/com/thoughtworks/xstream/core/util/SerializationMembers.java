@@ -24,12 +24,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.converters.ErrorWritingException;
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
 import com.thoughtworks.xstream.core.Caching;
-
 
 /**
  * Convenience wrapper to invoke special serialization methods on objects (and perform reflection caching).
@@ -40,17 +38,22 @@ import com.thoughtworks.xstream.core.Caching;
 public class SerializationMembers implements Caching {
 
     private static final Method NO_METHOD = new Object() {
+
         @SuppressWarnings("unused")
         private void noMethod() {
         }
     }.getClass().getDeclaredMethods()[0];
+
     private static final Map<String, ObjectStreamField> NO_FIELDS = Collections.emptyMap();
+
     private static final int PERSISTENT_FIELDS_MODIFIER = Modifier.PRIVATE | Modifier.STATIC | Modifier.FINAL;
-    private static final FastField[] OBJECT_TYPE_FIELDS = {
-        new FastField(Object.class, "readResolve"), new FastField(Object.class, "writeReplace"), new FastField(
-            Object.class, "readObject"), new FastField(Object.class, "writeObject")};
+
+    private static final FastField[] OBJECT_TYPE_FIELDS = { new FastField(Object.class, "readResolve"), new FastField(Object.class, "writeReplace"), new FastField(Object.class, "readObject"), new FastField(Object.class, "writeObject") };
+
     private final ConcurrentMap<FastField, Method> declaredCache = new ConcurrentHashMap<>();
+
     private final ConcurrentMap<FastField, Method> resRepCache = new ConcurrentHashMap<>();
+
     private final ConcurrentMap<String, Map<String, ObjectStreamField>> fieldCache = new ConcurrentHashMap<>();
 
     {
@@ -158,8 +161,7 @@ public class SerializationMembers implements Caching {
         }
     }
 
-    private Method getMethod(final Class<?> type, final String name, final boolean includeBaseclasses,
-            final Class<?>... parameterTypes) {
+    private Method getMethod(final Class<?> type, final String name, final boolean includeBaseclasses, final Class<?>... parameterTypes) {
         final Method method = getMethod(type, name, parameterTypes);
         return method == NO_METHOD || !includeBaseclasses && !method.getDeclaringClass().equals(type) ? null : method;
     }
@@ -170,7 +172,6 @@ public class SerializationMembers implements Caching {
         }
         final FastField method = new FastField(type, name);
         Method result = declaredCache.get(method);
-
         if (result == null) {
             try {
                 result = type.getDeclaredMethod(name, parameterTypes);
@@ -192,8 +193,7 @@ public class SerializationMembers implements Caching {
             result = getMethod(type, name, true);
             if (result != null && result.getDeclaringClass() != type) {
                 if ((result.getModifiers() & (Modifier.PUBLIC | Modifier.PROTECTED)) == 0) {
-                    if ((result.getModifiers() & Modifier.PRIVATE) > 0
-                        || type.getPackage() != result.getDeclaringClass().getPackage()) {
+                    if ((result.getModifiers() & Modifier.PRIVATE) > 0 || type.getPackage() != result.getDeclaringClass().getPackage()) {
                         result = NO_METHOD;
                     }
                 }
@@ -216,9 +216,9 @@ public class SerializationMembers implements Caching {
                 final Field field = type.getDeclaredField("serialPersistentFields");
                 if ((field.getModifiers() & PERSISTENT_FIELDS_MODIFIER) == PERSISTENT_FIELDS_MODIFIER) {
                     field.setAccessible(true);
-                    final ObjectStreamField[] fields = (ObjectStreamField[])field.get(null);
+                    final ObjectStreamField[] fields = (ObjectStreamField[]) field.get(null);
                     if (fields != null) {
-                        result = new HashMap<>();
+                        result = new org.apache.commons.collections4.map.HashedMap<>();
                         for (final ObjectStreamField f : fields) {
                             result.put(f.getName(), f);
                         }

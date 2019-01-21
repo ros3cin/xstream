@@ -14,11 +14,9 @@ package com.thoughtworks.xstream.mapper;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.converters.enums.EnumSingleValueConverter;
 import com.thoughtworks.xstream.core.Caching;
-
 
 /**
  * Mapper that handles the special case of polymorphic enums in Java 1.5. This renames MyEnum$1 to MyEnum making it less
@@ -31,6 +29,7 @@ import com.thoughtworks.xstream.core.Caching;
 public class EnumMapper extends MapperWrapper implements Caching {
 
     private transient AttributeMapper attributeMapper;
+
     private transient Map<Class<?>, SingleValueConverter> enumConverterMap;
 
     public EnumMapper(final Mapper wrapped) {
@@ -67,31 +66,27 @@ public class EnumMapper extends MapperWrapper implements Caching {
     }
 
     @Override
-    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type,
-            final Class<?> definedIn) {
+    public SingleValueConverter getConverterFromItemType(final String fieldName, final Class<?> type, final Class<?> definedIn) {
         final SingleValueConverter converter = getLocalConverter(fieldName, type, definedIn);
         return converter == null ? super.getConverterFromItemType(fieldName, type, definedIn) : converter;
     }
 
     @Override
-    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute,
-            final Class<?> type) {
+    public SingleValueConverter getConverterFromAttribute(final Class<?> definedIn, final String attribute, final Class<?> type) {
         final SingleValueConverter converter = getLocalConverter(attribute, type, definedIn);
         return converter == null ? super.getConverterFromAttribute(definedIn, attribute, type) : converter;
     }
 
     private SingleValueConverter getLocalConverter(final String fieldName, final Class<?> type, final Class<?> definedIn) {
-        if (attributeMapper != null
-                && Enum.class.isAssignableFrom(type)
-                && attributeMapper.shouldLookForSingleValueConverter(fieldName, type, definedIn)) {
+        if (attributeMapper != null && Enum.class.isAssignableFrom(type) && attributeMapper.shouldLookForSingleValueConverter(fieldName, type, definedIn)) {
             synchronized (enumConverterMap) {
                 SingleValueConverter singleValueConverter = enumConverterMap.get(type);
                 if (singleValueConverter == null) {
                     singleValueConverter = super.getConverterFromItemType(fieldName, type, definedIn);
                     if (singleValueConverter == null) {
                         @SuppressWarnings("unchecked")
-                        final Class<? extends Enum<?>> enumType = (Class<? extends Enum<?>>)type;
-                        @SuppressWarnings({"rawtypes", "unchecked"})
+                        final Class<? extends Enum<?>> enumType = (Class<? extends Enum<?>>) type;
+                        @SuppressWarnings({ "rawtypes", "unchecked" })
                         final EnumSingleValueConverter<?> enumConverter = new EnumSingleValueConverter(enumType);
                         singleValueConverter = enumConverter;
                     }
@@ -113,7 +108,7 @@ public class EnumMapper extends MapperWrapper implements Caching {
     }
 
     private Object readResolve() {
-        enumConverterMap = new HashMap<>();
+        enumConverterMap = new java.util.LinkedHashMap<>();
         attributeMapper = lookupMapperOfType(AttributeMapper.class);
         return this;
     }
